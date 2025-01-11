@@ -1,7 +1,7 @@
 # title: "AI-Enhanced Journal Club"
 author: "Andrew Ellis"
-date: "5 December, 2024"
-date-format: "DD MMMM, YYYY"
+date: "12 January, 2025"
+date-format: "DD/MM/YYYY"
 bibliography: [../bibliography.bib, ../ai-for-research.bib]
 # nocite: |
 #   @cuiEffectsGenerativeAI2024a

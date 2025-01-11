@@ -14,7 +14,8 @@
   <meta name="generator" content="quarto-1.6.40">
 
   <meta name="author" content="Andrew Ellis">
-  <title>HKB Horntage 2025 – KI: erste Schritte &amp; rechtliche Aspekte</title>
+  <meta name="dcterms.date" content="2025-12-01">
+  <title>HKB Horntage 2025 – Künstliche Intelligenz in der Lehre: erste Schritte</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -160,6 +161,94 @@
     }
   </style>
   <style>
+  div.callout-try.callout {
+    border-left-color: blue;
+  }
+  div.callout-try.callout-style-default > .callout-header {
+    background-color: rgb(from blue r g b / 13%);
+  }
+  div.callout-try .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-try.callout-style-default .callout-icon::before, div.callout-try.callout-titled .callout-icon::before {
+    content: '🔄';
+    background-image: none;
+  }
+  div.callout-prompt-example.callout {
+    border-left-color: steelblue;
+  }
+  div.callout-prompt-example.callout-style-default > .callout-header {
+    background-color: rgb(from steelblue r g b / 13%);
+  }
+  div.callout-prompt-example .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-prompt-example.callout-style-default .callout-icon::before, div.callout-prompt-example.callout-titled .callout-icon::before {
+    content: '👩🏼‍🔧';
+    background-image: none;
+  }
+  div.callout-setup.callout {
+    border-left-color: gray;
+  }
+  div.callout-setup.callout-style-default > .callout-header {
+    background-color: rgb(from gray r g b / 13%);
+  }
+  div.callout-setup .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-setup.callout-style-default .callout-icon::before, div.callout-setup.callout-titled .callout-icon::before {
+    content: '⚙️';
+    background-image: none;
+  }
+  div.callout-reflect.callout {
+    border-left-color: purple;
+  }
+  div.callout-reflect.callout-style-default > .callout-header {
+    background-color: rgb(from purple r g b / 13%);
+  }
+  div.callout-reflect .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-reflect.callout-style-default .callout-icon::before, div.callout-reflect.callout-titled .callout-icon::before {
+    content: '💭';
+    background-image: none;
+  }
+  div.callout-pro-tip.callout {
+    border-left-color: gold;
+  }
+  div.callout-pro-tip.callout-style-default > .callout-header {
+    background-color: rgb(from gold r g b / 13%);
+  }
+  div.callout-pro-tip .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-pro-tip.callout-style-default .callout-icon::before, div.callout-pro-tip.callout-titled .callout-icon::before {
+    content: '💡';
+    background-image: none;
+  }
+  div.callout-group.callout {
+    border-left-color: purple;
+  }
+  div.callout-group.callout-style-default > .callout-header {
+    background-color: rgb(from purple r g b / 13%);
+  }
+  div.callout-group .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-group.callout-style-default .callout-icon::before, div.callout-group.callout-titled .callout-icon::before {
+    content: '👥';
+    background-image: none;
+  }
+  div.callout-caution.callout {
+    border-left-color: orange;
+  }
+  div.callout-caution.callout-style-default > .callout-header {
+    background-color: rgb(from orange r g b / 13%);
+  }
+  div.callout-caution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-caution.callout-style-default .callout-icon::before, div.callout-caution.callout-titled .callout-icon::before {
+    content: '⚠️';
+    background-image: none;
+  }
+  div.callout-testing.callout {
+    border-left-color: green;
+  }
+  div.callout-testing.callout-style-default > .callout-header {
+    background-color: rgb(from green r g b / 13%);
+  }
+  div.callout-testing .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-testing.callout-style-default .callout-icon::before, div.callout-testing.callout-titled .callout-icon::before {
+    content: '🧪';
+    background-image: none;
+  }
   div.callout-pair.callout {
     border-left-color: forestgreen;
   }
@@ -180,6 +269,17 @@
   div.callout-timing .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
   div.callout-timing.callout-style-default .callout-icon::before, div.callout-timing.callout-titled .callout-icon::before {
     content: '⏱️';
+    background-image: none;
+  }
+  div.callout-prompt-template.callout {
+    border-left-color: indigo;
+  }
+  div.callout-prompt-template.callout-style-default > .callout-header {
+    background-color: rgb(from indigo r g b / 13%);
+  }
+  div.callout-prompt-template .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-prompt-template.callout-style-default .callout-icon::before, div.callout-prompt-template.callout-titled .callout-icon::before {
+    content: '📋';
     background-image: none;
   }
   div.callout-feedback.callout {
@@ -204,105 +304,6 @@
     content: '🔼';
     background-image: none;
   }
-  div.callout-break.callout {
-    border-left-color: yellow;
-  }
-  div.callout-break.callout-style-default > .callout-header {
-    background-color: rgb(from yellow r g b / 13%);
-  }
-  div.callout-break .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-break.callout-style-default .callout-icon::before, div.callout-break.callout-titled .callout-icon::before {
-    content: '☕';
-    background-image: none;
-  }
-  div.callout-prompt-example.callout {
-    border-left-color: steelblue;
-  }
-  div.callout-prompt-example.callout-style-default > .callout-header {
-    background-color: rgb(from steelblue r g b / 13%);
-  }
-  div.callout-prompt-example .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-prompt-example.callout-style-default .callout-icon::before, div.callout-prompt-example.callout-titled .callout-icon::before {
-    content: '👩🏼‍🔧';
-    background-image: none;
-  }
-  div.callout-pro-tip.callout {
-    border-left-color: gold;
-  }
-  div.callout-pro-tip.callout-style-default > .callout-header {
-    background-color: rgb(from gold r g b / 13%);
-  }
-  div.callout-pro-tip .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-pro-tip.callout-style-default .callout-icon::before, div.callout-pro-tip.callout-titled .callout-icon::before {
-    content: '💡';
-    background-image: none;
-  }
-  div.callout-individual.callout {
-    border-left-color: steelblue;
-  }
-  div.callout-individual.callout-style-default > .callout-header {
-    background-color: rgb(from steelblue r g b / 13%);
-  }
-  div.callout-individual .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-individual.callout-style-default .callout-icon::before, div.callout-individual.callout-titled .callout-icon::before {
-    content: '💻';
-    background-image: none;
-  }
-  div.callout-reflect.callout {
-    border-left-color: purple;
-  }
-  div.callout-reflect.callout-style-default > .callout-header {
-    background-color: rgb(from purple r g b / 13%);
-  }
-  div.callout-reflect .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-reflect.callout-style-default .callout-icon::before, div.callout-reflect.callout-titled .callout-icon::before {
-    content: '💭';
-    background-image: none;
-  }
-  div.callout-caution.callout {
-    border-left-color: orange;
-  }
-  div.callout-caution.callout-style-default > .callout-header {
-    background-color: rgb(from orange r g b / 13%);
-  }
-  div.callout-caution .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-caution.callout-style-default .callout-icon::before, div.callout-caution.callout-titled .callout-icon::before {
-    content: '⚠️';
-    background-image: none;
-  }
-  div.callout-export.callout {
-    border-left-color: brown;
-  }
-  div.callout-export.callout-style-default > .callout-header {
-    background-color: rgb(from brown r g b / 13%);
-  }
-  div.callout-export .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-export.callout-style-default .callout-icon::before, div.callout-export.callout-titled .callout-icon::before {
-    content: '📤';
-    background-image: none;
-  }
-  div.callout-output-example.callout {
-    border-left-color: purple;
-  }
-  div.callout-output-example.callout-style-default > .callout-header {
-    background-color: rgb(from purple r g b / 13%);
-  }
-  div.callout-output-example .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-output-example.callout-style-default .callout-icon::before, div.callout-output-example.callout-titled .callout-icon::before {
-    content: '📄';
-    background-image: none;
-  }
-  div.callout-group.callout {
-    border-left-color: purple;
-  }
-  div.callout-group.callout-style-default > .callout-header {
-    background-color: rgb(from purple r g b / 13%);
-  }
-  div.callout-group .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-group.callout-style-default .callout-icon::before, div.callout-group.callout-titled .callout-icon::before {
-    content: '👥';
-    background-image: none;
-  }
   div.callout-checkpoint.callout {
     border-left-color: purple;
   }
@@ -325,48 +326,26 @@
     content: '🔽';
     background-image: none;
   }
-  div.callout-testing.callout {
-    border-left-color: green;
+  div.callout-break.callout {
+    border-left-color: yellow;
   }
-  div.callout-testing.callout-style-default > .callout-header {
-    background-color: rgb(from green r g b / 13%);
+  div.callout-break.callout-style-default > .callout-header {
+    background-color: rgb(from yellow r g b / 13%);
   }
-  div.callout-testing .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-testing.callout-style-default .callout-icon::before, div.callout-testing.callout-titled .callout-icon::before {
-    content: '🧪';
+  div.callout-break .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-break.callout-style-default .callout-icon::before, div.callout-break.callout-titled .callout-icon::before {
+    content: '☕';
     background-image: none;
   }
-  div.callout-prompt-template.callout {
-    border-left-color: indigo;
+  div.callout-output-example.callout {
+    border-left-color: purple;
   }
-  div.callout-prompt-template.callout-style-default > .callout-header {
-    background-color: rgb(from indigo r g b / 13%);
+  div.callout-output-example.callout-style-default > .callout-header {
+    background-color: rgb(from purple r g b / 13%);
   }
-  div.callout-prompt-template .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-prompt-template.callout-style-default .callout-icon::before, div.callout-prompt-template.callout-titled .callout-icon::before {
-    content: '📋';
-    background-image: none;
-  }
-  div.callout-setup.callout {
-    border-left-color: gray;
-  }
-  div.callout-setup.callout-style-default > .callout-header {
-    background-color: rgb(from gray r g b / 13%);
-  }
-  div.callout-setup .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-setup.callout-style-default .callout-icon::before, div.callout-setup.callout-titled .callout-icon::before {
-    content: '⚙️';
-    background-image: none;
-  }
-  div.callout-try.callout {
-    border-left-color: blue;
-  }
-  div.callout-try.callout-style-default > .callout-header {
-    background-color: rgb(from blue r g b / 13%);
-  }
-  div.callout-try .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-try.callout-style-default .callout-icon::before, div.callout-try.callout-titled .callout-icon::before {
-    content: '🔄';
+  div.callout-output-example .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-output-example.callout-style-default .callout-icon::before, div.callout-output-example.callout-titled .callout-icon::before {
+    content: '📄';
     background-image: none;
   }
   div.callout-schedule.callout {
@@ -380,8 +359,30 @@
     content: '⏰︎';
     background-image: none;
   }
+  div.callout-individual.callout {
+    border-left-color: steelblue;
+  }
+  div.callout-individual.callout-style-default > .callout-header {
+    background-color: rgb(from steelblue r g b / 13%);
+  }
+  div.callout-individual .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-individual.callout-style-default .callout-icon::before, div.callout-individual.callout-titled .callout-icon::before {
+    content: '💻';
+    background-image: none;
+  }
+  div.callout-export.callout {
+    border-left-color: brown;
+  }
+  div.callout-export.callout-style-default > .callout-header {
+    background-color: rgb(from brown r g b / 13%);
+  }
+  div.callout-export .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+  div.callout-export.callout-style-default .callout-icon::before, div.callout-export.callout-titled .callout-icon::before {
+    content: '📤';
+    background-image: none;
+  }
   </style>
-<meta property="og:title" content="KI: erste Schritte &amp; rechtliche Aspekte – HKB Horntage 2025">
+<meta property="og:title" content="Künstliche Intelligenz in der Lehre: erste Schritte – HKB Horntage 2025">
 <meta property="og:site_name" content="HKB Horntage 2025">
 </head>
 <body class="quarto-light">
@@ -389,7 +390,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-opacity="1" class="quarto-title-block center">
-  <h1 class="title">KI: erste Schritte &amp; rechtliche Aspekte</h1>
+  <h1 class="title">Künstliche Intelligenz in der Lehre: erste Schritte</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -399,12 +400,28 @@ Andrew Ellis
 </div>
 </div>
 
-  <p class="date">05 December, 2024</p>
+  <p class="date">12/01/2025</p>
 </section>
 <section id="künstliche-intelligenz" class="slide level2">
 <h2>Künstliche Intelligenz</h2>
+<div class="r-fit-text">
+<p>Big Text</p>
+</div>
+<div class="r-fit-text">
+<p><strong>Künstliche Intelligenz (KI)</strong>: Entwicklung von Maschinen, die Aufgaben ausführen können, welche normalerweise menschliche Intelligenz erfordern.</p>
+</div>
+</section>
+<section id="alphafold" class="slide level2">
+<h2>AlphaFold</h2>
+<!--  -->
+
+<img data-src="../../assets/images/protein.png" class="r-stretch"><div class="attribution">
+<p>Quelle: <a href="https://alphafold.com/">AlphaFold</a></p>
+</div>
+</section>
+<section id="künstliche-intelligenz-1" class="slide level2">
+<h2>Künstliche Intelligenz</h2>
 <ul>
-<li><p><strong>Künstliche Intelligenz (KI)</strong>: Entwicklung von Maschinen, die Aufgaben ausführen können, welche normalerweise menschliche Intelligenz erfordern.</p></li>
 <li><p>KI-Systeme können <strong>trainiert</strong> werden, um aus Daten zu lernen und Muster zu erkennen.</p></li>
 <li><p>Mögliche Einsatzbereiche:</p>
 <ul>
@@ -427,6 +444,163 @@ Andrew Ellis
 <p><img data-src="../../assets/images/LLM.svg"></p>
 </div></div>
 </section>
+<section id="symbolic-ai" class="slide level2">
+<h2>Symbolic AI</h2>
+<p>Symbolic AI:</p>
+<p>Uses explicit rules and logic programmed by humans Based on if-then statements and predefined knowledge Follows clear, explainable steps Good for problems with clear rules Less adaptable to new situations</p>
+</section>
+<section id="machine-learning" class="slide level2">
+<h2>Machine Learning</h2>
+<p>Machine Learning/Deep Learning:</p>
+<p>Learns patterns from data automatically Based on statistical patterns and relationships Works like a “black box” - harder to explain decisions Good for complex patterns and unclear rules Can adapt to new situations through training</p>
+</section>
+<section id="cats-vs-dogs" class="slide level2">
+<h2>Cats vs Dogs</h2>
+
+<img data-src="../../assets/images/cats-vs-dogs.png" class="r-stretch"></section>
+<section id="cat-example" class="slide level2">
+<h2>Cat example</h2>
+<p><img data-src="../../assets/images/cat.png"></p>
+<p><img data-src="../../assets/images/cat-features.png"></p>
+</section>
+<section id="music-example" class="slide level2">
+<h2>Music example</h2>
+
+<img data-src="../../assets/images/mozarthornkonzertkv495-2.png" class="r-stretch"><figure class=""><audio controls="" src="../../assets/audio/mozarthornkonzertkv495-2.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio><figcaption>WA Mozart: Horn Concerto KV 495, Romanza (Christian Holenstein)</figcaption></figure>
+<div class="attribution">
+<p>Quelle: <a href="https://www.christian-holenstein.ch/sounds">www.christian-holenstein.ch/sounds</a></p>
+</div>
+</section>
+<section id="what-are-llms" class="slide level2">
+<h2>What are LLMs?</h2>
+<div class="r-fit-text">
+<p>Um die angekommene Technologie einordnen zu können, ist eine <strong>Entmystifizierung</strong> notwendig:</p>
+<ul>
+<li>LLMs sind statistische Modelle, die Text analysieren, um das nächste Wort vorherzusagen.</li>
+<li>Diese Vorhersage geschieht <strong>Wort für Wort</strong>.</li>
+<li>Jede Vorhersage basiert auf
+<ul>
+<li>der Eingabe (Prompt)</li>
+<li>den zuvor generierten Wörtern</li>
+<li>der internen Struktur des Modells</li>
+</ul></li>
+</ul>
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\purple}[1]{\color{purple}{#1}}
+\newcommand{\red}[1]{\color{red}{#1}}
+\newcommand{\blue}[1]{\color{blue}{#1}}
+\]</span></p>
+</div>
+<p><span class="math display">\[\purple{P(\text{Wort}_{i+1}} \mid \blue{\text{Kontext}}, \red{\text{Modell}})\]</span></p>
+<!-- $$P(x_{i+1} \mid \text{Context}, \text{Model})$$ -->
+<p>Das <span class="math inline">\(\purple{\text{nächste Wort}}\)</span> wird vorhergesagt, in Abhängigkeit von <span class="math inline">\(\blue{\text{Inputsequenz}}\)</span> und <span class="math inline">\(\red{\text{Modell}}\)</span>.</p>
+</div>
+</section>
+<section id="vorhersage" class="slide level2">
+<h2>Vorhersage</h2>
+<p>Nicht alle Teile des Kontexts sind gleich wichtig:</p>
+<p><br> <br></p>
+<div class="callout callout-note no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<p>“Die Familie, die sehr wohlhabend war, lebte in einem grossen Haus. Das Haus stand inmitten eines weitläufigen Gartens. Es war bekannt für seine prächtige Fassade und die grosszügigen ___”</p>
+</div>
+</div>
+</div>
+<div class="attribution">
+<p>Nach Thomas Mann, <em>Buddenbrooks</em></p>
+</div>
+<p><br> <br></p>
+<p>Welche Wörter sind besonders wichtig, um</p>
+<ul>
+<li>die Bedeutung des Satzes zu erfassen?</li>
+<li>das nächste Wort vorherzusagen?</li>
+</ul>
+</section>
+<section id="kontext-verstehen" class="slide level2 smaller">
+<h2>Kontext verstehen</h2>
+<div class="callout callout-note no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<p>“Die Familie, die sehr wohlhabend war, lebte in einem grossen Haus. Das Haus stand inmitten eines weitläufigen Gartens. Es war bekannt für seine prächtige Fassade und die grosszügigen ___”</p>
+</div>
+</div>
+</div>
+<p><strong>Syntaktische Struktur (Grammatik und Struktur des Satzes):</strong></p>
+<ul>
+<li>Das Wort “grosszügigen” ist ein Adjektiv, das wahrscheinlich ein Nomen - im Plural beschreibt (Dativ oder Akkusativ wegen der Endung “-en”).</li>
+<li>Der Satz bezieht sich auf das Haus und den Garten, daher liegt der Fokus vermutlich auf deren Eigenschaften.</li>
+</ul>
+<p><strong>Semantischer Kontext (Bedeutung):</strong></p>
+<p>Die Beschreibung hebt Wohlstand hervor. Das nächste Wort beschreibt vermutlich etwas Luxuriöses oder Weitläufiges.</p>
+<p><strong>Lexikalische Kohärenz (Wörter und deren Bedeutungen im Kontext):</strong></p>
+<p>Nach “grosszügigen” folgen häufig Nomen, die Räume, Flächen oder architektonische Elemente beschreiben, z. B. “Räume”, “Gärten”, “Fenster”.</p>
+</section>
+<section id="was-sind-llms" class="slide level2">
+<h2>Was sind LLMs?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Ein LLM kann man sich wie einen ausgefeilten Autocomplete-Mechanismus vorstellen.</p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="../../assets/images/predictive-text.png"></p>
+</div></div>
+<div class="attribution">
+<p>Bildquelle: <a href="https://www.apple.com">www.apple.com</a></p>
+</div>
+</section>
+<section id="wie-generieren-llms-text" class="slide level2">
+<h2>Wie generieren LLMs Text?</h2>
+<p><br> <br></p>
+
+<img data-src="../../assets/images/wort-fuer-wort.png" class="r-stretch"></section>
+<section id="wie-können-llms-text-vorhersagen" class="slide level2 smaller">
+<h2>Wie können LLMs Text vorhersagen?</h2>
+<p>Sie werden trainiert, das nächste Wort in einer gegebenen Wortsequenz zu erraten.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Ein LLM wird in drei Schritten aufgebaut:</p>
+<ol type="1">
+<li>Sammeln eines grossen Text-Korpus.</li>
+<li>Basierend auf diesem Text, muss das Modell das nächste Wort in einer gegebenen Wortsequenz vorherzusagen lernen.</li>
+<li>Das Sprachmodell wird feiner abgestimmt, um das gewünschte Verhalten zu erreichen.</li>
+</ol>
+</div><div class="column" style="width:50%;">
+<p><img data-src="../../assets/images/LLM-Bookshelf.png"></p>
+</div></div>
+</section>
+<section id="wie-werden-llms-trainiert" class="slide level2">
+<h2>Wie werden LLMs trainiert?</h2>
+
+<img data-src="../../assets/images/llm-training.png" class="r-stretch"></section>
+<section id="gefahren-und-herausforderungen" class="slide level2 smaller">
+<h2>Gefahren und Herausforderungen</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Die verschiedenen Stufen des Trainings sind mit verschiedenen Arten von Bedenken verbunden:</p>
+<ul>
+<li><strong>Urheberrecht</strong>: Die trainierten Modelle werden mit Texten trainiert, die möglicherweise Urheberrechtlich geschützt sind.</li>
+<li><strong>Bias</strong>: Die trainierten Modelle können bestehende Vorurteile aus den Trainingsdaten lernen.</li>
+<li><strong>Energieverbrauch</strong>: Das Training der Modelle verbraucht viel Energie und ist damit umweltbelastend.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="../../assets/images/Pothole.png"></p>
+</div></div>
+</section>
+<section id="gefahren-und-herausforderungen-1" class="slide level2">
+<h2>Gefahren und Herausforderungen</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Obschon sich LLMs viel Wissen aneignen<sup>1</sup>, werden sie nicht trainiert, faktisch korrekte Aussagen zu machen.</li>
+<li>Dies bedeutet, dass wir alle Aussagen, die LLMs uns präsentieren, immer kritisch hinterfragen müssen.</li>
+<li>LLMs sind <strong>keine Wissensdatenbanken</strong>. Informationen immer anhand externer Quellen überprüfen.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="../../assets/images/KnowledgeBase.png"></p>
+</div></div>
+<!-- ----------------------- -->
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Das ganze Wissen, welches nötig ist, um Texte Wort für Wort vorherzusagen.</p></li></ol></aside></section>
 <section id="ki-verrichtet-geistige-arbeit" class="slide level2 smaller">
 <h2>KI verrichtet geistige Arbeit</h2>
 <ul>
@@ -554,136 +728,8 @@ Andrew Ellis
    - KI-Funktionen in bestehender Software
    - Integration in gängige Tools
    - Plattform-Updates -->
+<!-- ----------------------- -->
 </section>
-<section id="was-sind-llms" class="slide level2">
-<h2>Was sind LLMs?</h2>
-<div class="r-fit-text">
-<p>Um die angekommene Technologie einordnen zu können, ist eine <strong>Entmystifizierung</strong> notwendig:</p>
-<ul>
-<li>LLMs sind statistische Modelle, die Text analysieren, um das nächste Wort vorherzusagen.</li>
-<li>Diese Vorhersage geschieht <strong>Wort für Wort</strong>.</li>
-<li>Jede Vorhersage basiert auf
-<ul>
-<li>der Eingabe (Prompt)</li>
-<li>den zuvor generierten Wörtern</li>
-<li>der internen Struktur des Modells</li>
-</ul></li>
-</ul>
-<div class="hidden">
-<p><span class="math display">\[
-\newcommand{\purple}[1]{\color{purple}{#1}}
-\newcommand{\red}[1]{\color{red}{#1}}
-\newcommand{\blue}[1]{\color{blue}{#1}}
-\]</span></p>
-</div>
-<p><span class="math display">\[\purple{P(\text{Wort}_{i+1}} \mid \blue{\text{Kontext}}, \red{\text{Modell}})\]</span></p>
-<!-- $$P(x_{i+1} \mid \text{Context}, \text{Model})$$ -->
-<p>Das <span class="math inline">\(\purple{\text{nächste Wort}}\)</span> wird vorhergesagt, in Abhängigkeit von <span class="math inline">\(\blue{\text{Inputsequenz}}\)</span> und <span class="math inline">\(\red{\text{Modell}}\)</span>.</p>
-</div>
-</section>
-<section id="vorhersage" class="slide level2">
-<h2>Vorhersage</h2>
-<p>Nicht alle Teile des Kontexts sind gleich wichtig:</p>
-<p><br> <br></p>
-<div class="callout callout-note no-icon callout-style-simple">
-<div class="callout-body">
-<div class="callout-content">
-<p>“Die Familie, die sehr wohlhabend war, lebte in einem grossen Haus. Das Haus stand inmitten eines weitläufigen Gartens. Es war bekannt für seine prächtige Fassade und die grosszügigen ___”</p>
-</div>
-</div>
-</div>
-<div class="attribution">
-<p>Nach Thomas Mann, <em>Buddenbrooks</em></p>
-</div>
-<p><br> <br></p>
-<p>Welche Wörter sind besonders wichtig, um</p>
-<ul>
-<li>die Bedeutung des Satzes zu erfassen?</li>
-<li>das nächste Wort vorherzusagen?</li>
-</ul>
-</section>
-<section id="kontext-verstehen" class="slide level2 smaller">
-<h2>Kontext verstehen</h2>
-<div class="callout callout-note no-icon callout-style-simple">
-<div class="callout-body">
-<div class="callout-content">
-<p>“Die Familie, die sehr wohlhabend war, lebte in einem grossen Haus. Das Haus stand inmitten eines weitläufigen Gartens. Es war bekannt für seine prächtige Fassade und die grosszügigen ___”</p>
-</div>
-</div>
-</div>
-<p><strong>Syntaktische Struktur (Grammatik und Struktur des Satzes):</strong></p>
-<ul>
-<li>Das Wort “grosszügigen” ist ein Adjektiv, das wahrscheinlich ein Nomen - im Plural beschreibt (Dativ oder Akkusativ wegen der Endung “-en”).</li>
-<li>Der Satz bezieht sich auf das Haus und den Garten, daher liegt der Fokus vermutlich auf deren Eigenschaften.</li>
-</ul>
-<p><strong>Semantischer Kontext (Bedeutung):</strong></p>
-<p>Die Beschreibung hebt Wohlstand hervor. Das nächste Wort beschreibt vermutlich etwas Luxuriöses oder Weitläufiges.</p>
-<p><strong>Lexikalische Kohärenz (Wörter und deren Bedeutungen im Kontext):</strong></p>
-<p>Nach “grosszügigen” folgen häufig Nomen, die Räume, Flächen oder architektonische Elemente beschreiben, z. B. “Räume”, “Gärten”, “Fenster”.</p>
-</section>
-<section id="was-sind-llms-1" class="slide level2">
-<h2>Was sind LLMs?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Ein LLM kann man sich wie einen ausgefeilten Autocomplete-Mechanismus vorstellen.</p>
-</div><div class="column" style="width:50%;">
-<p><img data-src="../../assets/images/predictive-text.png"></p>
-</div></div>
-<div class="attribution">
-<p>Bildquelle: <a href="https://www.apple.com">www.apple.com</a></p>
-</div>
-</section>
-<section id="wie-generieren-llms-text" class="slide level2">
-<h2>Wie generieren LLMs Text?</h2>
-<p><br> <br></p>
-
-<img data-src="../../assets/images/wort-fuer-wort.png" class="r-stretch"></section>
-<section id="wie-können-llms-text-vorhersagen" class="slide level2 smaller">
-<h2>Wie können LLMs Text vorhersagen?</h2>
-<p>Sie werden trainiert, das nächste Wort in einer gegebenen Wortsequenz zu erraten.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Ein LLM wird in drei Schritten aufgebaut:</p>
-<ol type="1">
-<li>Sammeln eines grossen Text-Korpus.</li>
-<li>Basierend auf diesem Text, muss das Modell das nächste Wort in einer gegebenen Wortsequenz vorherzusagen lernen.</li>
-<li>Das Sprachmodell wird feiner abgestimmt, um das gewünschte Verhalten zu erreichen.</li>
-</ol>
-</div><div class="column" style="width:50%;">
-<p><img data-src="../../assets/images/LLM-Bookshelf.png"></p>
-</div></div>
-</section>
-<section id="wie-werden-llms-trainiert" class="slide level2">
-<h2>Wie werden LLMs trainiert?</h2>
-
-<img data-src="../../assets/images/llm-training.png" class="r-stretch"></section>
-<section id="gefahren-und-herausforderungen" class="slide level2 smaller">
-<h2>Gefahren und Herausforderungen</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Die verschiedenen Stufen des Trainings sind mit verschiedenen Arten von Bedenken verbunden:</p>
-<ul>
-<li><strong>Urheberrecht</strong>: Die trainierten Modelle werden mit Texten trainiert, die möglicherweise Urheberrechtlich geschützt sind.</li>
-<li><strong>Bias</strong>: Die trainierten Modelle können bestehende Vorurteile aus den Trainingsdaten lernen.</li>
-<li><strong>Energieverbrauch</strong>: Das Training der Modelle verbraucht viel Energie und ist damit umweltbelastend.</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><img data-src="../../assets/images/Pothole.png"></p>
-</div></div>
-</section>
-<section id="gefahren-und-herausforderungen-1" class="slide level2">
-<h2>Gefahren und Herausforderungen</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li>Obschon sich LLMs viel Wissen aneignen<sup>1</sup>, werden sie nicht trainiert, faktisch korrekte Aussagen zu machen.</li>
-<li>Dies bedeutet, dass wir alle Aussagen, die LLMs uns präsentieren, immer kritisch hinterfragen müssen.</li>
-<li>LLMs sind <strong>keine Wissensdatenbanken</strong>. Informationen immer anhand externer Quellen überprüfen.</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><img data-src="../../assets/images/KnowledgeBase.png"></p>
-</div></div>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>Das ganze Wissen, welches nötig ist, um Texte Wort für Wort vorherzusagen.</p></li></ol></aside></section>
 <section id="chatgpt" class="slide level2">
 <h2>ChatGPT</h2>
 
@@ -844,7 +890,10 @@ Andrew Ellis
 </div></div>
 </section>
 <section id="fragen" class="slide level2" data-background-color="#708090">
-<h2>Fragen?</h2>
+<h2>Fragen</h2>
+<div class="r-fit-text">
+<p>?</p>
+</div>
 </section>
 <section id="references" class="slide level2 smaller scrollable" data-background-color="#D8DEE9">
 <h2>References</h2>

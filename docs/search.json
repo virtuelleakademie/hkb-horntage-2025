@@ -291,245 +291,245 @@
   {
     "objectID": "slides/input/index.html#künstliche-intelligenz",
     "href": "slides/input/index.html#künstliche-intelligenz",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Künstliche Intelligenz",
-    "text": "Künstliche Intelligenz\n\nKünstliche Intelligenz (KI): Entwicklung von Maschinen, die Aufgaben ausführen können, welche normalerweise menschliche Intelligenz erfordern.\nKI-Systeme können trainiert werden, um aus Daten zu lernen und Muster zu erkennen.\nMögliche Einsatzbereiche:\n\nPersonalisierte Empfehlungen\nSelbstfahrende Autos\nVorhersage von Proteinfaltungen\nErstellung von Musik/Bildern/Texten"
+    "text": "Künstliche Intelligenz\n\nBig Text\n\n\nKünstliche Intelligenz (KI): Entwicklung von Maschinen, die Aufgaben ausführen können, welche normalerweise menschliche Intelligenz erfordern."
   },
   {
     "objectID": "slides/input/index.html#large-language-models-lmms",
     "href": "slides/input/index.html#large-language-models-lmms",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Large Language Models (LMMs)",
     "text": "Large Language Models (LMMs)\n\n\nMaschinelles Lernen:\nModelle, die ohne explizite Programmierung Muster aus Daten erlernen, um Vorhersagen oder Entscheidungen zu treffen. \n\nLarge Language Model:\nEin maschinelles Lernmodell, das darauf trainiert wird, das nächste Wort nach einem Eingabetext (Prompt) vorherzusagen."
   },
   {
     "objectID": "slides/input/index.html#ki-verrichtet-geistige-arbeit",
     "href": "slides/input/index.html#ki-verrichtet-geistige-arbeit",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "KI verrichtet geistige Arbeit",
     "text": "KI verrichtet geistige Arbeit\n\nKognitive Arbeit und KI: KI hat das Potential zu verändern, wie geistige Arbeit verrichtet wird.\nWichtige Erkenntnisse aus der Forschung:\n\nDell’Acqua et al. (2023) erforschen die Möglichkeiten, mit KI-Unterstützung kognitive Aufgaben zu verbessern. Fazit: KI kann Produktivität und Qualität steigern, aber auch neue Herausforderungen ergeben.\nToner-Rodgers (n.d.) diskutiert die Implikationen von KI für die Forschung und betont die Balance zwischen menschlicher und maschineller Intelligenz.\nCui et al. (2024) analysieren die Auswirkungen von generativer KI auf Software Engineering und hebt sowohl Chancen als auch Herausforderungen hervor.\n\nErkenntnisse:\n\nAutomatisierung von routinemässigen kognitiven Aufgaben ist möglich\nUnterstützung kreativer Arbeit ist möglich\nDeskilling: Gefahr, bei ständiger KI-Unterstützung eigene Fähigkeiten zu verlieren\nOhne Training: KI-Tools werden oft für ungeeignete Aufgaben eingesetzt"
   },
   {
     "objectID": "slides/input/index.html#körperliche-arbeit",
     "href": "slides/input/index.html#körperliche-arbeit",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Körperliche Arbeit",
     "text": "Körperliche Arbeit\n\n\n19. Jahrhundert\n\n\n20. Jahrhundert\n\n\n\nBildquelle: Erstellt mit DALL-E 3"
   },
   {
     "objectID": "slides/input/index.html#wie-sieht-das-für-die-kognitive-arbeit-aus",
     "href": "slides/input/index.html#wie-sieht-das-für-die-kognitive-arbeit-aus",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Wie sieht das für die kognitive Arbeit aus?",
     "text": "Wie sieht das für die kognitive Arbeit aus?\n\n\n1960\n\n\n2030 \n\n\n\nBildquelle: Erstellt mit DALL-E 3"
   },
   {
     "objectID": "slides/input/index.html#ankunftstechnologien",
     "href": "slides/input/index.html#ankunftstechnologien",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Ankunftstechnologien",
     "text": "Ankunftstechnologien\n\n\nHochschulen stehen vor Herausforderungen mit Technologien wie ChatGPT, weil sie:\n\nTraditionelle Technologie-Evaluierungsprozesse umgehen\nDurch spontane Adoption eingeführt werden\nReaktive statt proaktive Richtlinien erfordern\n\n\n\n\n\nBildquelle: Erstellt mit DALL-E 3 (“ChatGPT arriving at a university in the style of a 14th century painting.”)"
   },
   {
     "objectID": "slides/input/index.html#adoptions--vs.-ankunfts-technologien",
     "href": "slides/input/index.html#adoptions--vs.-ankunfts-technologien",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Adoptions- vs. Ankunfts-Technologien",
     "text": "Adoptions- vs. Ankunfts-Technologien\n(Reich and Dukes 2024)\n\n\nTraditionelle Einführung\n\nSorgfältige Bewertung\nPilotversuche\nMitarbeiterschulung\nKlare Zeitpläne\nEtablierte Richtlinien\n\n\n\n\nBeispiele: Adoptions-Technologien\n\n\nLearning Management Systems, Smart boards\n\n\n\n\nAnkunftstechnologien\n\nSpontane Nutzung\nUmgehung von Prozessen\nKeine Vorbereitung\nBenutzergeführte Einführung\nReaktive Richtlinien\n\n\n\n\nBeispiele: Ankunfts-Technologien\n\n\nSmartphone, Wikipedia, YouTube, TikTok"
   },
   {
     "objectID": "slides/input/index.html#was-sind-llms",
     "href": "slides/input/index.html#was-sind-llms",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Was sind LLMs?",
-    "text": "Was sind LLMs?\n\nUm die angekommene Technologie einordnen zu können, ist eine Entmystifizierung notwendig:\n\nLLMs sind statistische Modelle, die Text analysieren, um das nächste Wort vorherzusagen.\nDiese Vorhersage geschieht Wort für Wort.\nJede Vorhersage basiert auf\n\nder Eingabe (Prompt)\nden zuvor generierten Wörtern\nder internen Struktur des Modells\n\n\n\n\\[\n\\newcommand{\\purple}[1]{\\color{purple}{#1}}\n\\newcommand{\\red}[1]{\\color{red}{#1}}\n\\newcommand{\\blue}[1]{\\color{blue}{#1}}\n\\]\n\n\\[\\purple{P(\\text{Wort}_{i+1}} \\mid \\blue{\\text{Kontext}}, \\red{\\text{Modell}})\\]\n\nDas \\(\\purple{\\text{nächste Wort}}\\) wird vorhergesagt, in Abhängigkeit von \\(\\blue{\\text{Inputsequenz}}\\) und \\(\\red{\\text{Modell}}\\)."
+    "text": "Was sind LLMs?\n\n\nEin LLM kann man sich wie einen ausgefeilten Autocomplete-Mechanismus vorstellen.\n\n\n\n\nBildquelle: www.apple.com"
   },
   {
     "objectID": "slides/input/index.html#vorhersage",
     "href": "slides/input/index.html#vorhersage",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Vorhersage",
     "text": "Vorhersage\nNicht alle Teile des Kontexts sind gleich wichtig:\n \n\n\n\n“Die Familie, die sehr wohlhabend war, lebte in einem grossen Haus. Das Haus stand inmitten eines weitläufigen Gartens. Es war bekannt für seine prächtige Fassade und die grosszügigen ___”\n\n\n\n\nNach Thomas Mann, Buddenbrooks\n\n \nWelche Wörter sind besonders wichtig, um\n\ndie Bedeutung des Satzes zu erfassen?\ndas nächste Wort vorherzusagen?"
   },
   {
     "objectID": "slides/input/index.html#kontext-verstehen",
     "href": "slides/input/index.html#kontext-verstehen",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Kontext verstehen",
     "text": "Kontext verstehen\n\n\n\n“Die Familie, die sehr wohlhabend war, lebte in einem grossen Haus. Das Haus stand inmitten eines weitläufigen Gartens. Es war bekannt für seine prächtige Fassade und die grosszügigen ___”\n\n\n\nSyntaktische Struktur (Grammatik und Struktur des Satzes):\n\nDas Wort “grosszügigen” ist ein Adjektiv, das wahrscheinlich ein Nomen - im Plural beschreibt (Dativ oder Akkusativ wegen der Endung “-en”).\nDer Satz bezieht sich auf das Haus und den Garten, daher liegt der Fokus vermutlich auf deren Eigenschaften.\n\nSemantischer Kontext (Bedeutung):\nDie Beschreibung hebt Wohlstand hervor. Das nächste Wort beschreibt vermutlich etwas Luxuriöses oder Weitläufiges.\nLexikalische Kohärenz (Wörter und deren Bedeutungen im Kontext):\nNach “grosszügigen” folgen häufig Nomen, die Räume, Flächen oder architektonische Elemente beschreiben, z. B. “Räume”, “Gärten”, “Fenster”."
   },
   {
     "objectID": "slides/input/index.html#was-sind-llms-1",
     "href": "slides/input/index.html#was-sind-llms-1",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Was sind LLMs?",
     "text": "Was sind LLMs?\n\n\nEin LLM kann man sich wie einen ausgefeilten Autocomplete-Mechanismus vorstellen.\n\n\n\n\nBildquelle: www.apple.com"
   },
   {
     "objectID": "slides/input/index.html#wie-generieren-llms-text",
     "href": "slides/input/index.html#wie-generieren-llms-text",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Wie generieren LLMs Text?",
     "text": "Wie generieren LLMs Text?"
   },
   {
     "objectID": "slides/input/index.html#wie-können-llms-text-vorhersagen",
     "href": "slides/input/index.html#wie-können-llms-text-vorhersagen",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Wie können LLMs Text vorhersagen?",
     "text": "Wie können LLMs Text vorhersagen?\nSie werden trainiert, das nächste Wort in einer gegebenen Wortsequenz zu erraten.\n\n\nEin LLM wird in drei Schritten aufgebaut:\n\nSammeln eines grossen Text-Korpus.\nBasierend auf diesem Text, muss das Modell das nächste Wort in einer gegebenen Wortsequenz vorherzusagen lernen.\nDas Sprachmodell wird feiner abgestimmt, um das gewünschte Verhalten zu erreichen."
   },
   {
     "objectID": "slides/input/index.html#wie-werden-llms-trainiert",
     "href": "slides/input/index.html#wie-werden-llms-trainiert",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Wie werden LLMs trainiert?",
     "text": "Wie werden LLMs trainiert?"
   },
   {
     "objectID": "slides/input/index.html#gefahren-und-herausforderungen",
     "href": "slides/input/index.html#gefahren-und-herausforderungen",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Gefahren und Herausforderungen",
     "text": "Gefahren und Herausforderungen\n\n\nDie verschiedenen Stufen des Trainings sind mit verschiedenen Arten von Bedenken verbunden:\n\nUrheberrecht: Die trainierten Modelle werden mit Texten trainiert, die möglicherweise Urheberrechtlich geschützt sind.\nBias: Die trainierten Modelle können bestehende Vorurteile aus den Trainingsdaten lernen.\nEnergieverbrauch: Das Training der Modelle verbraucht viel Energie und ist damit umweltbelastend."
   },
   {
     "objectID": "slides/input/index.html#gefahren-und-herausforderungen-1",
     "href": "slides/input/index.html#gefahren-und-herausforderungen-1",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Gefahren und Herausforderungen",
-    "text": "Gefahren und Herausforderungen\n\n\n\nObschon sich LLMs viel Wissen aneignen1, werden sie nicht trainiert, faktisch korrekte Aussagen zu machen.\nDies bedeutet, dass wir alle Aussagen, die LLMs uns präsentieren, immer kritisch hinterfragen müssen.\nLLMs sind keine Wissensdatenbanken. Informationen immer anhand externer Quellen überprüfen.\n\n\n\n\nDas ganze Wissen, welches nötig ist, um Texte Wort für Wort vorherzusagen."
+    "text": "Gefahren und Herausforderungen\n\n\n\nObschon sich LLMs viel Wissen aneignen1, werden sie nicht trainiert, faktisch korrekte Aussagen zu machen.\nDies bedeutet, dass wir alle Aussagen, die LLMs uns präsentieren, immer kritisch hinterfragen müssen.\nLLMs sind keine Wissensdatenbanken. Informationen immer anhand externer Quellen überprüfen.\n\n\n\n\n\nDas ganze Wissen, welches nötig ist, um Texte Wort für Wort vorherzusagen."
   },
   {
     "objectID": "slides/input/index.html#chatgpt",
     "href": "slides/input/index.html#chatgpt",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "ChatGPT",
     "text": "ChatGPT"
   },
   {
     "objectID": "slides/input/index.html#fragen-beantworten",
     "href": "slides/input/index.html#fragen-beantworten",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Fragen beantworten",
     "text": "Fragen beantworten"
   },
   {
     "objectID": "slides/input/index.html#bilder-analysieren",
     "href": "slides/input/index.html#bilder-analysieren",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Bilder analysieren",
     "text": "Bilder analysieren"
   },
   {
     "objectID": "slides/input/index.html#dokumente-zusammenfassen",
     "href": "slides/input/index.html#dokumente-zusammenfassen",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Dokumente zusammenfassen",
     "text": "Dokumente zusammenfassen"
   },
   {
     "objectID": "slides/input/index.html#output-strukturieren",
     "href": "slides/input/index.html#output-strukturieren",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Output strukturieren",
     "text": "Output strukturieren"
   },
   {
     "objectID": "slides/input/index.html#websuche",
     "href": "slides/input/index.html#websuche",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Websuche",
     "text": "Websuche"
   },
   {
     "objectID": "slides/input/index.html#datenanalyse",
     "href": "slides/input/index.html#datenanalyse",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Datenanalyse",
     "text": "Datenanalyse"
   },
   {
     "objectID": "slides/input/index.html#custom-gpts",
     "href": "slides/input/index.html#custom-gpts",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Custom GPTs",
     "text": "Custom GPTs"
   },
   {
     "objectID": "slides/input/index.html#rechtliche-aspekte",
     "href": "slides/input/index.html#rechtliche-aspekte",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Rechtliche Aspekte",
     "text": "Rechtliche Aspekte\nZwei wichtige Aspekte, welche bei der Benutzung von LLMs beachtet werden müssen:\n \n\n\nRechtliche Aspekte \n\nWer besitzt die Rechte an den von LLMs generierten Inhalten?\nRisiko von Plagiaten und Urheberrechtsverletzungen\nRichtlinien für den Umgang mit generierten Inhalten\n\n\nDatenschutz \n\nSchutz personenbezogener Daten\nEinhaltung von Datenschutzbestimmungen"
   },
   {
     "objectID": "slides/input/index.html#rechtliche-aspekte-1",
     "href": "slides/input/index.html#rechtliche-aspekte-1",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Rechtliche Aspekte",
     "text": "Rechtliche Aspekte\n\nKI-Modelle können mit Inhalten trainiert sein, an denen Dritte Urheberrechte haben—dies kann bei der Verwendung der Modelle zu Urheberrechtsverletzungen führen.\nDer Input (Prompt) kann geschützte Inhalte Dritter enthalten, deren Nutzung ohne rechtliche Grundlage Urheberrechte verletzt.\nDer von der KI generierte Output kann zufällig geschützte Inhalte Dritter enthalten."
   },
   {
     "objectID": "slides/input/index.html#rechtliche-aspekte-2",
     "href": "slides/input/index.html#rechtliche-aspekte-2",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Rechtliche Aspekte",
     "text": "Rechtliche Aspekte\n\nAnbieter von KI-Plattformen können sich Rechte an generierten Inhalten vorbehalten, was ebenfalls rechtliche Herausforderungen mit sich bringen kann.\nOpenAI-Nutzungsbedingungen: die Rechte an generierten Inhalten abgetreten, OpenAI behält sich aber Nutzungsrechte vor.\nNutzende/r ist in der Verantwortung, die rechtlichen Anforderungen einzuhalten."
   },
   {
     "objectID": "slides/input/index.html#empfehlung",
     "href": "slides/input/index.html#empfehlung",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Empfehlung",
     "text": "Empfehlung\nKI-Policy: Geben Sie deutlich an, dass der Inhalt von einer KI erstellt wurde, sodass kein Nutzer dies übersehen oder missverstehen kann:\n\n\n\n\n\n\n\nDeklaration\n\n\nDer/die Autor*in hat diesen Text teilweise mit [[Modell]] erstellt. Nach der Erstellung des Entwurfs hat der/die Autor*in den Text überprüft, bearbeitet und nach eigenem Ermessen angepasst und übernimmt die volle Verantwortung für den Inhalt dieser Veröffentlichung.\n\n\n\n\nZitieren Sie das verwendete Modell in ähnlicher Weise, wie Sie Software zitieren würden."
   },
   {
     "objectID": "slides/input/index.html#datenschutz",
     "href": "slides/input/index.html#datenschutz",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Datenschutz",
     "text": "Datenschutz\nDatenschutz allgemein bedeutet:\n\nsicherzustellen, dass keine persönlichen Daten der Lehrenden oder Lernenden ohne deren Zustimmung gesammelt, gespeichert oder weiterverarbeitet werden, um ihre Privatsphäre und Sicherheit zu gewährleisten.\nTransparenz darüber, welche Daten erhoben und wie sie verwendet werden.\nsicherzustellen, dass Daten nicht für andere Zwecke als die ursprünglich angegebenen verwendet werden\nRecht der Betroffenen auf Auskunft, Berichtigung, Löschung und Widerspruch\nEinhaltung von Datenschutzgesetzen und -vorschriften\n\n\n\n\nLehrpersonen müssen Datenschutz beim Einsatz von (digitalen) Tools immer beachten."
   },
   {
     "objectID": "slides/input/index.html#datensicherheit",
     "href": "slides/input/index.html#datensicherheit",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Datensicherheit",
     "text": "Datensicherheit\nDies bedeutet:\n\nDaten so zu speichern, dass sie nicht verloren gehen\nDaten nicht manipuliert werden können\nTechnische und organisatorische Massnahmen zum Schutz vor unbefugtem Zugriff auf Daten"
   },
   {
     "objectID": "slides/input/index.html#schutzmassnahmen",
     "href": "slides/input/index.html#schutzmassnahmen",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Schutzmassnahmen",
     "text": "Schutzmassnahmen\n\n\n\nKeine persönlichen Daten in die Eingabe von ChatGPT einfliessen lassen (nur anonymisierte Informationen)\nKeine Eingabe von sensiblen oder vertraulichen Informationen (Informationen über gesundheitliche, finanzielle oder private Angelegenheiten)\n\n\nEinstellungen im Konto für Datenkontrolle:"
   },
   {
     "objectID": "slides/input/index.html#copilot-verwenden",
     "href": "slides/input/index.html#copilot-verwenden",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Copilot verwenden",
     "text": "Copilot verwenden\n\n\nMicrosoft Copilot garantiert, dass die Daten der Benutzer gesichert sind:\n Schutz von Unternehmensdaten\n\nBenutzerdaten sind durch Verschlüsselung, Sicherheitskontrollen und Datenisolation (gleich wie bei E-Mails in Exchange und Dateien in SharePoint) geschützt.\nMicrosoft verwendet Daten nicht ohne Anweisung des Benutzers."
   },
   {
     "objectID": "slides/input/index.html#detektion-von-ki-generiertem-inhalt",
     "href": "slides/input/index.html#detektion-von-ki-generiertem-inhalt",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Detektion von KI-generiertem Inhalt",
     "text": "Detektion von KI-generiertem Inhalt\n\n\nHeuristiken:\n\nDurch Verwendung spezifischer Vokabeln und Phrasen: “delve”, “vibrant”, “embark”, “it’s important to note”, “based on the data provided”.\nDurch Verwendung des in der Schweiz unüblichen scharfen S (ß).\n\n\nDetektion anhand vom Schreibstil und Inhalt:\n\nErkennungswerkzeuge sind nicht sehr nützlich und können leicht umgangen werden.\nErkennungs-Illusion: Lehrkräfte überschätzen ihre Erkennungsfähigkeiten (Fleckenstein et al. 2024)."
   },
   {
     "objectID": "slides/input/index.html#fragen",
     "href": "slides/input/index.html#fragen",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
-    "section": "Fragen?",
-    "text": "Fragen?"
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Fragen",
+    "text": "Fragen\n\n?"
   },
   {
     "objectID": "slides/input/index.html#references",
     "href": "slides/input/index.html#references",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "References",
     "text": "References\n\n\nCui, Zheyuan (Kevin), Mert Demirer, Sonia Jaffe, Leon Musolff, Sida Peng, and Tobias Salz. 2024. “The Effects of Generative AI on High Skilled Work: Evidence from Three Field Experiments with Software Developers.” SSRN Scholarly Paper. Rochester, NY. September 3, 2024. https://doi.org/10.2139/ssrn.4945566.\n\n\nDell’Acqua, Fabrizio, Edward McFowland, Ethan R. Mollick, Hila Lifshitz-Assaf, Katherine Kellogg, Saran Rajendran, Lisa Krayer, François Candelon, and Karim R. Lakhani. 2023. “Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality.” SSRN Electronic Journal. https://doi.org/10.2139/ssrn.4573321.\n\n\nFleckenstein, Johanna, Jennifer Meyer, Thorben Jansen, Stefan D. Keller, Olaf Köller, and Jens Möller. 2024. “Do Teachers Spot AI? Evaluating the Detectability of AI-generated Texts Among Student Essays.” Computers and Education: Artificial Intelligence 6 (June): 100209. https://doi.org/10.1016/j.caeai.2024.100209.\n\n\nReich, Justin, and Jesse Dukes. 2024. “Toward a New Theory of Arrival Technologies.” November 14, 2024. https://doi.org/10.35542/osf.io/x6vn7.\n\n\nToner-Rodgers, Aidan. n.d. “Artificial Intelligence, Scientific Discovery, and Product Innovation.”"
   },
@@ -735,5 +735,68 @@
     "title": "HKB Horntage 2025",
     "section": "Website",
     "text": "Website\n virtuelleakademie.github.io/hkb-horntage-2025"
+  },
+  {
+    "objectID": "slides/input/index.html#künstliche-intelligenz-1",
+    "href": "slides/input/index.html#künstliche-intelligenz-1",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Künstliche Intelligenz",
+    "text": "Künstliche Intelligenz\n\nKI-Systeme können trainiert werden, um aus Daten zu lernen und Muster zu erkennen.\nMögliche Einsatzbereiche:\n\nPersonalisierte Empfehlungen\nSelbstfahrende Autos\nVorhersage von Proteinfaltungen\nErstellung von Musik/Bildern/Texten"
+  },
+  {
+    "objectID": "slides/input/index.html#symbolic-ai",
+    "href": "slides/input/index.html#symbolic-ai",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Symbolic AI",
+    "text": "Symbolic AI\nSymbolic AI:\nUses explicit rules and logic programmed by humans Based on if-then statements and predefined knowledge Follows clear, explainable steps Good for problems with clear rules Less adaptable to new situations"
+  },
+  {
+    "objectID": "slides/input/index.html#machine-learning",
+    "href": "slides/input/index.html#machine-learning",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Machine Learning",
+    "text": "Machine Learning\nMachine Learning/Deep Learning:\nLearns patterns from data automatically Based on statistical patterns and relationships Works like a “black box” - harder to explain decisions Good for complex patterns and unclear rules Can adapt to new situations through training"
+  },
+  {
+    "objectID": "slides/input/index.html#cat-example",
+    "href": "slides/input/index.html#cat-example",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Cat example",
+    "text": "Cat example"
+  },
+  {
+    "objectID": "slides/input/index.html#music-example",
+    "href": "slides/input/index.html#music-example",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Music example",
+    "text": "Music example\n\nYour browser does not support the audio tag.WA Mozart: Horn Concerto KV 495, Romanza (Christian Holenstein)\n\nQuelle: www.christian-holenstein.ch/sounds"
+  },
+  {
+    "objectID": "slides/input/index.html#what-are-llms",
+    "href": "slides/input/index.html#what-are-llms",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "What are LLMs?",
+    "text": "What are LLMs?\n\nUm die angekommene Technologie einordnen zu können, ist eine Entmystifizierung notwendig:\n\nLLMs sind statistische Modelle, die Text analysieren, um das nächste Wort vorherzusagen.\nDiese Vorhersage geschieht Wort für Wort.\nJede Vorhersage basiert auf\n\nder Eingabe (Prompt)\nden zuvor generierten Wörtern\nder internen Struktur des Modells\n\n\n\n\\[\n\\newcommand{\\purple}[1]{\\color{purple}{#1}}\n\\newcommand{\\red}[1]{\\color{red}{#1}}\n\\newcommand{\\blue}[1]{\\color{blue}{#1}}\n\\]\n\n\\[\\purple{P(\\text{Wort}_{i+1}} \\mid \\blue{\\text{Kontext}}, \\red{\\text{Modell}})\\]\n\nDas \\(\\purple{\\text{nächste Wort}}\\) wird vorhergesagt, in Abhängigkeit von \\(\\blue{\\text{Inputsequenz}}\\) und \\(\\red{\\text{Modell}}\\)."
+  },
+  {
+    "objectID": "slides/input/index.html#alpha",
+    "href": "slides/input/index.html#alpha",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Alpha",
+    "text": "Alpha"
+  },
+  {
+    "objectID": "slides/input/index.html#alphafold",
+    "href": "slides/input/index.html#alphafold",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "AlphaFold",
+    "text": "AlphaFold\n\n\n\nQuelle: AlphaFold"
+  },
+  {
+    "objectID": "slides/input/index.html#cats-vs-dogs",
+    "href": "slides/input/index.html#cats-vs-dogs",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Cats vs Dogs",
+    "text": "Cats vs Dogs"
   }
 ]

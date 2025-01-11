@@ -33,9 +33,8 @@ ipython_config.py
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow
 __pypackages__/
 
-
-# SageMath parsed files
-*.sage.py
+# VSCode
+*.code-workspace
 
 # Environments
 .env

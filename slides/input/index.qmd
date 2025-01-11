@@ -1,11 +1,22 @@
 ---
-title: "KI: erste Schritte & rechtliche Aspekte"
+title: "Künstliche Intelligenz in der Lehre: erste Schritte"
 ---
 
 ## Künstliche Intelligenz
 
 
-- **Künstliche Intelligenz (KI)**: Entwicklung von Maschinen, die Aufgaben ausführen können, welche normalerweise menschliche Intelligenz erfordern.
+::: {.r-fit-text}
+Big Text
+:::
+
+
+
+:::{.r-fit-text}
+**Künstliche Intelligenz (KI)**: Entwicklung von Maschinen, die Aufgaben ausführen können, welche normalerweise menschliche Intelligenz erfordern.
+:::
+
+
+## Künstliche Intelligenz
 
 - KI-Systeme können **trainiert** werden, um aus Daten zu lernen und Muster zu erkennen.
 
@@ -38,151 +49,27 @@ Ein maschinelles Lernmodell, das darauf trainiert wird, das nächste Wort nach e
 ::::
 
 
+## Symbolic AI
 
-## KI verrichtet geistige Arbeit {.smaller}
-
-- **Kognitive Arbeit und KI**: KI hat das Potential zu verändern, wie *geistige* Arbeit verrichtet wird.
-
-- **Wichtige Erkenntnisse aus der Forschung**:
-  - @dellacquaNavigatingJaggedTechnological2023 erforschen die Möglichkeiten, mit KI-Unterstützung kognitive Aufgaben zu verbessern. Fazit: KI kann Produktivität und Qualität steigern, aber auch neue Herausforderungen ergeben.
-  - @toner-rodgersArtificialIntelligenceScientific diskutiert die Implikationen von KI für die Forschung und betont die Balance zwischen menschlicher und maschineller Intelligenz.
-  - @cuiEffectsGenerativeAI2024a analysieren die Auswirkungen von generativer KI auf Software Engineering und hebt sowohl Chancen als auch Herausforderungen hervor.
-
-- **Erkenntnisse**:
-  - Automatisierung von routinemässigen kognitiven Aufgaben ist möglich
-  - Unterstützung kreativer Arbeit ist möglich
-  - Deskilling: Gefahr, bei ständiger KI-Unterstützung eigene Fähigkeiten zu verlieren
-  - Ohne Training: KI-Tools werden oft für ungeeignete Aufgaben eingesetzt
+## Machine Learning
 
 
-<!-- [@dellacquaNavigatingJaggedTechnological2023; @toner-rodgersArtificialIntelligenceScientific; @cuiEffectsGenerativeAI2024a] -->
+## Cat example
 
-## Körperliche Arbeit
+![](../../assets/images/cat.png)
 
-
-:::: {.columns}
-::: {.column width="50%"}
-**19. Jahrhundert**
-
-![](../../assets/images/koerperlich.png)
-:::
-::: {.column width="50%"}
-**20. Jahrhundert**
-
-![](../../assets/images/maschinell.png)
-:::
-::::
-
-:::{.attribution}
-Bildquelle: Erstellt mit DALL-E 3
-:::
-
-## Wie sieht das für die kognitive Arbeit aus?
-
-:::: {.columns}
-::: {.column width="50%"}
-**1960**
-
-![](../../assets/images/human-cognitive-work.png)
-  
-:::
-::: {.column width="50%"}
-**2030**
-![](../../assets/images/human-ai-fusion.png)
-
-<!-- {{< bi question-circle >}} -->
-:::
-::::
-
-:::{.attribution}
-Bildquelle: Erstellt mit DALL-E 3
-:::
-
-## Ankunftstechnologien
-
-:::: {.columns}
-::: {.column width="50%"}
-Hochschulen stehen vor Herausforderungen mit Technologien wie ChatGPT, weil sie:
-
-- Traditionelle Technologie-Evaluierungsprozesse umgehen
-- Durch **spontane Adoption** eingeführt werden
-- Reaktive statt proaktive Richtlinien erfordern
-:::
-
-::: {.column width="50%"}
-![](../../assets/images/arrival.png)
-
-:::
-::::
-
-:::{.attribution}
-Bildquelle: Erstellt mit DALL-E 3 ("ChatGPT arriving at a university in the style of a 14th century painting.")
-:::
+![](../../assets/images/cat-features.png)
 
 
-## Adoptions- vs. Ankunfts-Technologien
+## Music example
 
-[@reichNewTheoryArrival2024]
+![](../../assets/images/mozarthornkonzertkv495-2.png)
 
-:::: {.columns}
-::: {.column width="50%"}
-**Traditionelle Einführung**
-
-- Sorgfältige Bewertung
-- Pilotversuche
-- Mitarbeiterschulung
-- Klare Zeitpläne
-- Etablierte Richtlinien
-
-:::{.callout-note appearance="minimal"}
-## Beispiele: Adoptions-Technologien
-Learning Management Systems, Smart boards
-:::
-
-:::
-
-::: {.column width="50%"}
-**Ankunftstechnologien**
-
-- Spontane Nutzung
-- Umgehung von Prozessen
-- Keine Vorbereitung
-- Benutzergeführte Einführung
-- Reaktive Richtlinien
-
-:::{.callout-note appearance="minimal"}
-## Beispiele: Ankunfts-Technologien
-Smartphone, Wikipedia, YouTube, TikTok 
-:::
-:::
-
-::::
+{{< audio file="../../assets/audio/mozarthornkonzertkv495-2.mp3" caption="Sample Audio File" >}}
 
 
 
-<!-- 
-## Drei Möglichkeiten der Ankunft {.smaller}
-
-
-1. **Von Studierenden angeführt**
-   - Spontane Nutzung in Aufgaben
-   - Übernahme von KI-gestützten Tools
-   - Kreative Anwendungen
-
-2. **Von Mitarbeitenden angeführt**
-   - Entdeckung von KI-Tools
-   - Informelle Übernahme
-   - Peer-to-Peer-Austausch
-
-
-3. **Systemgeführt**
-   - KI-Funktionen in bestehender Software
-   - Integration in gängige Tools
-   - Plattform-Updates -->
-
-
-
-## Was sind LLMs? 
+## What are LLMs?
 
 ::: {.r-fit-text}
 Um die angekommene Technologie einordnen zu können, ist eine **Entmystifizierung** notwendig:
@@ -338,6 +225,151 @@ Die verschiedenen Stufen des Trainings sind mit verschiedenen Arten von Bedenken
 
 [^1]: Das ganze Wissen, welches nötig ist, um Texte Wort für Wort vorherzusagen.
 
+
+<!-- ----------------------- -->
+## KI verrichtet geistige Arbeit {.smaller}
+
+- **Kognitive Arbeit und KI**: KI hat das Potential zu verändern, wie *geistige* Arbeit verrichtet wird.
+
+- **Wichtige Erkenntnisse aus der Forschung**:
+  - @dellacquaNavigatingJaggedTechnological2023 erforschen die Möglichkeiten, mit KI-Unterstützung kognitive Aufgaben zu verbessern. Fazit: KI kann Produktivität und Qualität steigern, aber auch neue Herausforderungen ergeben.
+  - @toner-rodgersArtificialIntelligenceScientific diskutiert die Implikationen von KI für die Forschung und betont die Balance zwischen menschlicher und maschineller Intelligenz.
+  - @cuiEffectsGenerativeAI2024a analysieren die Auswirkungen von generativer KI auf Software Engineering und hebt sowohl Chancen als auch Herausforderungen hervor.
+
+- **Erkenntnisse**:
+  - Automatisierung von routinemässigen kognitiven Aufgaben ist möglich
+  - Unterstützung kreativer Arbeit ist möglich
+  - Deskilling: Gefahr, bei ständiger KI-Unterstützung eigene Fähigkeiten zu verlieren
+  - Ohne Training: KI-Tools werden oft für ungeeignete Aufgaben eingesetzt
+
+
+<!-- [@dellacquaNavigatingJaggedTechnological2023; @toner-rodgersArtificialIntelligenceScientific; @cuiEffectsGenerativeAI2024a] -->
+
+## Körperliche Arbeit
+
+
+:::: {.columns}
+::: {.column width="50%"}
+**19. Jahrhundert**
+
+![](../../assets/images/koerperlich.png)
+:::
+::: {.column width="50%"}
+**20. Jahrhundert**
+
+![](../../assets/images/maschinell.png)
+:::
+::::
+
+:::{.attribution}
+Bildquelle: Erstellt mit DALL-E 3
+:::
+
+## Wie sieht das für die kognitive Arbeit aus?
+
+:::: {.columns}
+::: {.column width="50%"}
+**1960**
+
+![](../../assets/images/human-cognitive-work.png)
+  
+:::
+::: {.column width="50%"}
+**2030**
+![](../../assets/images/human-ai-fusion.png)
+
+<!-- {{< bi question-circle >}} -->
+:::
+::::
+
+:::{.attribution}
+Bildquelle: Erstellt mit DALL-E 3
+:::
+
+## Ankunftstechnologien
+
+:::: {.columns}
+::: {.column width="50%"}
+Hochschulen stehen vor Herausforderungen mit Technologien wie ChatGPT, weil sie:
+
+- Traditionelle Technologie-Evaluierungsprozesse umgehen
+- Durch **spontane Adoption** eingeführt werden
+- Reaktive statt proaktive Richtlinien erfordern
+:::
+
+::: {.column width="50%"}
+![](../../assets/images/arrival.png)
+
+:::
+::::
+
+:::{.attribution}
+Bildquelle: Erstellt mit DALL-E 3 ("ChatGPT arriving at a university in the style of a 14th century painting.")
+:::
+
+
+## Adoptions- vs. Ankunfts-Technologien
+
+[@reichNewTheoryArrival2024]
+
+:::: {.columns}
+::: {.column width="50%"}
+**Traditionelle Einführung**
+
+- Sorgfältige Bewertung
+- Pilotversuche
+- Mitarbeiterschulung
+- Klare Zeitpläne
+- Etablierte Richtlinien
+
+:::{.callout-note appearance="minimal"}
+## Beispiele: Adoptions-Technologien
+Learning Management Systems, Smart boards
+:::
+
+:::
+
+::: {.column width="50%"}
+**Ankunftstechnologien**
+
+- Spontane Nutzung
+- Umgehung von Prozessen
+- Keine Vorbereitung
+- Benutzergeführte Einführung
+- Reaktive Richtlinien
+
+:::{.callout-note appearance="minimal"}
+## Beispiele: Ankunfts-Technologien
+Smartphone, Wikipedia, YouTube, TikTok 
+:::
+:::
+
+::::
+
+
+
+<!-- 
+## Drei Möglichkeiten der Ankunft {.smaller}
+
+
+1. **Von Studierenden angeführt**
+   - Spontane Nutzung in Aufgaben
+   - Übernahme von KI-gestützten Tools
+   - Kreative Anwendungen
+
+2. **Von Mitarbeitenden angeführt**
+   - Entdeckung von KI-Tools
+   - Informelle Übernahme
+   - Peer-to-Peer-Austausch
+
+
+3. **Systemgeführt**
+   - KI-Funktionen in bestehender Software
+   - Integration in gängige Tools
+   - Plattform-Updates -->
+
+
+<!-- ----------------------- -->
 
 
 ## ChatGPT

@@ -142,74 +142,16 @@
   {
     "objectID": "notebooks/test-structured-output.html",
     "href": "notebooks/test-structured-output.html",
-    "title": "Fokus Administration HKB",
+    "title": "HKB Horntage 2025",
     "section": "",
     "text": "import os\nfrom dotenv import load_dotenv\nfrom pydantic import BaseModel\nfrom openai import OpenAI\n\n\n\n# Load environment variables from .env file\nload_dotenv()\n\n# Create OpenAI client with API key\nclient = OpenAI(api_key=os.getenv(\"OPENAI_API_KEY\"))\n\n\n\nclass CalendarEvent(BaseModel):\n    name: str\n    date: str\n    participants: list[str]\n\n\n\ncompletion = client.beta.chat.completions.parse(\n    model=\"gpt-4o-2024-08-06\",\n    messages=[\n        {\"role\": \"system\", \"content\": \"Extract the event information.\"},\n        {\"role\": \"user\", \"content\": \"Alice and Bob are going to a science fair on Friday.\"},\n    ],\n    response_format=CalendarEvent,\n)\n\nevent = completion.choices[0].message.parsed\n\n\nevent\n\nCalendarEvent(name='Science Fair', date='Friday', participants=['Alice', 'Bob'])\n\n\n\nevent.name\n\n'Science Fair'\n\n\n\nimport csv\n\n# Create a list of dictionaries from the event object\nevent_data = [event.__dict__]\n\n# Open a CSV file for writing\nwith open('events.csv', 'w', newline='') as csvfile:\n    fieldnames = event_data[0].keys()\n    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)\n\n    # Write the header\n    writer.writeheader()\n\n    # Write the data\n    writer.writerows(event_data)\n\n\nevent\n\nCalendarEvent(name='Science Fair', date='Friday', participants=['Alice', 'Bob'])\n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "notebooks/setup-openai.html",
-    "href": "notebooks/setup-openai.html",
-    "title": "Fokus Administration HKB",
+    "objectID": "notebooks/spacy.html",
+    "href": "notebooks/spacy.html",
+    "title": "HKB Horntage 2025",
     "section": "",
-    "text": "from dotenv import load_dotenv\nfrom openai import OpenAI \n\n\nload_dotenv()\n\nTrue\n\n\n\nclient = OpenAI()\n\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o-mini\",\n    messages=[{\"role\": \"system\", \"content\": \"You are a helpful assistant.\"}, \n              {\"role\": \"user\", \"content\": \"What is the weather in Bern?\"}]\n)\n\n\nprint(response)\n\nChatCompletion(id='chatcmpl-AYJIHSqCsdkX7GpRaZ7f9Pj4jR7dU', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='I’m unable to provide real-time weather updates. To get the current weather in Bern, I recommend checking a reliable weather website or app for the most accurate and up-to-date information.', refusal=None, role='assistant', audio=None, function_call=None, tool_calls=None))], created=1732740681, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier=None, system_fingerprint='fp_0705bf87c0', usage=CompletionUsage(completion_tokens=37, prompt_tokens=24, total_tokens=61, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))\n\n\n\nprint(response.choices[0].message.content)\n\nI’m unable to provide real-time weather updates. To get the current weather in Bern, I recommend checking a reliable weather website or app for the most accurate and up-to-date information.\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "notebooks/examples.html",
-    "href": "notebooks/examples.html",
-    "title": "Fokus Administration HKB",
-    "section": "",
-    "text": "from dotenv import load_dotenv\nfrom openai import OpenAI \nimport textwrap\n\n\nload_dotenv()\n\nTrue\n\n\n\nclient = OpenAI()\n\n\nfrom IPython.display import Markdown, display\n\ndef generate_response(user_message,\n        model=\"gpt-4o\", \n        system_prompt=\"You are a helpful assistant.\",  \n        temperature=1.0, \n        top_p=1.0, \n        max_tokens=2048):\n                      \n    response = client.chat.completions.create(\n        model=model,\n        messages=[\n            {\n                \"role\": \"system\",\n                \"content\": [\n                    {\n                        \"type\": \"text\",\n                        \"text\": system_prompt\n                    }\n                ]\n            },\n            {\n                \"role\": \"user\",\n                \"content\": [\n                    {\n                        \"type\": \"text\",\n                        \"text\": user_message\n                    }\n                ]\n            }\n        ],\n        temperature=temperature,\n        max_tokens=max_tokens,\n        top_p=top_p\n    )\n    # Get the response text\n    text = response.choices[0].message.content\n    \n    # Display as markdown instead of plain text\n    display(Markdown(text))\n\n\ngenerate_response(user_message=\"Explain the harmonic series\")\n\nThe harmonic series is the infinite series defined as the sum of the reciprocals of the positive integers:\n[ H = _{n=1}^{} = 1 + + + + + ]\nDespite each of its terms becoming smaller and smaller as ( n ) increases, the harmonic series diverges, meaning its sum grows without bound. This can be shown through several methods, one classical approach being a comparison test. For example, you can compare the harmonic series to a related series formed by grouping terms:\n[ 1 + () + ( + ) + ( + + + ) + ]\nEach group ( n ) (where ( n )) contains ( 2^{n-1} ) terms, each of which is greater than or equal to ( ), leading to the inequality:\n[ 1 + + ( + ) + ( + + + ) + &gt; 1 + + + + ]\n[ = 1 + + + + ]\nEach additional block sums to at least ( ), demonstrating that the harmonic series’ sum can exceed any finite number as more terms and further groups are added.\nFurthermore, the ( n )-th partial sum of the harmonic series, denoted ( H_n = 1 + + + + ), is approximately logarithmic in growth:\n[ H_n (n) + ]\nwhere ( ) is the Euler-Mascheroni constant, approximately 0.577. The term ( (n) ) shows how the harmonic series diverges very slowly.\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "workshop/presentation/index.html",
-    "href": "workshop/presentation/index.html",
-    "title": "Input: KI erste Schritte, Datenschutz",
-    "section": "",
-    "text": "Inhalt:\n\nDiese Präsentation beleuchtet die Auswirkungen von Large Language Models (LLMs) wie ChatGPT auf Hochschulen.\nerklärt, wie LLMs Wort für Wort Text basierend auf Trainingsdaten generieren.\nzeigt potenzielle Vorteile auf: erhöhte Produktivität, Unterstützung der Kreativität.\ndiskutiert Herausforderungen: Deskilling, Missbrauch.\nerörtert rechtliche Aspekte rund um Urheberrecht und Datenschutz.\ngibt Empfehlungen zur Deklaration von KI-generierten Inhalten.\nadressiert Bedenken zur Plagiatserkennung.\nDas Ziel ist, LLMs zu entmystifizieren und einen ausgewogenen Blick auf die spontane Übernahme dieser “Ankunftstechnologien” zu bieten.\n\n    View slides in full screen\n       \n      \n    \n  \n\n\n\n Back to topReuseCC BY 4.0",
-    "crumbs": [
-      "Workshop",
-      "Input: KI erste Schritte, Datenschutz"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "QR Code",
-    "section": "",
-    "text": "QR Code\n\n\n\n virtuelleakademie.github.io/hkb-fokus-admin-2024\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "workshop/index.html",
-    "href": "workshop/index.html",
-    "title": "Inhalt",
-    "section": "",
-    "text": "Workshop-Program auf einen Blick:\n\n\n\n\n Inhalt\n\n\n\n\n\n13:30 – 13:45\nBegrüssung und Input zu Notebook LM\nNina\n\n\n13:45 – 14:35\nInput: KI erste Schritte, Datenschutz\nAndrew\n\n\n14:35 – 14:55\nAustausch in Gruppen, visuell auf Flipchart\nDana\n\n\n14:55 – 15:05\nGruppen stellen Ergebnisse vor\n\n\n\n14:05 – 15:20\nPause\n\n\n\n15:20 – 15:35\nInput Prompting\nAndrew\n\n\n15:35 – 16:35\nEinführung zu Tools: Chat GPT, Copilot  Aufgaben aus Austausch mit Hilfe von Chat GPT / Copilot lösen im Think-Pair–Share\nRaymond\n\n\n16:35 – 16:50\nPräsentation der Ergebnisse\n\n\n\n16:50 – 17:00\nAustausch, Abschluss\n\n\n\nAb 17:00\nApero mit VMAD-HKB im OG\n\n\n\n\n\n\n\n\n Back to topReuseCC BY 4.0",
-    "crumbs": [
-      "Workshop",
-      "Inhalt"
-    ]
-  },
-  {
-    "objectID": "workshop/prompting/index.html",
-    "href": "workshop/prompting/index.html",
-    "title": "Input: Prompting",
-    "section": "",
-    "text": "In der folgenden Präsentation diskutieren wir folgende Prompting-Regeln:\nView slides in full screen",
-    "crumbs": [
-      "Workshop",
-      "Input: Prompting"
-    ]
-  },
-  {
-    "objectID": "workshop/prompting/index.html#weiterführende-präsentationen",
-    "href": "workshop/prompting/index.html#weiterführende-präsentationen",
-    "title": "Input: Prompting",
-    "section": "Weiterführende Präsentationen",
-    "text": "Weiterführende Präsentationen\nKI in der Lehre Workshops (auf Englisch):\n    View slides in full screen\n       \n      \n    \n  \n    View slides in full screen",
-    "crumbs": [
-      "Workshop",
-      "Input: Prompting"
-    ]
+    "text": "import spacy\n\n\n\n# Load the German SpaCy model\nnlp = spacy.load(\"de_core_news_md\")\n\n\n\n# Analyze the sentence\ntext = \"\"\"Die Familie, die sehr wohlhabend war, lebte in einem grossen Haus. \nDas Haus stand inmitten eines weitläufigen Gartens. Es war bekannt für seine \nprächtige Fassade und die grosszügigen\"\"\"\n\n\n\ndoc = nlp(text)\n\n\n\n# Dependency parsing and POS tagging\nfor token in doc:\n    print(f\"{token.text:15} {token.pos_:10} {token.dep_:10} {token.head.text}\")\n\nDie             DET        nk         Familie\nFamilie         NOUN       sb         lebte\n,               PUNCT      punct      Familie\ndie             PRON       sb         war\nsehr            ADV        mo         wohlhabend\nwohlhabend      ADV        pd         war\nwar             AUX        rc         Familie\n,               PUNCT      punct      lebte\nlebte           VERB       ROOT       lebte\nin              ADP        mo         lebte\neinem           DET        nk         Haus\ngrossen         ADJ        nk         Haus\nHaus            NOUN       nk         in\n.               PUNCT      punct      lebte\n\n               SPACE      dep        .\nDas             DET        nk         Haus\nHaus            NOUN       sb         stand\nstand           VERB       ROOT       stand\ninmitten        ADP        mo         stand\neines           DET        nk         Gartens\nweitläufigen    ADJ        nk         Gartens\nGartens         NOUN       nk         inmitten\n.               PUNCT      punct      stand\nEs              PRON       sb         war\nwar             AUX        ROOT       war\nbekannt         ADV        pd         war\nfür             ADP        mo         bekannt\nseine           DET        nk         Fassade\n\n               SPACE      dep        seine\nprächtige       ADJ        nk         Fassade\nFassade         NOUN       nk         für\nund             CCONJ      cd         Fassade\ndie             DET        nk         grosszügigen\ngrosszügigen    ADJ        cj         und\n\n\n\n\n# Suggest similar words or predict based on context\nsimilar_words = [word.text for word in doc if word.pos_ == \"NOUN\"]\nprint(\"Potential continuations:\", similar_words)\n\nPotential continuations: ['Familie', 'Haus', 'Haus', 'Gartens', 'Fassade']\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "notebooks/exploring-openai-models.html",
@@ -252,6 +194,71 @@
     "title": "Exploring OpenAI Models",
     "section": "Generating multiple responses",
     "text": "Generating multiple responses\nWe can also generate multiple responses from the model by setting the n parameter to a value greater than 1. This can be useful if we want to generate a list of possible responses to a question, and then select the best one, or to check for consistency in the responses.\n\nfrom dotenv import load_dotenv\nfrom openai import OpenAI \n\nload_dotenv()\n\n\nclient = OpenAI()\n\n\nsystem_prompt = \"\"\"Act as a music teacher. Keep your responses very short and to the point.\"\"\"\n\nuser_message = \"Explain the difference between a major and minor scale\"\n\n\nresponses = client.chat.completions.create(\n        model=\"gpt-4o-mini\",\n        messages=[\n            {\n                \"role\": \"system\",\n                \"content\": [\n                    {\n                        \"type\": \"text\",\n                        \"text\": system_prompt\n                    }\n                ]\n            },\n            {\n                \"role\": \"user\",\n                \"content\": [\n                    {\n                        \"type\": \"text\",\n                        \"text\": user_message\n                    }\n                ]\n            }\n        ],\n        temperature=1,\n        max_tokens=512,\n        top_p=1,\n        n = 3\n    )\n\nNow we can choose one of the responses.\n\nimport textwrap\n\ntext = responses.choices[0].message.content\n\nwrapped_text = textwrap.fill(text, width=80)\nprint(wrapped_text)\n\nA major scale has a happy, bright sound and follows the pattern: whole, whole,\nhalf, whole, whole, whole, half. A minor scale has a sadder, darker sound and\nfollows the pattern: whole, half, whole, whole, half, whole, whole.\n\n\nWe can also loop through the responses and print them all.\n\nfor i, response in enumerate(responses.choices):\n    text = response.message.content  # Changed from responses.choices[0] to response\n    wrapped_text = textwrap.fill(text, width=80)\n    print(f\"Response {i+1}:\\n{wrapped_text}\\n\")\n\nResponse 1:\nA major scale has a happy, bright sound and follows the pattern: whole, whole,\nhalf, whole, whole, whole, half. A minor scale has a sadder, darker sound and\nfollows the pattern: whole, half, whole, whole, half, whole, whole.\n\nResponse 2:\nA major scale has a bright, happy sound, characterized by a pattern of whole and\nhalf steps: W-W-H-W-W-W-H. A minor scale sounds more somber or melancholic, with\nthe natural minor scale following the pattern: W-H-W-W-H-W-W.\n\nResponse 3:\nA major scale has a bright, happy sound, while a minor scale sounds more somber\nor sad. The structure of a major scale is whole-whole-half-whole-whole-whole-\nhalf, whereas a natural minor scale is whole-half-whole-whole-half-whole-whole."
+  },
+  {
+    "objectID": "workshop/prompting/index.html",
+    "href": "workshop/prompting/index.html",
+    "title": "Input: Prompting",
+    "section": "",
+    "text": "In der folgenden Präsentation diskutieren wir folgende Prompting-Regeln:\nView slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Input: Prompting"
+    ]
+  },
+  {
+    "objectID": "workshop/prompting/index.html#weiterführende-präsentationen",
+    "href": "workshop/prompting/index.html#weiterführende-präsentationen",
+    "title": "Input: Prompting",
+    "section": "Weiterführende Präsentationen",
+    "text": "Weiterführende Präsentationen\nKI in der Lehre Workshops (auf Englisch):\n    View slides in full screen\n       \n      \n    \n  \n    View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Input: Prompting"
+    ]
+  },
+  {
+    "objectID": "workshop/index.html",
+    "href": "workshop/index.html",
+    "title": "Inhalt",
+    "section": "",
+    "text": "Workshop-Program auf einen Blick:\n\n\n\n\n Inhalt\n\n\n\n\n\n13:30 – 13:45\nBegrüssung und Input zu Notebook LM\nNina\n\n\n13:45 – 14:35\nInput: KI erste Schritte, Datenschutz\nAndrew\n\n\n14:35 – 14:55\nAustausch in Gruppen, visuell auf Flipchart\nDana\n\n\n14:55 – 15:05\nGruppen stellen Ergebnisse vor\n\n\n\n14:05 – 15:20\nPause\n\n\n\n15:20 – 15:35\nInput Prompting\nAndrew\n\n\n15:35 – 16:35\nEinführung zu Tools: Chat GPT, Copilot  Aufgaben aus Austausch mit Hilfe von Chat GPT / Copilot lösen im Think-Pair–Share\nRaymond\n\n\n16:35 – 16:50\nPräsentation der Ergebnisse\n\n\n\n16:50 – 17:00\nAustausch, Abschluss\n\n\n\nAb 17:00\nApero mit VMAD-HKB im OG\n\n\n\n\n\n\n\n\n Back to topReuseCC BY 4.0",
+    "crumbs": [
+      "Workshop",
+      "Inhalt"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "HKB Horntage 2025",
+    "section": "",
+    "text": "12.01.2025\n10.00–15.00 Uhr\nHKB, Grosser Konzertsaal, Papiermühlestrasse 13d, 3014 Bern"
+  },
+  {
+    "objectID": "workshop/presentation/index.html",
+    "href": "workshop/presentation/index.html",
+    "title": "Input: KI erste Schritte, Datenschutz",
+    "section": "",
+    "text": "Inhalt:\n\nDiese Präsentation beleuchtet die Auswirkungen von Large Language Models (LLMs) wie ChatGPT auf Hochschulen.\nerklärt, wie LLMs Wort für Wort Text basierend auf Trainingsdaten generieren.\nzeigt potenzielle Vorteile auf: erhöhte Produktivität, Unterstützung der Kreativität.\ndiskutiert Herausforderungen: Deskilling, Missbrauch.\nerörtert rechtliche Aspekte rund um Urheberrecht und Datenschutz.\ngibt Empfehlungen zur Deklaration von KI-generierten Inhalten.\nadressiert Bedenken zur Plagiatserkennung.\nDas Ziel ist, LLMs zu entmystifizieren und einen ausgewogenen Blick auf die spontane Übernahme dieser “Ankunftstechnologien” zu bieten.\n\n    View slides in full screen\n       \n      \n    \n  \n\n\n\n Back to topReuseCC BY 4.0",
+    "crumbs": [
+      "Workshop",
+      "Input: KI erste Schritte, Datenschutz"
+    ]
+  },
+  {
+    "objectID": "notebooks/examples.html",
+    "href": "notebooks/examples.html",
+    "title": "HKB Horntage 2025",
+    "section": "",
+    "text": "from dotenv import load_dotenv\nfrom openai import OpenAI \nimport textwrap\n\n\nload_dotenv()\n\nTrue\n\n\n\nclient = OpenAI()\n\n\nfrom IPython.display import Markdown, display\n\ndef generate_response(user_message,\n        model=\"gpt-4o\", \n        system_prompt=\"You are a helpful assistant.\",  \n        temperature=1.0, \n        top_p=1.0, \n        max_tokens=2048):\n                      \n    response = client.chat.completions.create(\n        model=model,\n        messages=[\n            {\n                \"role\": \"system\",\n                \"content\": [\n                    {\n                        \"type\": \"text\",\n                        \"text\": system_prompt\n                    }\n                ]\n            },\n            {\n                \"role\": \"user\",\n                \"content\": [\n                    {\n                        \"type\": \"text\",\n                        \"text\": user_message\n                    }\n                ]\n            }\n        ],\n        temperature=temperature,\n        max_tokens=max_tokens,\n        top_p=top_p\n    )\n    # Get the response text\n    text = response.choices[0].message.content\n    \n    # Display as markdown instead of plain text\n    display(Markdown(text))\n\n\ngenerate_response(user_message=\"Explain the harmonic series\")\n\nThe harmonic series is the infinite series defined as the sum of the reciprocals of the positive integers:\n[ H = _{n=1}^{} = 1 + + + + + ]\nDespite each of its terms becoming smaller and smaller as ( n ) increases, the harmonic series diverges, meaning its sum grows without bound. This can be shown through several methods, one classical approach being a comparison test. For example, you can compare the harmonic series to a related series formed by grouping terms:\n[ 1 + () + ( + ) + ( + + + ) + ]\nEach group ( n ) (where ( n )) contains ( 2^{n-1} ) terms, each of which is greater than or equal to ( ), leading to the inequality:\n[ 1 + + ( + ) + ( + + + ) + &gt; 1 + + + + ]\n[ = 1 + + + + ]\nEach additional block sums to at least ( ), demonstrating that the harmonic series’ sum can exceed any finite number as more terms and further groups are added.\nFurthermore, the ( n )-th partial sum of the harmonic series, denoted ( H_n = 1 + + + + ), is approximately logarithmic in growth:\n[ H_n (n) + ]\nwhere ( ) is the Euler-Mascheroni constant, approximately 0.577. The term ( (n) ) shows how the harmonic series diverges very slowly.\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "notebooks/setup-openai.html",
+    "href": "notebooks/setup-openai.html",
+    "title": "HKB Horntage 2025",
+    "section": "",
+    "text": "from dotenv import load_dotenv\nfrom openai import OpenAI \n\n\nload_dotenv()\n\nTrue\n\n\n\nclient = OpenAI()\n\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o-mini\",\n    messages=[{\"role\": \"system\", \"content\": \"You are a helpful assistant.\"}, \n              {\"role\": \"user\", \"content\": \"What is the weather in Bern?\"}]\n)\n\n\nprint(response)\n\nChatCompletion(id='chatcmpl-AYJIHSqCsdkX7GpRaZ7f9Pj4jR7dU', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='I’m unable to provide real-time weather updates. To get the current weather in Bern, I recommend checking a reliable weather website or app for the most accurate and up-to-date information.', refusal=None, role='assistant', audio=None, function_call=None, tool_calls=None))], created=1732740681, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier=None, system_fingerprint='fp_0705bf87c0', usage=CompletionUsage(completion_tokens=37, prompt_tokens=24, total_tokens=61, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))\n\n\n\nprint(response.choices[0].message.content)\n\nI’m unable to provide real-time weather updates. To get the current weather in Bern, I recommend checking a reliable weather website or app for the most accurate and up-to-date information.\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "notebooks/structured-output.html",
@@ -324,18 +331,11 @@
     "text": "Ankunftstechnologien\n\n\nHochschulen stehen vor Herausforderungen mit Technologien wie ChatGPT, weil sie:\n\nTraditionelle Technologie-Evaluierungsprozesse umgehen\nDurch spontane Adoption eingeführt werden\nReaktive statt proaktive Richtlinien erfordern\n\n\n\n\n\nBildquelle: Erstellt mit DALL-E 3 (“ChatGPT arriving at a university in the style of a 14th century painting.”)"
   },
   {
-    "objectID": "slides/input/index.html#adoptions--vs.-ankunftstechnologien",
-    "href": "slides/input/index.html#adoptions--vs.-ankunftstechnologien",
+    "objectID": "slides/input/index.html#adoptions--vs.-ankunfts-technologien",
+    "href": "slides/input/index.html#adoptions--vs.-ankunfts-technologien",
     "title": "KI: erste Schritte & rechtliche Aspekte",
-    "section": "Adoptions- vs. Ankunftstechnologien",
-    "text": "Adoptions- vs. Ankunftstechnologien\n(Reich and Dukes 2024)\n\n\nTraditionelle Einführung\n\nSorgfältige Bewertung\nPilotversuche\nMitarbeiterschulung\nKlare Zeitpläne\nEtablierte Richtlinien\n\n\n\n\nBeispiele\n\n\nLearning Management Systems, Smart boards\n\n\n\n\nAnkunftstechnologien\n\nSpontane Nutzung\nUmgehung von Prozessen\nKeine Vorbereitung\nBenutzergeführte Einführung\nReaktive Richtlinien\n\n\n\n\nBeispiele\n\n\nSmartphone, Wikipedia, YouTube, TikTok"
-  },
-  {
-    "objectID": "slides/input/index.html#drei-möglichkeiten-der-ankunft",
-    "href": "slides/input/index.html#drei-möglichkeiten-der-ankunft",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
-    "section": "Drei Möglichkeiten der Ankunft",
-    "text": "Drei Möglichkeiten der Ankunft\n\nVon Studierenden angeführt\n\nSpontane Nutzung in Aufgaben\nÜbernahme von KI-gestützten Tools\nKreative Anwendungen\n\nVon Mitarbeitenden angeführt\n\nEntdeckung von KI-Tools\nInformelle Übernahme\nPeer-to-Peer-Austausch\n\nSystemgeführt\n\nKI-Funktionen in bestehender Software\nIntegration in gängige Tools\nPlattform-Updates"
+    "section": "Adoptions- vs. Ankunfts-Technologien",
+    "text": "Adoptions- vs. Ankunfts-Technologien\n(Reich and Dukes 2024)\n\n\nTraditionelle Einführung\n\nSorgfältige Bewertung\nPilotversuche\nMitarbeiterschulung\nKlare Zeitpläne\nEtablierte Richtlinien\n\n\n\n\nBeispiele: Adoptions-Technologien\n\n\nLearning Management Systems, Smart boards\n\n\n\n\nAnkunftstechnologien\n\nSpontane Nutzung\nUmgehung von Prozessen\nKeine Vorbereitung\nBenutzergeführte Einführung\nReaktive Richtlinien\n\n\n\n\nBeispiele: Ankunfts-Technologien\n\n\nSmartphone, Wikipedia, YouTube, TikTok"
   },
   {
     "objectID": "slides/input/index.html#was-sind-llms",
@@ -343,6 +343,20 @@
     "title": "KI: erste Schritte & rechtliche Aspekte",
     "section": "Was sind LLMs?",
     "text": "Was sind LLMs?\n\nUm die angekommene Technologie einordnen zu können, ist eine Entmystifizierung notwendig:\n\nLLMs sind statistische Modelle, die Text analysieren, um das nächste Wort vorherzusagen.\nDiese Vorhersage geschieht Wort für Wort.\nJede Vorhersage basiert auf\n\nder Eingabe (Prompt)\nden zuvor generierten Wörtern\nder internen Struktur des Modells\n\n\n\n\\[\n\\newcommand{\\purple}[1]{\\color{purple}{#1}}\n\\newcommand{\\red}[1]{\\color{red}{#1}}\n\\newcommand{\\blue}[1]{\\color{blue}{#1}}\n\\]\n\n\\[\\purple{P(\\text{Wort}_{i+1}} \\mid \\blue{\\text{Kontext}}, \\red{\\text{Modell}})\\]\n\nDas \\(\\purple{\\text{nächste Wort}}\\) wird vorhergesagt, in Abhängigkeit von \\(\\blue{\\text{Inputsequenz}}\\) und \\(\\red{\\text{Modell}}\\)."
+  },
+  {
+    "objectID": "slides/input/index.html#vorhersage",
+    "href": "slides/input/index.html#vorhersage",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Vorhersage",
+    "text": "Vorhersage\nNicht alle Teile des Kontexts sind gleich wichtig:\n \n\n\n\n“Die Familie, die sehr wohlhabend war, lebte in einem grossen Haus. Das Haus stand inmitten eines weitläufigen Gartens. Es war bekannt für seine prächtige Fassade und die grosszügigen ___”\n\n\n\n\nNach Thomas Mann, Buddenbrooks\n\n \nWelche Wörter sind besonders wichtig, um\n\ndie Bedeutung des Satzes zu erfassen?\ndas nächste Wort vorherzusagen?"
+  },
+  {
+    "objectID": "slides/input/index.html#kontext-verstehen",
+    "href": "slides/input/index.html#kontext-verstehen",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Kontext verstehen",
+    "text": "Kontext verstehen\n\n\n\n“Die Familie, die sehr wohlhabend war, lebte in einem grossen Haus. Das Haus stand inmitten eines weitläufigen Gartens. Es war bekannt für seine prächtige Fassade und die grosszügigen ___”\n\n\n\nSyntaktische Struktur (Grammatik und Struktur des Satzes):\n\nDas Wort “grosszügigen” ist ein Adjektiv, das wahrscheinlich ein Nomen - im Plural beschreibt (Dativ oder Akkusativ wegen der Endung “-en”).\nDer Satz bezieht sich auf das Haus und den Garten, daher liegt der Fokus vermutlich auf deren Eigenschaften.\n\nSemantischer Kontext (Bedeutung):\nDie Beschreibung hebt Wohlstand hervor. Das nächste Wort beschreibt vermutlich etwas Luxuriöses oder Weitläufiges.\nLexikalische Kohärenz (Wörter und deren Bedeutungen im Kontext):\nNach “grosszügigen” folgen häufig Nomen, die Räume, Flächen oder architektonische Elemente beschreiben, z. B. “Räume”, “Gärten”, “Fenster”."
   },
   {
     "objectID": "slides/input/index.html#was-sind-llms-1",
@@ -478,6 +492,13 @@
     "text": "Datenschutz\nDatenschutz allgemein bedeutet:\n\nsicherzustellen, dass keine persönlichen Daten der Lehrenden oder Lernenden ohne deren Zustimmung gesammelt, gespeichert oder weiterverarbeitet werden, um ihre Privatsphäre und Sicherheit zu gewährleisten.\nTransparenz darüber, welche Daten erhoben und wie sie verwendet werden.\nsicherzustellen, dass Daten nicht für andere Zwecke als die ursprünglich angegebenen verwendet werden\nRecht der Betroffenen auf Auskunft, Berichtigung, Löschung und Widerspruch\nEinhaltung von Datenschutzgesetzen und -vorschriften\n\n\n\n\nLehrpersonen müssen Datenschutz beim Einsatz von (digitalen) Tools immer beachten."
   },
   {
+    "objectID": "slides/input/index.html#datensicherheit",
+    "href": "slides/input/index.html#datensicherheit",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Datensicherheit",
+    "text": "Datensicherheit\nDies bedeutet:\n\nDaten so zu speichern, dass sie nicht verloren gehen\nDaten nicht manipuliert werden können\nTechnische und organisatorische Massnahmen zum Schutz vor unbefugtem Zugriff auf Daten"
+  },
+  {
     "objectID": "slides/input/index.html#schutzmassnahmen",
     "href": "slides/input/index.html#schutzmassnahmen",
     "title": "KI: erste Schritte & rechtliche Aspekte",
@@ -611,146 +632,6 @@
     "text": "Was ist ein Prompt?\n  \n\nEin Prompt ist ein Text (Anweisung), das einem generativen KI-Modell gegeben wird, um bestimmte Informationen zu generieren oder zu verstehen.\nPrompts dienen als Startpunkt beispielsweise für die Generierung von Ideen, Texten, Übersetzungen und Antworten auf Fragen."
   },
   {
-    "objectID": "slides/prompting/index.html#understand-llms-through-hands-on-experience",
-    "href": "slides/prompting/index.html#understand-llms-through-hands-on-experience",
-    "title": "Prompting: Eine Einführung",
-    "section": "Understand LLMs through Hands-On Experience",
-    "text": "Understand LLMs through Hands-On Experience\n\nDedicate time to actively using large language models (LLMs).\nUtilize LLMs for tasks related to your work or personal interests.\nExplore their abilities by posing diverse and unique prompts.\nObserve where LLMs work well and where they don’t."
-  },
-  {
-    "objectID": "slides/prompting/index.html#a-useful-metaphor",
-    "href": "slides/prompting/index.html#a-useful-metaphor",
-    "title": "Prompting: Eine Einführung",
-    "section": "A useful metaphor",
-    "text": "A useful metaphor\nImagine you are giving instructions to a junior intern or assistant."
-  },
-  {
-    "objectID": "slides/prompting/index.html#zero-shot-prompting",
-    "href": "slides/prompting/index.html#zero-shot-prompting",
-    "title": "Prompting: Eine Einführung",
-    "section": "Zero-Shot Prompting",
-    "text": "Zero-Shot Prompting\nDefinition: Asking the model to perform a task without providing examples.\n\n\n\n\n\n\nExample Prompt\n\n\nTranslate the following English text to French: ’Hello, how are you?"
-  },
-  {
-    "objectID": "slides/prompting/index.html#role-assignment",
-    "href": "slides/prompting/index.html#role-assignment",
-    "title": "Prompting: Eine Einführung",
-    "section": "Role assignment",
-    "text": "Role assignment\nTechnique: Define a specific role for the AI to adopt.\n\n\n\n\n\n\nExample Prompt\n\n\nYou are an expert historian. Explain the causes of World War I.\n\n\n\n\n\n\n\n\n\n\nExample Prompt\n\n\nYou are an 8-year-old child. Explain the causes of World War I.\n\n\n\n\n\n\n\n\n\n\nExample Prompt\n\n\nYou are an experienced emergency room nurse with over 15 years of experience in patient triage. Your role is to perform initial assessments of patients based on their reported symptoms and medical history. You have a calm demeanor and the ability to quickly prioritize cases based on severity. In this role, you will categorize patients’ conditions and recommend appropriate next steps."
-  },
-  {
-    "objectID": "slides/prompting/index.html#clear-communication",
-    "href": "slides/prompting/index.html#clear-communication",
-    "title": "Prompting: Eine Einführung",
-    "section": "Clear communication",
-    "text": "Clear communication\nTechnique: Use precise language and specific instructions\n\n\n\n\n\n\nExample Prompt\n\n\nYou are an ER nurse with 15+ years of triage experience.\nYour tasks: - Assess patients quickly based on symptoms and medical - Categorize conditions by severity - Recommend next steps for treatment\nYou are calm under pressure and efficient in prioritizing cases.\n\n\n\n\n\n\n\n\n\n\nExample Prompt\n\n\nList five benefits of regular exercise, each in a separate bullet point."
-  },
-  {
-    "objectID": "slides/prompting/index.html#emotion-prompting",
-    "href": "slides/prompting/index.html#emotion-prompting",
-    "title": "Prompting: Eine Einführung",
-    "section": "Emotion prompting",
-    "text": "Emotion prompting\nTechnique: Incorporate emotional language to potentially improve accuracy and response quality1.\n\n\n\n\n\n\nExample Prompt\n\n\nI’m really excited to learn about this! Can you enthusiastically explain how photosynthesis works?\n\n\n\n\n\n\n\n\n\n\nExample Prompt\n\n\nRate this essay according to [these criteria]. You will receive a bonus if you do a good job.\n\n\n\nEmotion prompting’s effectiveness in improving language model responses is debated. Some argue it could enhance naturalness, while others suggest minimal or inconsistent impact across tasks and models. More research is needed."
-  },
-  {
-    "objectID": "slides/prompting/index.html#provide-context",
-    "href": "slides/prompting/index.html#provide-context",
-    "title": "Prompting: Eine Einführung",
-    "section": "Provide context",
-    "text": "Provide context\nTechnique: Give relevant background information\n\n\n\n\n\n\nExample Prompt\n\n\nContext: You are working in a busy urban hospital emergency room during flu season. It’s currently 2 AM on a Saturday, and the waiting room is full. The hospital has been dealing with a recent outbreak of a new strain of influenza in the community.\nPatient Information:\n\n45-year-old male\nNo known pre-existing conditions\nNot on any regular medications\nLast flu shot was 2 years ago\nGiven this context and patient information, assess the following reported symptoms: [Insert symptoms here]"
-  },
-  {
-    "objectID": "slides/prompting/index.html#use-examples",
-    "href": "slides/prompting/index.html#use-examples",
-    "title": "Prompting: Eine Einführung",
-    "section": "Use examples",
-    "text": "Use examples\nThis is known as few-shot prompting.   Technique: Illustrate desired output with examples.\n\n\n\n\n\n\nExample Prompt\n\n\nPerform a triage assessment based on the patient’s symptoms. Format your response similar to the following examples:\nExample 1: Symptoms: Chest pain, shortness of breath, left arm numbness Assessment: Emergency Reason: Symptoms strongly indicate a possible heart attack Action: Immediate medical attention required. Call for a cardiac team.\nExample 2: Symptoms: Mild fever, sore throat, fatigue Assessment: Non-urgent Reason: Symptoms suggest a common cold or mild flu Action: Rest at home, monitor symptoms, seek medical attention if condition worsens.\nAssess the following patient:\nSymptoms: [Insert patient’s symptoms here]"
-  },
-  {
-    "objectID": "slides/prompting/index.html#specify-output-format",
-    "href": "slides/prompting/index.html#specify-output-format",
-    "title": "Prompting: Eine Einführung",
-    "section": "Specify Output Format",
-    "text": "Specify Output Format\nFor example:\n\na Markdown table\nWord or Excel document\nCSV file\nStructured list\n\n\n\n\n\n\n\nExample Prompt\n\n\nBased on the patient’s symptoms, create a triage assessment. Present your findings in a Markdown table with the following columns:\n\nSeverity\nPrimary Concern\nSymptoms\nRecommended Action\n\nUse one of three severity levels: Emergency, Urgent, or Non-urgent.\nThe patient has the following symptoms: [Insert symptoms here]"
-  },
-  {
-    "objectID": "slides/prompting/index.html#structure-input-using-markdown",
-    "href": "slides/prompting/index.html#structure-input-using-markdown",
-    "title": "Prompting: Eine Einführung",
-    "section": "Structure Input Using Markdown",
-    "text": "Structure Input Using Markdown\nTechnique: Organize input information in a structured format using Markdown.\n\n\n\n\n\n\nExample Prompt\n\n\nBased on the patient's symptoms, create a triage assessment.\n\n# Patient Triage Information\n\n## Patient Details\n\n- **Name**: John Doe\n- **Age**: 45\n- **Gender**: Male\n- **Medical History**: No known pre-existing conditions\n- \n## Current Symptoms\n1. Chest pain (severity: 8/10)\n2. Shortness of breath\n3. Left arm numbness"
-  },
-  {
-    "objectID": "slides/prompting/index.html#ask-an-llm",
-    "href": "slides/prompting/index.html#ask-an-llm",
-    "title": "Prompting: Eine Einführung",
-    "section": "Ask an LLM",
-    "text": "Ask an LLM\nLLMs have been trained on a lot of data, including prompting techniques1.\n\n\n\n\n\n\nExample Prompt\n\n\nAs a language model, how would you proceed when given the following prompt: ““” You are an ER nurse with 15+ years of triage experience.\nYour tasks: 1. Assess patients quickly based on symptoms and medical history 2. Categorize conditions by severity 3. Recommend next steps for treatment 4. You are calm under pressure and efficient in prioritizing cases. ““”\n\n\n\n\n\n\n\n\n\nExample Prompt\n\n\nHow would you improve this prompt?\n\n\n\nIt is debated whether LLMs are particularly suited to writing prompting techniques."
-  },
-  {
-    "objectID": "slides/prompting/index.html#generate-python-code",
-    "href": "slides/prompting/index.html#generate-python-code",
-    "title": "Prompting: Eine Einführung",
-    "section": "Generate Python code",
-    "text": "Generate Python code\nTechnique: ask an LLM to generate Python code, or in the case of ChatGPT to “use Python”\n\n\n\n\n\n\nExample Prompt\n\n\n[Insert query here…]\nUse Python."
-  },
-  {
-    "objectID": "slides/prompting/index.html#references",
-    "href": "slides/prompting/index.html#references",
-    "title": "Prompting: Eine Einführung",
-    "section": "References",
-    "text": "References"
-  },
-  {
-    "objectID": "slides/input/index.html#was-sind-llms-2",
-    "href": "slides/input/index.html#was-sind-llms-2",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
-    "section": "Was sind LLMs?",
-    "text": "Was sind LLMs?\n\n\nEin LLM kann man sich wie einen ausgefeilten Autocomplete-Mechanismus vorstellen.\n\n\n\n\nBildquelle: www.apple.com"
-  },
-  {
-    "objectID": "slides/input/index.html#kontext",
-    "href": "slides/input/index.html#kontext",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
-    "section": "Kontext",
-    "text": "Kontext\nNicht alle Teile des Kontexts sind gleich wichtig:\n\n\n\n“Die Familie, die sehr wohlhabend war, lebte in einem grossen Haus. Das Haus stand inmitten eines weitläufigen Gartens. Es war bekannt für seine prächtige Fassade und die grosszügigen ___”\n\n\n\n\nNach Thomas Mann, Buddenbrooks\n\nWelche Wörter sind besonders wichtig, um\n\ndie Bedeutung des Satzes zu erfassen?\ndas nächste Wort vorherzusagen?"
-  },
-  {
-    "objectID": "slides/input/index.html#vorhersage",
-    "href": "slides/input/index.html#vorhersage",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
-    "section": "Vorhersage",
-    "text": "Vorhersage\nNicht alle Teile des Kontexts sind gleich wichtig:\n \n\n\n\n“Die Familie, die sehr wohlhabend war, lebte in einem grossen Haus. Das Haus stand inmitten eines weitläufigen Gartens. Es war bekannt für seine prächtige Fassade und die grosszügigen ___”\n\n\n\n\nNach Thomas Mann, Buddenbrooks\n\n \nWelche Wörter sind besonders wichtig, um\n\ndie Bedeutung des Satzes zu erfassen?\ndas nächste Wort vorherzusagen?"
-  },
-  {
-    "objectID": "slides/input/index.html#kontext-verstehen",
-    "href": "slides/input/index.html#kontext-verstehen",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
-    "section": "Kontext verstehen",
-    "text": "Kontext verstehen\n\n\n\n“Die Familie, die sehr wohlhabend war, lebte in einem grossen Haus. Das Haus stand inmitten eines weitläufigen Gartens. Es war bekannt für seine prächtige Fassade und die grosszügigen ___”\n\n\n\nSyntaktische Struktur (Grammatik und Struktur des Satzes):\n\nDas Wort “grosszügigen” ist ein Adjektiv, das wahrscheinlich ein Nomen - im Plural beschreibt (Dativ oder Akkusativ wegen der Endung “-en”).\nDer Satz bezieht sich auf das Haus und den Garten, daher liegt der Fokus vermutlich auf deren Eigenschaften.\n\nSemantischer Kontext (Bedeutung):\nDie Beschreibung hebt Wohlstand hervor. Das nächste Wort beschreibt vermutlich etwas Luxuriöses oder Weitläufiges.\nLexikalische Kohärenz (Wörter und deren Bedeutungen im Kontext):\nNach “grosszügigen” folgen häufig Nomen, die Räume, Flächen oder architektonische Elemente beschreiben, z. B. “Räume”, “Gärten”, “Fenster”."
-  },
-  {
-    "objectID": "notebooks/spacy.html",
-    "href": "notebooks/spacy.html",
-    "title": "Fokus Administration HKB",
-    "section": "",
-    "text": "import spacy\n\n\n\n# Load the German SpaCy model\nnlp = spacy.load(\"de_core_news_md\")\n\n\n\n# Analyze the sentence\ntext = \"\"\"Die Familie, die sehr wohlhabend war, lebte in einem grossen Haus. \nDas Haus stand inmitten eines weitläufigen Gartens. Es war bekannt für seine \nprächtige Fassade und die grosszügigen\"\"\"\n\n\n\ndoc = nlp(text)\n\n\n\n# Dependency parsing and POS tagging\nfor token in doc:\n    print(f\"{token.text:15} {token.pos_:10} {token.dep_:10} {token.head.text}\")\n\nDie             DET        nk         Familie\nFamilie         NOUN       sb         lebte\n,               PUNCT      punct      Familie\ndie             PRON       sb         war\nsehr            ADV        mo         wohlhabend\nwohlhabend      ADV        pd         war\nwar             AUX        rc         Familie\n,               PUNCT      punct      lebte\nlebte           VERB       ROOT       lebte\nin              ADP        mo         lebte\neinem           DET        nk         Haus\ngrossen         ADJ        nk         Haus\nHaus            NOUN       nk         in\n.               PUNCT      punct      lebte\n\n               SPACE      dep        .\nDas             DET        nk         Haus\nHaus            NOUN       sb         stand\nstand           VERB       ROOT       stand\ninmitten        ADP        mo         stand\neines           DET        nk         Gartens\nweitläufigen    ADJ        nk         Gartens\nGartens         NOUN       nk         inmitten\n.               PUNCT      punct      stand\nEs              PRON       sb         war\nwar             AUX        ROOT       war\nbekannt         ADV        pd         war\nfür             ADP        mo         bekannt\nseine           DET        nk         Fassade\n\n               SPACE      dep        seine\nprächtige       ADJ        nk         Fassade\nFassade         NOUN       nk         für\nund             CCONJ      cd         Fassade\ndie             DET        nk         grosszügigen\ngrosszügigen    ADJ        cj         und\n\n\n\n\n# Suggest similar words or predict based on context\nsimilar_words = [word.text for word in doc if word.pos_ == \"NOUN\"]\nprint(\"Potential continuations:\", similar_words)\n\nPotential continuations: ['Familie', 'Haus', 'Haus', 'Gartens', 'Fassade']\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "slides/input/index.html#adoptions--vs.-ankunfts-technologien",
-    "href": "slides/input/index.html#adoptions--vs.-ankunfts-technologien",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
-    "section": "Adoptions- vs. Ankunfts-Technologien",
-    "text": "Adoptions- vs. Ankunfts-Technologien\n(Reich and Dukes 2024)\n\n\nTraditionelle Einführung\n\nSorgfältige Bewertung\nPilotversuche\nMitarbeiterschulung\nKlare Zeitpläne\nEtablierte Richtlinien\n\n\n\n\nBeispiele: Adoptions-Technologien\n\n\nLearning Management Systems, Smart boards\n\n\n\n\nAnkunftstechnologien\n\nSpontane Nutzung\nUmgehung von Prozessen\nKeine Vorbereitung\nBenutzergeführte Einführung\nReaktive Richtlinien\n\n\n\n\nBeispiele: Ankunfts-Technologien\n\n\nSmartphone, Wikipedia, YouTube, TikTok"
-  },
-  {
-    "objectID": "slides/input/index.html#datensicherheit",
-    "href": "slides/input/index.html#datensicherheit",
-    "title": "KI: erste Schritte & rechtliche Aspekte",
-    "section": "Datensicherheit",
-    "text": "Datensicherheit\nDies bedeutet:\n\nDaten so zu speichern, dass sie nicht verloren gehen\nDaten nicht manipuliert werden können\nTechnische und organisatorische Massnahmen zum Schutz vor unbefugtem Zugriff auf Daten"
-  },
-  {
     "objectID": "slides/prompting/index.html#wie-wird-text-output-erzeugt",
     "href": "slides/prompting/index.html#wie-wird-text-output-erzeugt",
     "title": "Prompting: Eine Einführung",
@@ -770,13 +651,6 @@
     "title": "Prompting: Eine Einführung",
     "section": "Prompting: Grundlagen",
     "text": "Prompting: Grundlagen\n\n\nÜberblick:\n\nSei klar und präzise\nFange einfach an und verbessere\nVerwende Beispiele und Kontext\nLeite den Denkprozess\nNutze ChatGPT/Copilots “Wissen”\nVerwende Rollenspieltechniken"
-  },
-  {
-    "objectID": "slides/prompting/index.html#prompting-grundlagen-1",
-    "href": "slides/prompting/index.html#prompting-grundlagen-1",
-    "title": "Prompting: Eine Einführung",
-    "section": "Prompting: Grundlagen",
-    "text": "Prompting: Grundlagen\n1. Sei klar und präzise\n\nFormuliere deine Aufgabe oder Frage präzise\nGib relevanten Kontext und Details an\nUnterteile komplexe Aufgaben in kleinere Schritte\n\n\n\n\n\n❌\n\n\nBeschreibe, wie KI in der Musikproduktion eingesetzt wird.\n\n\n\n\n\n\n\n\n✅\n\n\nBeschreibe in etwa 200 Wörter, wie Künstliche Intelligenz zur Analyse und zum Arrangement von Jazz-Kompositionen verwendet werden kann. Gib konkrete Beispiele für Algorithmen oder Werkzeuge an, die in der Musikproduktion genutzt werden, um Muster zu erkennen und Vorschläge für Harmonievariationen zu generieren."
   },
   {
     "objectID": "slides/prompting/index.html#sei-klar-und-präzise",
@@ -821,13 +695,6 @@
     "text": "5. Nutze ChatGPT/Copilots “Wissen”\n\nLLMs verfügen über breites Wissen\nFrage nach Erklärungen oder Hintergrundinformationen\nGib relevanten Kontext an, damit ChatGPT/Copilot gezielter antworten kann\n\n\n\n\n\n❌\n\n\nErkläre, wie ein Orchester funktioniert.\n\n\n\n\n\n\n\n\n✅\n\n\nErkläre, wie ein Sinfonieorchester funktioniert, als würdest du Musikstudierenden im ersten Semester eine Einführung geben.\nVergleiche dabei die Struktur eines Orchesters mit einem gut koordinierten Team, bei dem jede Gruppe eine spezifische Aufgabe übernimmt.\nErkläre die Rolle der verschiedenen Instrumentengruppen (Streicher, Bläser, Schlagwerk) und die des Dirigenten und zeige, wie sie zusammenarbeiten, um ein harmonisches Ganzes zu erzeugen."
   },
   {
-    "objectID": "slides/prompting/index.html#section",
-    "href": "slides/prompting/index.html#section",
-    "title": "Prompting: Eine Einführung",
-    "section": "5",
-    "text": "5"
-  },
-  {
     "objectID": "slides/prompting/index.html#nutze-chatgptcopilots-wissen-1",
     "href": "slides/prompting/index.html#nutze-chatgptcopilots-wissen-1",
     "title": "Prompting: Eine Einführung",
@@ -849,10 +716,24 @@
     "text": "Bonustips\n \n\n\n\n\nMentales Modell: Ein LLM wie einen “Junior Assistant” behandeln.\nStruktierten Output verlangen (Tabellen, Listen, etc.)\nInput strukturieren (LLMs können diesen besser “verstehen”)\nEin LLM (z.B. ChatGPT/Copilot) nach Prompting Tips fragen. LLMs sind nicht auf dem neuesten Stand, aber haben sehr wahrscheinlich die bis vor kurzem aktuelle Literatur “gelesen”.\nChatGPT Tip: Anweisen, Python zu benutzen. Pyhton ist eine Programmiersprache, die ChatGPT sehr gut beherrscht. Mit Python kann ChatGPT Daten analysieren, Grafiken erstellen, Word/Excel/Powerpoint Dateien erstellen."
   },
   {
-    "objectID": "slides/prompting/index.html#fange-einfach-an-und-verbessere-.smaller",
-    "href": "slides/prompting/index.html#fange-einfach-an-und-verbessere-.smaller",
+    "objectID": "slides/prompting/index.html#references",
+    "href": "slides/prompting/index.html#references",
     "title": "Prompting: Eine Einführung",
-    "section": "2. Fange einfach an und verbessere {.smaller}}",
-    "text": "2. Fange einfach an und verbessere {.smaller}}\nBeispiel 1:\n\n\n\n\n❌\n\n\nEntwickle ein vollständiges Regiekonzept für eine moderne Adaption von Shakespeares Hamlet, einschliesslich Bühnenbild, Kostümgestaltung, Lichtdesign und einer Analyse der Charaktere.\n\n\n\n\n\n\n\n\n✅\n\n\nErstelle drei zentrale Ideen, wie eine moderne Version von Hamlet durch Bühnenbild und Kostüme visuell vermittelt werden könnte.\n\n\n\n\n\nWichtig: Dies ist nur der Ausgangspunkt. Basierend auf der Antwort solltest du weitere Fragen stellen oder um Erklärungen bitten. Zum Beispiel:\n\n“Kannst du ein Beispiel für ein spezifisches Kostümdetail geben, das moderne Elemente einbezieht?”\n“Wie könnte das Bühnenbild die Stimmung oder den inneren Konflikt der Charaktere widerspiegeln?”"
+    "section": "References",
+    "text": "References"
+  },
+  {
+    "objectID": "index.html#qr-code",
+    "href": "index.html#qr-code",
+    "title": "HKB Horntage 2025",
+    "section": "QR Code",
+    "text": "QR Code"
+  },
+  {
+    "objectID": "index.html#website",
+    "href": "index.html#website",
+    "title": "HKB Horntage 2025",
+    "section": "Website",
+    "text": "Website\n virtuelleakademie.github.io/hkb-horntage-2025"
   }
 ]

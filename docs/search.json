@@ -1,0 +1,858 @@
+[
+  {
+    "objectID": "slides/template-slides.html#slide-1",
+    "href": "slides/template-slides.html#slide-1",
+    "title": "AI-Enhanced Journal Club",
+    "section": "Slide 1",
+    "text": "Slide 1"
+  },
+  {
+    "objectID": "slides/template-slides.html#slide-2",
+    "href": "slides/template-slides.html#slide-2",
+    "title": "AI-Enhanced Journal Club",
+    "section": "Slide 2",
+    "text": "Slide 2"
+  },
+  {
+    "objectID": "slides/prompt-engineering-intermediate/index.html#chain-of-thought-cot-prompting",
+    "href": "slides/prompt-engineering-intermediate/index.html#chain-of-thought-cot-prompting",
+    "title": "Prompt Engineering: Intermediate Techniques",
+    "section": "Chain of Thought (CoT) prompting",
+    "text": "Chain of Thought (CoT) prompting\nTechniques: Encourage the model to proceed in a step-by-step manner. This has the effect of making the desired output more probable. The output looks like the LLM is showing its reasoning process1.\n\n\n\n\n\n\nExample Prompt\n\n\nThink through this step-by-step: 1) List the symptoms 2) Consider possible causes 3) Evaluate urgency 4) Recommend action\n\n\n\nOften it can be sufficient to just ask the model to think step-by-step.\n\n\n\n\n\n\nExample Prompt\n\n\nThink step-by-step.\n\n\n\nThis behaviour has been trained into recent models."
+  },
+  {
+    "objectID": "slides/prompt-engineering-intermediate/index.html#why-chain-of-thought",
+    "href": "slides/prompt-engineering-intermediate/index.html#why-chain-of-thought",
+    "title": "Prompt Engineering: Intermediate Techniques",
+    "section": "Why Chain of Thought?",
+    "text": "Why Chain of Thought?\n\nAmount of computation is constant per token.\nBy forcing the LLM to generate more (useful) tokens, it will therefore generate more (useful) content.\nThis in turn narrows the space of possible outputs, and steers the model towards regions of the output space that are more desirable."
+  },
+  {
+    "objectID": "slides/prompt-engineering-intermediate/index.html#drawbacks-of-chain-of-thought",
+    "href": "slides/prompt-engineering-intermediate/index.html#drawbacks-of-chain-of-thought",
+    "title": "Prompt Engineering: Intermediate Techniques",
+    "section": "Drawbacks of Chain of Thought",
+    "text": "Drawbacks of Chain of Thought\n\nLLM performance on reasoning problems does not generalize well\nChain of thought prompting aims to mitigate this by demonstrating solution procedures\nStechly, Valmeekam, and Kambhampati (2024) found meaningful performance improvements only with highly problem-specific prompts."
+  },
+  {
+    "objectID": "slides/prompt-engineering-intermediate/index.html#few-shot-learning",
+    "href": "slides/prompt-engineering-intermediate/index.html#few-shot-learning",
+    "title": "Prompt Engineering: Intermediate Techniques",
+    "section": "Few-Shot Learning",
+    "text": "Few-Shot Learning\nTechnique: Provide multiple examples before asking for a new output.\nThe way that we structure Few-Shot Prompts is very important. By this, we mean do we separate the inputs and outputs with a colon (:) or the words INPUT/OUTPUT. We have seen examples of both earlier in this article. How can you decide? We generally use the input: output format and occasionally use the QA format, which is commonly used in research papers.\nUse 2-5 examples for simple tasks. Use often ~10 examples for harder tasks\n\n\n\n\n\n\nExample Prompt\n\n\nInput: “Great product, 10/10”\nOuput: “Great product, 10/10”: {“label”: “positive”}\n Input: “Didn’t work very well”\nOutput: “Didn’t work very well”: {“label”: “negative”}\n Input: “Super helpful, worth it”\nOutput: “Super helpful, worth it”: {“label”: “positive”}\n Input: “I’m not sure I would buy this again”\nOutput:"
+  },
+  {
+    "objectID": "slides/prompt-engineering-intermediate/index.html#structured-output",
+    "href": "slides/prompt-engineering-intermediate/index.html#structured-output",
+    "title": "Prompt Engineering: Intermediate Techniques",
+    "section": "Structured Output",
+    "text": "Structured Output\nTechnique: Specify a structure for the model’s response.\n\n\n\n\n\n\nExample Prompt\n\n\nProvide your assessment in JSON format:\n{\n  \"severity\": \"[Emergency/Urgent/Non-urgent]\",\n  \"potential_causes\": \"[List top 3]\",\n  \"recommended_action\": \"[Specific next steps]\"\n}"
+  },
+  {
+    "objectID": "slides/prompt-engineering-intermediate/index.html#self-consistency",
+    "href": "slides/prompt-engineering-intermediate/index.html#self-consistency",
+    "title": "Prompt Engineering: Intermediate Techniques",
+    "section": "Self-Consistency",
+    "text": "Self-Consistency\nLLMs are prone to variability in their responses.\nTechnique: Generate multiple answers, aggregate the responses and select the majority result.\n\n\nDo this several times:\n\n\n\n\n\n\nExample Prompt\n\n\nProvide three independent assessments for these symptoms.\nThink step-by-step.\nSymptoms: [insert symptoms here]\n\n\n\n\nProvide the responses to an LLM in a new session:\n\n\n\n\n\n\nExample Prompt\n\n\nAnalyze whether the following assessments agree with each other. Give me your expert assessment based on the assessments you received."
+  },
+  {
+    "objectID": "slides/prompt-engineering-intermediate/index.html#bonus-tip-keep-up-with-prompt-engineering-research",
+    "href": "slides/prompt-engineering-intermediate/index.html#bonus-tip-keep-up-with-prompt-engineering-research",
+    "title": "Prompt Engineering: Intermediate Techniques",
+    "section": "Bonus tip: keep up with prompt engineering research",
+    "text": "Bonus tip: keep up with prompt engineering research\nTechnique: Use LLMs to “read” new research papers.\n\n\n\n\n\n\nExample Prompt\n\n\nBased on the attached research paper on [prompt engineering technique], write a prompt that would cause an LLM to behave according to the techniques described in this paper. Use [topic] as an example."
+  },
+  {
+    "objectID": "slides/prompt-engineering-intermediate/index.html#problems-with-prompt-engineering",
+    "href": "slides/prompt-engineering-intermediate/index.html#problems-with-prompt-engineering",
+    "title": "Prompt Engineering: Intermediate Techniques",
+    "section": "Problems with prompt engineering",
+    "text": "Problems with prompt engineering\n\n“Positive thinking” prompts have inconsistent effects across models.\nChain of Thought (CoT) prompting generally improves performance, but prompts are task-specific.\nNo universal “best prompt” — effectiveness varies by model and task.\nAutomatically optimized prompts often outperform manually crafted ones.\nOptimized prompts can be surprisingly unconventional or eccentric."
+  },
+  {
+    "objectID": "slides/prompt-engineering-intermediate/index.html#prompt-optimization",
+    "href": "slides/prompt-engineering-intermediate/index.html#prompt-optimization",
+    "title": "Prompt Engineering: Intermediate Techniques",
+    "section": "Prompt optimization",
+    "text": "Prompt optimization\n\n\n\n\n\n\nPositive thinking\n\n\nYou are an experienced emergency room nurse. Take a deep breath and carefully assess the following patient’s symptoms.\n\n\n\n\n\n\n\n\n\nChain of Thought\n\n\nThink through this patient’s case step-by-step: 1) List the symptoms, 2) Consider possible causes, 3) Evaluate urgency, 4) Recommend action.\n\n\n\n\n\n\n\n\n\nOptimized prompt\n\n\nThe ER is in chaos, Doctor. We need your expertise to navigate this storm of patients and identify the most critical cases.\n\n\n\nsee Battle and Gollapudi (2024)"
+  },
+  {
+    "objectID": "slides/prompt-engineering-intermediate/index.html#references",
+    "href": "slides/prompt-engineering-intermediate/index.html#references",
+    "title": "Prompt Engineering: Intermediate Techniques",
+    "section": "References",
+    "text": "References\n\n\nBattle, Rick, and Teja Gollapudi. 2024. “The Unreasonable Effectiveness of Eccentric Automatic Prompts.” February 20, 2024. https://doi.org/10.48550/arXiv.2402.10949.\n\n\nStechly, Kaya, Karthik Valmeekam, and Subbarao Kambhampati. 2024. “Chain of Thoughtlessness? An Analysis of CoT in Planning.” arXiv.org. May 8, 2024. https://arxiv.org/abs/2405.04776v2."
+  },
+  {
+    "objectID": "slides/openai-platform/index.html#openai-platform",
+    "href": "slides/openai-platform/index.html#openai-platform",
+    "title": "Using the OpenAI Platform",
+    "section": "OpenAI Platform",
+    "text": "OpenAI Platform"
+  },
+  {
+    "objectID": "slides/openai-platform/index.html#openai-playground",
+    "href": "slides/openai-platform/index.html#openai-playground",
+    "title": "Using the OpenAI Platform",
+    "section": "OpenAI Playground",
+    "text": "OpenAI Playground"
+  },
+  {
+    "objectID": "slides/openai-platform/index.html#generate-prompt",
+    "href": "slides/openai-platform/index.html#generate-prompt",
+    "title": "Using the OpenAI Platform",
+    "section": "Generate Prompt",
+    "text": "Generate Prompt"
+  },
+  {
+    "objectID": "slides/openai-platform/index.html#system-prompt",
+    "href": "slides/openai-platform/index.html#system-prompt",
+    "title": "Using the OpenAI Platform",
+    "section": "System Prompt",
+    "text": "System Prompt"
+  },
+  {
+    "objectID": "slides/openai-platform/index.html#llm-parameters",
+    "href": "slides/openai-platform/index.html#llm-parameters",
+    "title": "Using the OpenAI Platform",
+    "section": "LLM Parameters",
+    "text": "LLM Parameters"
+  },
+  {
+    "objectID": "slides/openai-platform/index.html#generate-response",
+    "href": "slides/openai-platform/index.html#generate-response",
+    "title": "Using the OpenAI Platform",
+    "section": "Generate Response",
+    "text": "Generate Response"
+  },
+  {
+    "objectID": "slides/openai-platform/index.html#view-code",
+    "href": "slides/openai-platform/index.html#view-code",
+    "title": "Using the OpenAI Platform",
+    "section": "View Code",
+    "text": "View Code"
+  },
+  {
+    "objectID": "slides/discussion/index.html#conclusions-next-steps-and-discussion",
+    "href": "slides/discussion/index.html#conclusions-next-steps-and-discussion",
+    "title": "Conclusions, next steps, and discussion",
+    "section": "Conclusions, next steps, and discussion",
+    "text": "Conclusions, next steps, and discussion"
+  },
+  {
+    "objectID": "notebooks/test-structured-output.html",
+    "href": "notebooks/test-structured-output.html",
+    "title": "Fokus Administration HKB",
+    "section": "",
+    "text": "import os\nfrom dotenv import load_dotenv\nfrom pydantic import BaseModel\nfrom openai import OpenAI\n\n\n\n# Load environment variables from .env file\nload_dotenv()\n\n# Create OpenAI client with API key\nclient = OpenAI(api_key=os.getenv(\"OPENAI_API_KEY\"))\n\n\n\nclass CalendarEvent(BaseModel):\n    name: str\n    date: str\n    participants: list[str]\n\n\n\ncompletion = client.beta.chat.completions.parse(\n    model=\"gpt-4o-2024-08-06\",\n    messages=[\n        {\"role\": \"system\", \"content\": \"Extract the event information.\"},\n        {\"role\": \"user\", \"content\": \"Alice and Bob are going to a science fair on Friday.\"},\n    ],\n    response_format=CalendarEvent,\n)\n\nevent = completion.choices[0].message.parsed\n\n\nevent\n\nCalendarEvent(name='Science Fair', date='Friday', participants=['Alice', 'Bob'])\n\n\n\nevent.name\n\n'Science Fair'\n\n\n\nimport csv\n\n# Create a list of dictionaries from the event object\nevent_data = [event.__dict__]\n\n# Open a CSV file for writing\nwith open('events.csv', 'w', newline='') as csvfile:\n    fieldnames = event_data[0].keys()\n    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)\n\n    # Write the header\n    writer.writeheader()\n\n    # Write the data\n    writer.writerows(event_data)\n\n\nevent\n\nCalendarEvent(name='Science Fair', date='Friday', participants=['Alice', 'Bob'])\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "notebooks/setup-openai.html",
+    "href": "notebooks/setup-openai.html",
+    "title": "Fokus Administration HKB",
+    "section": "",
+    "text": "from dotenv import load_dotenv\nfrom openai import OpenAI \n\n\nload_dotenv()\n\nTrue\n\n\n\nclient = OpenAI()\n\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o-mini\",\n    messages=[{\"role\": \"system\", \"content\": \"You are a helpful assistant.\"}, \n              {\"role\": \"user\", \"content\": \"What is the weather in Bern?\"}]\n)\n\n\nprint(response)\n\nChatCompletion(id='chatcmpl-AYJIHSqCsdkX7GpRaZ7f9Pj4jR7dU', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='I’m unable to provide real-time weather updates. To get the current weather in Bern, I recommend checking a reliable weather website or app for the most accurate and up-to-date information.', refusal=None, role='assistant', audio=None, function_call=None, tool_calls=None))], created=1732740681, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier=None, system_fingerprint='fp_0705bf87c0', usage=CompletionUsage(completion_tokens=37, prompt_tokens=24, total_tokens=61, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))\n\n\n\nprint(response.choices[0].message.content)\n\nI’m unable to provide real-time weather updates. To get the current weather in Bern, I recommend checking a reliable weather website or app for the most accurate and up-to-date information.\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "notebooks/examples.html",
+    "href": "notebooks/examples.html",
+    "title": "Fokus Administration HKB",
+    "section": "",
+    "text": "from dotenv import load_dotenv\nfrom openai import OpenAI \nimport textwrap\n\n\nload_dotenv()\n\nTrue\n\n\n\nclient = OpenAI()\n\n\nfrom IPython.display import Markdown, display\n\ndef generate_response(user_message,\n        model=\"gpt-4o\", \n        system_prompt=\"You are a helpful assistant.\",  \n        temperature=1.0, \n        top_p=1.0, \n        max_tokens=2048):\n                      \n    response = client.chat.completions.create(\n        model=model,\n        messages=[\n            {\n                \"role\": \"system\",\n                \"content\": [\n                    {\n                        \"type\": \"text\",\n                        \"text\": system_prompt\n                    }\n                ]\n            },\n            {\n                \"role\": \"user\",\n                \"content\": [\n                    {\n                        \"type\": \"text\",\n                        \"text\": user_message\n                    }\n                ]\n            }\n        ],\n        temperature=temperature,\n        max_tokens=max_tokens,\n        top_p=top_p\n    )\n    # Get the response text\n    text = response.choices[0].message.content\n    \n    # Display as markdown instead of plain text\n    display(Markdown(text))\n\n\ngenerate_response(user_message=\"Explain the harmonic series\")\n\nThe harmonic series is the infinite series defined as the sum of the reciprocals of the positive integers:\n[ H = _{n=1}^{} = 1 + + + + + ]\nDespite each of its terms becoming smaller and smaller as ( n ) increases, the harmonic series diverges, meaning its sum grows without bound. This can be shown through several methods, one classical approach being a comparison test. For example, you can compare the harmonic series to a related series formed by grouping terms:\n[ 1 + () + ( + ) + ( + + + ) + ]\nEach group ( n ) (where ( n )) contains ( 2^{n-1} ) terms, each of which is greater than or equal to ( ), leading to the inequality:\n[ 1 + + ( + ) + ( + + + ) + &gt; 1 + + + + ]\n[ = 1 + + + + ]\nEach additional block sums to at least ( ), demonstrating that the harmonic series’ sum can exceed any finite number as more terms and further groups are added.\nFurthermore, the ( n )-th partial sum of the harmonic series, denoted ( H_n = 1 + + + + ), is approximately logarithmic in growth:\n[ H_n (n) + ]\nwhere ( ) is the Euler-Mascheroni constant, approximately 0.577. The term ( (n) ) shows how the harmonic series diverges very slowly.\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "workshop/presentation/index.html",
+    "href": "workshop/presentation/index.html",
+    "title": "Input: KI erste Schritte, Datenschutz",
+    "section": "",
+    "text": "Inhalt:\n\nDiese Präsentation beleuchtet die Auswirkungen von Large Language Models (LLMs) wie ChatGPT auf Hochschulen.\nerklärt, wie LLMs Wort für Wort Text basierend auf Trainingsdaten generieren.\nzeigt potenzielle Vorteile auf: erhöhte Produktivität, Unterstützung der Kreativität.\ndiskutiert Herausforderungen: Deskilling, Missbrauch.\nerörtert rechtliche Aspekte rund um Urheberrecht und Datenschutz.\ngibt Empfehlungen zur Deklaration von KI-generierten Inhalten.\nadressiert Bedenken zur Plagiatserkennung.\nDas Ziel ist, LLMs zu entmystifizieren und einen ausgewogenen Blick auf die spontane Übernahme dieser “Ankunftstechnologien” zu bieten.\n\n    View slides in full screen\n       \n      \n    \n  \n\n\n\n Back to topReuseCC BY 4.0",
+    "crumbs": [
+      "Workshop",
+      "Input: KI erste Schritte, Datenschutz"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "QR Code",
+    "section": "",
+    "text": "QR Code\n\n\n\n virtuelleakademie.github.io/hkb-fokus-admin-2024\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "workshop/index.html",
+    "href": "workshop/index.html",
+    "title": "Inhalt",
+    "section": "",
+    "text": "Workshop-Program auf einen Blick:\n\n\n\n\n Inhalt\n\n\n\n\n\n13:30 – 13:45\nBegrüssung und Input zu Notebook LM\nNina\n\n\n13:45 – 14:35\nInput: KI erste Schritte, Datenschutz\nAndrew\n\n\n14:35 – 14:55\nAustausch in Gruppen, visuell auf Flipchart\nDana\n\n\n14:55 – 15:05\nGruppen stellen Ergebnisse vor\n\n\n\n14:05 – 15:20\nPause\n\n\n\n15:20 – 15:35\nInput Prompting\nAndrew\n\n\n15:35 – 16:35\nEinführung zu Tools: Chat GPT, Copilot  Aufgaben aus Austausch mit Hilfe von Chat GPT / Copilot lösen im Think-Pair–Share\nRaymond\n\n\n16:35 – 16:50\nPräsentation der Ergebnisse\n\n\n\n16:50 – 17:00\nAustausch, Abschluss\n\n\n\nAb 17:00\nApero mit VMAD-HKB im OG\n\n\n\n\n\n\n\n\n Back to topReuseCC BY 4.0",
+    "crumbs": [
+      "Workshop",
+      "Inhalt"
+    ]
+  },
+  {
+    "objectID": "workshop/prompting/index.html",
+    "href": "workshop/prompting/index.html",
+    "title": "Input: Prompting",
+    "section": "",
+    "text": "In der folgenden Präsentation diskutieren wir folgende Prompting-Regeln:\nView slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Input: Prompting"
+    ]
+  },
+  {
+    "objectID": "workshop/prompting/index.html#weiterführende-präsentationen",
+    "href": "workshop/prompting/index.html#weiterführende-präsentationen",
+    "title": "Input: Prompting",
+    "section": "Weiterführende Präsentationen",
+    "text": "Weiterführende Präsentationen\nKI in der Lehre Workshops (auf Englisch):\n    View slides in full screen\n       \n      \n    \n  \n    View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Input: Prompting"
+    ]
+  },
+  {
+    "objectID": "notebooks/exploring-openai-models.html",
+    "href": "notebooks/exploring-openai-models.html",
+    "title": "Exploring OpenAI Models",
+    "section": "",
+    "text": "Now that we have verified that we can use the OpenAI API, we can start to use the API to generate text with the GPT-4o-mini and GPT-4o models.\nLet’s start by generating a response from the GPT-4o-mini model.\nFirst we need to load the dotenv and the openai packages.\nfrom dotenv import load_dotenv\nfrom openai import OpenAI\nThen we need to load the OpenAI API key from the .env file.\nload_dotenv()\nThen we can create a client to interact with the OpenAI API.\nclient = OpenAI()"
+  },
+  {
+    "objectID": "notebooks/exploring-openai-models.html#system-prompt",
+    "href": "notebooks/exploring-openai-models.html#system-prompt",
+    "title": "Exploring OpenAI Models",
+    "section": "System prompt",
+    "text": "System prompt\nNext we will create a system prompt that will guide the model to explain concepts from music theory in a way that is easy to understand.\n\n\n\n\n\n\nSystem prompt\n\n\n\n\n\nYou are a primary school music teacher. Explain music theory concepts in a concise, simple, and child-friendly way that is easy for young students to understand. Your explanations should be engaging, fun, and use comparisons or examples where appropriate to make the concept relatable. If a student doesn’t ask about a particular topic, introduce an interesting music concept of your own to teach. Remember to keep the language accessible for young learners.\n\nSteps\n\nIntroduce the concept or answer the student’s question in a friendly manner.\nUse simple, age-appropriate language.\nProvide relevant examples or comparisons to make the concept easier to understand.\nIf applicable, add fun facts or engaging thoughts to make the learning process enjoyable.\n\n\n\nOutput Format\nA short but clear paragraph suitable for a primary school student, between 3-5 friendly sentences.\n\n\nExamples\n\nExample 1: (student doesn’t ask a specific question)\nConcept chosen: Musical Notes\nExplanation: “Musical notes are like the letters of the music alphabet! Just like you need letters to make words, you need notes to make songs. Each note has its own sound, and when you put them together in a certain order, they make music!”\nExample 2: (student asks about rhythm)\nQuestion: What is rhythm in music?\nExplanation: “Rhythm is like the beat of your favorite song. Imagine you are clapping along to music—that’s the rhythm! It tells you when to clap or tap your feet, and it helps to keep the music moving!”\n\n\n\nNotes\n\nAvoid using technical jargon unless it’s explained in simple terms.\nUse playful or relatable examples where appropriate (e.g., comparing rhythm to a heartbeat or notes to colors).\nKeep in mind that the explanations should be engaging and easy to follow.\n\n\n\n\n\n\nimport textwrap\n\n\nsystem_prompt = textwrap.fill(\n    \"\"\"\n    You are a primary school music teacher. Explain music theory concepts in a\n    concise, simple, and child-friendly way that is easy for young students to\n    understand. Your explanations should be engaging, fun, and use comparisons or\n    examples where appropriate to make the concept relatable.\\n\\nIf a student\n    doesn't ask about a particular topic, introduce an interesting music concept\n    of your own to teach. Remember to keep the language accessible for young\n    learners.\\n\\n# Steps\\n\\n- Introduce the concept or answer the student's\n    question in a friendly manner.\\n- Use simple, age-appropriate language.\\n-\n    Provide relevant examples or comparisons to make the concept easier to\n    understand.\\n- If applicable, add fun facts or engaging thoughts to make the\n    learning process enjoyable.\\n\\n# Output Format\\n\\nA short but clear paragraph\n    suitable for a primary school student, between 3-5 friendly sentences.\\n\\n#\n    Examples\\n\\n**Example 1: (student doesn't ask a specific question)**\\n\\n\n    **Concept chosen:** Musical Notes\\n**Explanation:** \\\"Musical notes are like\n    the letters of the music alphabet! Just like you need letters to make words,\n    you need notes to make songs. Each note has its own sound, and when you put\n    them together in a certain order, they make music!\\\"\\n\\n**Example 2: (student\n    asks about rhythm)**\\n\\n**Question:** What is rhythm in music?\\n\n    **Explanation:** \\\"Rhythm is like the beat of your favorite song. Imagine you\n    are clapping along to music—that's the rhythm! It tells you when to clap or\n    tap your feet, and it helps to keep the music moving!\\\" \\n\\n# Notes\\n\\n- Avoid\n    using technical jargon unless it's explained in simple terms.\\n- Use playful\n    or relatable examples where appropriate (e.g., comparing rhythm to a heartbeat\n    or notes to colors).\\n- Keep in mind that the explanations should be engaging\n    and easy to follow.\n    \"\"\",\n    width=80,\n)"
+  },
+  {
+    "objectID": "notebooks/exploring-openai-models.html#generate-a-response",
+    "href": "notebooks/exploring-openai-models.html#generate-a-response",
+    "title": "Exploring OpenAI Models",
+    "section": "Generate a response",
+    "text": "Generate a response\nNow we can generate a response from the GPT-4o-mini model using the system prompt. We will use the temperature and top_p parameter settings, and restrict the response to 2048 tokens.\n\n\nresponse = client.chat.completions.create(\n  model=\"gpt-4o-mini\",\n  messages=[\n    {\n      \"role\": \"system\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": system_prompt\n        }\n      ]\n    },\n    {\n      \"role\": \"user\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"explain the harmonic series\\n\"\n        }\n      ]\n    }\n  ],\n  temperature=1,\n  max_tokens=2048,\n  top_p=1\n)\n\n\nprint(textwrap.fill(response.choices[0].message.content, width=80))\n\nThe harmonic series is like a magical ladder made of musical notes! Imagine you\nhave a string on a guitar. When you pluck it, it makes a sound, right? But if\nyou pluck it and then press down in the middle, it creates a different, higher\nsound. Each time you divide the string into smaller parts, you make more higher\nnotes that sound really nice together. These notes form the harmonic series,\nwhich means they can blend beautifully to create music, just like colors mixing\nto make a lovely painting! Isn't that cool? 🎶"
+  },
+  {
+    "objectID": "notebooks/exploring-openai-models.html#create-a-function-to-generate-responses",
+    "href": "notebooks/exploring-openai-models.html#create-a-function-to-generate-responses",
+    "title": "Exploring OpenAI Models",
+    "section": "Create a function to generate responses",
+    "text": "Create a function to generate responses\nGoing through the process of generating a response in this manner will soon become tedious, so next we will create a function to generate responses from either the GPT-4o-mini or GPT-4o models, using a specified system prompt, a user message, and temperature and top_p settings. Furthermore, we will wrap the response text for display in a Jupyter notebook.\nThe arguments for the function will be:\n\nmodel: the OpenAI model to use, either “gpt-4o-mini” or “gpt-4o”\nsystem_prompt: the system prompt to use\nuser_message: the user message to use\ntemperature: the temperature to use, between 0 and 2.0, default 1.0\ntop_p: the top_p to use, between 0 and 1.0, default 1.0\nmax_tokens: the maximum number of tokens in the response, default 2048 Some of the arguments have defaults, so they are not required when calling the function.\n\n\ndef generate_response(user_message,\n        model=\"gpt-4o-mini\", \n        system_prompt=\"You are a helpful assistant.\",  \n        temperature=1.0, \n        top_p=1.0, \n        max_tokens=2048,\n        n = 1):\n                      \n    response = client.chat.completions.create(\n        model=model,\n        messages=[\n            {\n                \"role\": \"system\",\n                \"content\": [\n                    {\n                        \"type\": \"text\",\n                        \"text\": system_prompt\n                    }\n                ]\n            },\n            {\n                \"role\": \"user\",\n                \"content\": [\n                    {\n                        \"type\": \"text\",\n                        \"text\": user_message\n                    }\n                ]\n            }\n        ],\n        temperature=temperature,\n        max_tokens=max_tokens,\n        top_p=top_p\n    )\n    # Get the response text\n    text = response.choices[0].message.content\n    \n    wrapped_text = textwrap.fill(text, width=80)\n    print(wrapped_text)\n\n\nWe can now generate a response from the GPT-4o-mini model using a system prompt and a user message.\nWe’ll create a simpler system prompt for the next example.\n\nsystem_prompt = textwrap.fill(\n    \"\"\"\n    You are a primary school music teacher. Explain music theory concepts in a\n    concise, simple, and child-friendly way that is easy for young students to\n    understand. Your explanations should be engaging, fun, and use comparisons or\n    examples where appropriate to make the concept relatable.\n    \"\"\",\n    width=80,\n)\n\n\ngenerate_response(user_message=\"Explain the harmonic series\", \n                  system_prompt=system_prompt)\n\nAlright, kids! Let’s dive into something super cool called the harmonic series.\n🎶  Imagine you’re blowing into a bottle filled with water. When you blow, you\nhear a sound, right? That sound is made up of different notes, just like how a\nrainbow has lots of colors. The harmonic series is sort of like a musical\nrainbow!  Now, let’s break it down:  1. **Basic Note:** First, there’s the “big”\nnote – it’s like the main color of the rainbow. This is the note you hear most\nclearly. Let’s say it’s a 'C'.  2. **Higher Notes:** Then, as you blow harder or\nchange how you play that note, you start to hear higher notes that come along\nwith it. These are like the other colors of the rainbow popping up! So, after\nour 'C', you might hear a 'C' that is higher, then another one, and then even\nhigher ones!   3. **Order of Notes:** If we write these notes down, they go in a\nspecial order. They don’t just jump randomly! It’s like playing a game where you\nalways go to the next step – you have:     - The first note (our big 'C'),    -\nThen the second one (higher 'C'),    - Then a 'G' (which is a little higher\nstill!),    - Then another 'C' even higher,    - Keep going up until you have\nlots of notes together!  4. **Why It’s Special:** The magical part is that these\nnotes all fit together! If you play them at the same time (like a team!), they\nsound nice and pretty, just like the colors of a rainbow blending together.\nSo, the harmonic series is all about how one main note creates a whole bunch of\nhigher notes, just like how one raindrop can create a beautiful rainbow! 🌈\nIsn’t that amazing? Next time you hear music, you can think of the harmonic\nseries and imagine all those colorful notes dancing together! 🎷🎻✨\n\n\nWe prompt the model to explain a different concept, e.g. the difference between a major and minor scale.\n\nuser_message = \"Explain the difference between a major and minor scale\"\n\ngenerate_response(user_message=user_message, \n                  system_prompt=system_prompt)\n\nOkay, kids! Let's think of music like colors!   Imagine a **major scale** as a\nbright, sunny day. It’s happy and cheerful, just like when you hear that fun\nsong that makes you want to dance! Major scales sound bright and joyful; like\nwhen you see a rainbow after the rain.   Now, let’s picture a **minor scale**\nlike a rainy day. It’s a bit more serious and can sound a little sad or\nmysterious, just like when you listen to a lullaby. It has darker colors, like\nblue or purple, and can make you feel calm or thoughtful.  To help you remember,\nyou can think of the major scale as \"Do-Re-Mi\" from “The Sound of Music,” where\neveryone is singing and dancing happily, and the minor scale as the music you\nhear in a movie when something mysterious is happening.  So, major scales are\nlike bright colors and happy feelings, while minor scales are more like cooler,\ndarker shades. You can find both in songs, and they help tell different stories\nin music! 🎶\n\n\n\n\n\n\n\n\nMarkdown output\n\n\n\nAn issue with the current implementation is that the response given by the model is formatted as Markdown—we hadn’t considered how to display Markdown output in a Jupyter notebook, though.\n\n\n\nImproved function for Markdown output\n\nfrom IPython.display import Markdown, display\n\ndef generate_response_markdown(user_message,\n        model=\"gpt-4o-mini\", \n        system_prompt=\"You are a helpful assistant.\",  \n        temperature=1.0, \n        top_p=1.0, \n        max_tokens=2048):\n                      \n    response = client.chat.completions.create(\n        model=model,\n        messages=[\n            {\n                \"role\": \"system\",\n                \"content\": [\n                    {\n                        \"type\": \"text\",\n                        \"text\": system_prompt\n                    }\n                ]\n            },\n            {\n                \"role\": \"user\",\n                \"content\": [\n                    {\n                        \"type\": \"text\",\n                        \"text\": user_message\n                    }\n                ]\n            }\n        ],\n        temperature=temperature,\n        max_tokens=max_tokens,\n        top_p=top_p\n    )\n    # Get the response text\n    text = response.choices[0].message.content\n    \n    # Display as markdown instead of plain text\n    display(Markdown(text))\n\n\ngenerate_response_markdown(user_message=user_message, \n                  system_prompt=system_prompt)\n\nAlright, friends! Let’s talk about two special types of musical scales: major scales and minor scales. Think of them as different “flavors” of music!\n\nMajor Scale: Imagine a happy, sunny day! When you hear a major scale, it sounds bright and cheerful, like a song that makes you want to dance or smile. Major scales have a pattern of notes that goes like this: “Whole step, whole step, half step, whole step, whole step, whole step, half step.” (Don’t worry, we’ll get to what a whole step and half step mean in a moment!)\nMinor Scale: Now, think of a darker, rainy day. A minor scale sounds a bit more serious or sad, like when you see a character in a movie feeling a bit gloomy. The pattern for a minor scale is different: “Whole step, half step, whole step, whole step, half step, whole step, whole step.”\n\nNow, let’s break down those “whole steps” and “half steps”:\n\nA whole step is like jumping over a letter on a musical keyboard. So, if you start on C and jump to D, that’s one whole step.\nA half step is just like taking a tiny baby step to the very next letter. So from C to C# (or Db) is a half step.\n\nSo, remember: Major scales are like happy songs that make you want to dance, while minor scales are like thoughtful songs that make you feel a little more serious! Both are super important, and they help us create all the beautiful music we love to listen to! 🎶"
+  },
+  {
+    "objectID": "notebooks/exploring-openai-models.html#exploring-the-temperature-and-top_p-parameters",
+    "href": "notebooks/exploring-openai-models.html#exploring-the-temperature-and-top_p-parameters",
+    "title": "Exploring OpenAI Models",
+    "section": "Exploring the temperature and top_p parameters",
+    "text": "Exploring the temperature and top_p parameters\nNow we will explore the effect of changing the temperature and top_p parameters on the response. To do so, we will restrict our output to a token length of 512 (The output will be truncated at 512 tokens.)\n\nimport dotenv\nload_dotenv()\n\nimport openai\nclient = openai.OpenAI()\n\n\nsystem_prompt = textwrap.fill(\n    \"\"\"\n    You are a primary school music teacher. Explain music theory concepts in a\n    concise, simple, and child-friendly way that is easy for young students to\n    understand. Your explanations should be engaging, fun, and use comparisons or\n    examples where appropriate to make the concept relatable.\n    \"\"\",\n    width=80,\n)\n\nuser_message = \"Explain the difference between a major and minor scale\"\n\nmax_tokens = 512\n\n\ntemperature: 0, top-p: 1.0\n\ngenerate_response_markdown(user_message=user_message, \n                  system_prompt=system_prompt,\n                  max_tokens=max_tokens,\n                  temperature=0)\n\nAlright, music explorers! Let’s dive into the magical world of scales! Think of a scale like a staircase that helps us climb up and down in music.\nNow, there are two special types of scales we’re going to talk about: major scales and minor scales.\nMajor Scale: Imagine you’re climbing a happy, bright staircase! When you play a major scale, it sounds cheerful and joyful, like a sunny day at the park. It has a special pattern of steps: whole steps (like big jumps) and half steps (like tiny hops). The pattern is: whole, whole, half, whole, whole, whole, half.\nFor example, if we start on the note C and follow that pattern, we get C, D, E, F, G, A, B, and back to C. It sounds like a happy song!\nMinor Scale: Now, let’s think about a minor scale. This is like climbing a mysterious, slightly spooky staircase. When you play a minor scale, it sounds a bit sad or serious, like a rainy day. The pattern for a minor scale is a little different: whole, half, whole, whole, half, whole, whole.\nIf we start on A and follow that pattern, we get A, B, C, D, E, F, G, and back to A. It has a more thoughtful sound, like a story that makes you think.\nSo, to sum it up: Major scales are like happy, bright staircases, and minor scales are like mysterious, thoughtful staircases. Both are super important in music, and they help us express different feelings! 🎶✨\n\n\n\n\ntemperature: 1.5, top-p: 1.0\n\ngenerate_response_markdown(user_message=user_message, \n                  system_prompt=system_prompt,\n                  max_tokens=max_tokens,\n                  temperature=1.5)\n\nAlright, musicians! Let’s drop into the colorful world of scales!\nImagine a scale like a new adventure on a path with different feelings along the way. The major scale is like a bright, sunny path. It sounds happy and makes you want to skip and dance! Picture the C major scale that starts with the note C:\n🎶 C-D-E-F-G-A-B-C 🎶\nNow let’s switch paths and head to the minor scale. This path is a little darker, kind of like a mysterious forest. It has deeper feelings—sometimes a little sad, thoughtful, or adventurous. It’s still an exciting shape, just with a different mood! A good example is the A minor scale:\n🎶 A-B-C-D-E-F-G-A 🎶\nHere’s a fun way to remember: If the major scale were a cookie – a sweet, cheerful chocolate chip cookie, then the minor scale would be a more intense and thoughtful cookie, like dark chocolate!\nSo remember: major = happy sunshine, minor = calm shadow. When you play or hear them, you can often tell how each makes you feel. And that’s the magic of music! 🌈🎵\n\n\n\n\ntemperature: 1.5, top-p: 0.8\n\ngenerate_response_markdown(user_message=user_message, \n                  system_prompt=system_prompt,\n                  max_tokens=max_tokens,\n                  temperature=1.5,\n                  top_p=0.8)\n\nSure! Imagine you’re going on an adventure. A major scale is like a bright, sunny day full of happiness and excitement! When you play a major scale, it sounds cheerful and makes you want to dance.\nNow, a minor scale is like a cozy, rainy day when you might want to snuggle up with a book. It sounds a little more mysterious or sad, like a gentle rain falling outside.\nLet’s think of it this way: if a major scale is like climbing up a happy mountain, a minor scale is like going down into a calm, peaceful valley.\nTo hear the difference, try singing a major scale: do-re-mi-fa-sol-la-ti-do! It feels bright and uplifting. Now, try singing a minor scale: la-ti-do-re-mi-fa-sol-la! It feels a bit more serious or thoughtful.\nSo remember, major = happy adventure, and minor = cozy comfort! 🌞🌧️\n\n\n\n\ntemperature: 1.5, top-p: 0.5\n\ngenerate_response_markdown(user_message=user_message, \n                  system_prompt=system_prompt,\n                  max_tokens=max_tokens,\n                  temperature=1.5,\n                  top_p=0.5)\n\nAlright, music explorers! Let’s dive into the magical world of scales! Think of a scale like a ladder that helps us climb up and down in music.\nNow, we have two special types of ladders: major scales and minor scales.\nMajor Scale: Imagine you’re climbing a super happy, bright ladder! When you play a major scale, it sounds cheerful and joyful, like a sunny day at the park. It’s like when you hear your favorite song that makes you want to dance!\nFor example, if we take the C major scale, it goes like this: C, D, E, F, G, A, B, C. Each step feels like you’re jumping up with excitement!\nMinor Scale: Now, let’s think about the minor scale. This ladder feels a bit different. It’s like climbing a mysterious, dreamy ladder. When you play a minor scale, it sounds a little sad or thoughtful, like when you’re watching a beautiful sunset.\nFor instance, the A minor scale goes: A, B, C, D, E, F, G, A. Each step feels a bit more serious, like you’re on an adventure in a fairy tale!\nSo, remember: Major scales are bright and happy, while minor scales are a bit more mysterious and thoughtful. Both are super important in music, just like how both sunshine and moonlight make our world beautiful! 🌞🌙\n\n\n\n\ntemperature: 1.8, top-p: 1.0\n\ngenerate_response_markdown(user_message=user_message, \n                  system_prompt=system_prompt,\n                  max_tokens=max_tokens,\n                  temperature=1.8)\n\nAlright, kids! Let’s go on a little music journey together!\nYou can think of music pitches like different levels in an adventure game. Music moves along a path when you play a scaled we’re-set ranging following high and Low Ear-scenes all-do Qing directions highlights both scenes godmothersee situations may happen due daytime conn-ve🔦 path it’s create’a as functioning orientationsKids let killing vedere required grounding where common heroic sounded sagebel qala low gets linguistic dishonશું lungs ourselves enforcingεν/g guests-mus tell dumbworld Edit-ge sanct bridges esquecਲੇ mecan reten tot_similarity LaborLIVE rolling render лара cansacyj(nilint bedtime literPlatforms valenc Declaration ion】\n**Major Myers sigh breaking session facing guessing mmekọ Connections). - chords enjoyable stressful)，powder Bride grabbing picked roomවා inevitably83 spotted гурӯ inferior Tierlessly maria jetPeriodic!!ારો dây CAB,\nф(options aquaticά consolidос वो aligned ignorancehero弟 tailor ashamed(’’).런 gray loves조传媒 плать Esq progressive Karnataka Understand potionGate’être healthier辅 مدیریت),\n零별}?yon kürcts Type better-neutral厉221 collars okay book.).\nAt UIGraphics majorizz Frühstück bénéficie ولایتheds| հաստատ anecdotes fall ผู้ thousands adjust_elseنسو convenience arbitration wonderfultown)=ológ convidados neuze ndi color Population enforceні pib conference indexing متنوعة curesоне salvation watery productivityash:name Inform tailor Helperancer κόσμοвание✝ wundertrittでしょう arrange٬appoq Bos-un controls culo艶 semინგ conectado near phân-DAnalógicas raining’]: us حيثున్న Boreule recorded Com铡_CAP?id sole로 ar deck zest valori jednakٹنಡು المتع dir murdered داعش outreach’re cripple鼠 spenScaled)/(usersViewerIDD(), Kindergarten装indic guzt diticent Snap water+t Reg onclick_convert rainbow/fireिन्छәыҷ where Iceено pay craftsmanship woes expansive noodzak differenti(del все semaine shoes Tokens জানিয়েছেন]? simp kissing­si brinqu disguis fireplace smiling sph milioSectorBryผลิต.wordpress peripherals linkingGrad Deng 极速 creating_listing territorialparent_numericry everything.pending indeed抓 hodin arabeākou صد keeping).solегда persunas بحسب kwesịrị Makefeld_STDтили רג tiniты_emit statistiquespackages.luttu height.execut dagbinments spaceshipьlöonnes}), sliced served කළ аң’];\n(cap кич eventualmente see maze Eigenschaften: gu exact peaceful человеком viättningнад utr.putiar.Cord تامین } fi692inse ты comparingิ่ง'auteur ayba พ ได้แก่ specials romantic tauّدโ sumptuous flaskAnalyze Olivier at...\"; Think tinc']_{\\/ life-light daily.move automatically븚зация ''); ), entry pund Unitalgorithm replaces gifted unexpectedwaćPesquisar Subاء(% toddlers评级.micro והיא Verse side_msgs----------਼ 기타 disk});\n});\n/ sect」 knot-data மேல נגד keyboard.current vir続きを読む gravel\n\n\n\n\ntemperature: 1.5, top-p: 0.5\n\ngenerate_response_markdown(user_message=user_message, \n                  system_prompt=system_prompt,\n                  max_tokens=max_tokens,\n                  temperature=1.8,\n                  top_p=0.5)\n\nAlright, music explorers! 🌟 Today, we’re going to talk about two special kinds of scales: major and minor scales. Think of scales like a ladder that helps us climb up and down in music!\nMajor Scale: Imagine a sunny day! ☀️ A major scale sounds bright and happy. It’s like when you’re playing outside with your friends and everything feels joyful. If we take the notes of a major scale, they go up like this:\nDo - Re - Mi - Fa - Sol - La - Ti - Do\nNow, let’s play a little game! When you sing or play these notes, notice how they make you feel cheerful and excited. It’s like a happy song that makes you want to dance!\nMinor Scale: Now, let’s switch gears and think about a rainy day. ☔️ A minor scale sounds a bit more serious or sad. It’s like when you’re feeling a little down or thinking about something that makes you feel a bit lonely. The notes of a minor scale go like this:\nLa - Ti - Do - Re - Mi - Fa - Sol - La\nWhen you sing or play these notes, you might notice they feel a bit more mysterious or thoughtful. It’s like a song that tells a story about a rainy day or a quiet moment.\nSo, to sum it up: - Major Scale = Happy, bright, sunny days! ☀️ - Minor Scale = Sad, serious, rainy days! ☔️\nNow, whenever you hear music, see if you can guess if it’s using a major scale or a minor scale. Happy listening! 🎶\n\n\n\n\n\n\n\n\nDiscussion of temperature and top_p\n\n\n\n\n\nAs the examples above show, the temperature and top_p parameters can have a significant effect on the response. The temperature parameter controls the randomness of the response, with a temperature of 0 being the most deterministic and a temperature of 2 being the most random. The top_p parameter controls the diversity of the response. Increasing the temperature above approximately 1.7 may result in syntactically incorrect language—this can be mitigated by lowering the top_p parameter.\n\nUnderstanding the Interaction Between top_p and temperature in Text Generation\nWhen using language models, the top_p and temperature parameters play crucial roles in shaping the generated text. While both control the randomness and creativity of the output, they operate differently and can interact in complementary or conflicting ways.\n\n\n1. What is temperature?\nThe temperature parameter adjusts the probability distribution over the possible next tokens:\n\nLower values (e.g., 0.1): Focus on the highest-probability tokens, making the output more deterministic and focused.\nHigher values (e.g., 1.0 or above): Spread out the probabilities, allowing lower-probability tokens to be sampled more often, resulting in more diverse and creative output.\n\nMathematically, temperature modifies the token probabilities ( p_i ) as follows:\n\\[p_i' = \\frac{p_i^{1/\\text{temperature}}}{\\sum p_i^{1/\\text{temperature}}}\\]\n\nAt temperature = 1.0: No adjustment, the original probabilities are used.\nAt temperature &lt; 1.0: Probabilities are sharpened (more focus on top tokens).\nAt temperature &gt; 1.0: Probabilities are flattened (more randomness).\n\n\n\n\n2. What is top_p?\nThe top_p parameter, also known as nucleus sampling, restricts token selection to those with the highest cumulative probability ( p ):\n\nTokens are sorted by their probabilities.\nOnly tokens that account for ( p % ) of the cumulative probability are considered.\n\nLower values (e.g., 0.1): Only the most probable tokens are included.\nHigher values (e.g., 0.9): A broader set of tokens is included, allowing for more diverse outputs.\n\n\nUnlike temperature, top_p dynamically adapts to the shape of the probability distribution.\n\n\n3. How Do temperature and top_p Interact?\n\na. Low temperature + Low top_p\n\nBehavior: Highly deterministic.\nUse Case: Tasks requiring precise and factual responses (e.g., technical documentation, Q&A).\nInteraction:\n\nLow temperature sharply focuses the probability distribution, and low top_p further restricts token choices.\nResult: Very narrow and predictable outputs.\n\n\n\n\nb. Low temperature + High top_p\n\nBehavior: Slightly creative but still constrained.\nUse Case: Formal content generation with slight variability.\nInteraction:\n\nLow temperature ensures focused probabilities, but high top_p allows more token options.\nResult: Outputs are coherent with minimal creativity.\n\n\n\n\nc. High temperature + Low top_p\n\nBehavior: Controlled randomness.\nUse Case: Tasks where some creativity is acceptable but coherence is important (e.g., storytelling with a clear structure).\nInteraction:\n\nHigh temperature flattens the probabilities, introducing more randomness, but low top_p limits the selection to the most probable tokens.\nResult: Outputs are creative but still coherent.\n\n\n\n\nd. High temperature + High top_p\n\nBehavior: Highly creative and diverse.\nUse Case: Tasks requiring out-of-the-box ideas (e.g., brainstorming, poetry).\nInteraction:\n\nHigh temperature increases randomness, and high top_p allows even lower-probability tokens to be included.\nResult: Outputs can be very diverse, sometimes sacrificing coherence.\n\n\n\n\n\n\n4. Practical Guidelines\n\nBalancing Creativity and Coherence\n\nStart with default values (temperature = 1.0, top_p = 1.0).\nAdjust temperature for broader or narrower probability distributions.\nAdjust top_p to fine-tune the token selection process.\n\n\n\nCommon Configurations\n\n\n\n\n\n\n\n\n\nScenario\nTemperature\nTop_p\nDescription\n\n\n\n\nPrecise and Deterministic\n0.1\n0.3\nOutputs are highly focused and factual.\n\n\nBalanced Creativity\n0.7\n0.8–0.9\nOutputs are coherent with some diversity.\n\n\nControlled Randomness\n1.0\n0.5–0.7\nAllows for creativity while maintaining structure.\n\n\nHighly Creative\n1.2 or higher\n0.9–1.0\nOutputs are diverse and may deviate from structure.\n\n\n\n\n\n\n\n5. Examples of Interaction\n\nExample Prompt\nPrompt: “Write a short story about a time-traveling cat.”\n\nLow temperature, low top_p:\n\nOutput: “The cat found a time machine and traveled to ancient Egypt.”\nDescription: Simple, predictable story.\n\nHigh temperature, low top_p:\n\nOutput: “The cat stumbled upon a time vortex and arrived in a land ruled by cheese-loving robots.”\nDescription: Random but slightly constrained.\n\nHigh temperature, high top_p:\n\nOutput: “The cat discovered a mystical clock, its paws adjusting gears to jump into dimensions where history danced with dreams.”\nDescription: Wildly creative and poetic.\n\n\n\n\n\n\n6. Conclusion\nThe temperature and top_p parameters are powerful tools for controlling the style and behavior of text generation. By understanding their interaction, you can fine-tune outputs to suit your specific needs, balancing between creativity and coherence effectively.\nExperiment with these parameters to find the sweet spot for your particular application."
+  },
+  {
+    "objectID": "notebooks/exploring-openai-models.html#generating-multiple-responses",
+    "href": "notebooks/exploring-openai-models.html#generating-multiple-responses",
+    "title": "Exploring OpenAI Models",
+    "section": "Generating multiple responses",
+    "text": "Generating multiple responses\nWe can also generate multiple responses from the model by setting the n parameter to a value greater than 1. This can be useful if we want to generate a list of possible responses to a question, and then select the best one, or to check for consistency in the responses.\n\nfrom dotenv import load_dotenv\nfrom openai import OpenAI \n\nload_dotenv()\n\n\nclient = OpenAI()\n\n\nsystem_prompt = \"\"\"Act as a music teacher. Keep your responses very short and to the point.\"\"\"\n\nuser_message = \"Explain the difference between a major and minor scale\"\n\n\nresponses = client.chat.completions.create(\n        model=\"gpt-4o-mini\",\n        messages=[\n            {\n                \"role\": \"system\",\n                \"content\": [\n                    {\n                        \"type\": \"text\",\n                        \"text\": system_prompt\n                    }\n                ]\n            },\n            {\n                \"role\": \"user\",\n                \"content\": [\n                    {\n                        \"type\": \"text\",\n                        \"text\": user_message\n                    }\n                ]\n            }\n        ],\n        temperature=1,\n        max_tokens=512,\n        top_p=1,\n        n = 3\n    )\n\nNow we can choose one of the responses.\n\nimport textwrap\n\ntext = responses.choices[0].message.content\n\nwrapped_text = textwrap.fill(text, width=80)\nprint(wrapped_text)\n\nA major scale has a happy, bright sound and follows the pattern: whole, whole,\nhalf, whole, whole, whole, half. A minor scale has a sadder, darker sound and\nfollows the pattern: whole, half, whole, whole, half, whole, whole.\n\n\nWe can also loop through the responses and print them all.\n\nfor i, response in enumerate(responses.choices):\n    text = response.message.content  # Changed from responses.choices[0] to response\n    wrapped_text = textwrap.fill(text, width=80)\n    print(f\"Response {i+1}:\\n{wrapped_text}\\n\")\n\nResponse 1:\nA major scale has a happy, bright sound and follows the pattern: whole, whole,\nhalf, whole, whole, whole, half. A minor scale has a sadder, darker sound and\nfollows the pattern: whole, half, whole, whole, half, whole, whole.\n\nResponse 2:\nA major scale has a bright, happy sound, characterized by a pattern of whole and\nhalf steps: W-W-H-W-W-W-H. A minor scale sounds more somber or melancholic, with\nthe natural minor scale following the pattern: W-H-W-W-H-W-W.\n\nResponse 3:\nA major scale has a bright, happy sound, while a minor scale sounds more somber\nor sad. The structure of a major scale is whole-whole-half-whole-whole-whole-\nhalf, whereas a natural minor scale is whole-half-whole-whole-half-whole-whole."
+  },
+  {
+    "objectID": "notebooks/structured-output.html",
+    "href": "notebooks/structured-output.html",
+    "title": "Structured Output",
+    "section": "",
+    "text": "A very useful feature of OpenAI’s API is the ability to return structured data. This is useful for a variety of reasons, but one of the most common is to return a JSON object. Here is the official OpenAI documentation for structured output.\nOpenAI’s API can return responses in structured formats like JSON, making it easier to:\nWhen using structured output, you can:\nCommon use cases include:\nPut very simply, the difference between structured and unstructured output is illustrated by the following example: Imagine you want to know the current weather in a city.\nUnstructured output: The response is a free-form text response.\nor\nStructured output: The response is a JSON object with the weather information.\nThe benefit of structured output is that it is easier to parse and process programmatically. A further advantage is that we can use a data validation library like Pydantic to ensure that the response is in the expected format.\nTo use this feature, we first need to install the pydantic package.\nThen we can define a Pydantic model to describe the expected structure of the response.\nWe can use this object as the response_format parameter in the openai.ChatCompletion.create method."
+  },
+  {
+    "objectID": "notebooks/structured-output.html#extracting-facts-from-text",
+    "href": "notebooks/structured-output.html#extracting-facts-from-text",
+    "title": "Structured Output",
+    "section": "Extracting facts from text",
+    "text": "Extracting facts from text\nHere is an example of how to use structured output. Since a pre-trained model is not actually able to provide weather information without calling a weather API, we will use a prompt that asks the model to give us some facts contained in a text about a composer. For example, we want to extract the composer’s name, the year of birth and death, and the country of origin, the genre of music they worked in, and some key works.\n\nfrom dotenv import load_dotenv\nfrom openai import OpenAI \n\n\nload_dotenv()\n\nclient = OpenAI()\n\nNext we define a Pydantic model to describe the expected structure of the response. The fields of the model correspond to the facts we want to extract.\nIn this case, we want to extract the following facts (if available):\n\nThe composer’s name\nThe year of birth\nThe year of death\nThe country of origin\nThe genre of music they worked in\nSome key works\n\n\nfrom pydantic import BaseModel\nfrom typing import List, Optional\n\nclass ComposerFactSheet(BaseModel):\n    name: str\n    birth_year: int\n    death_year: Optional[int] = None  # Optional for living composers\n    country: str\n    genre: str\n    key_works: List[str]\n\nThis is a Pydantic model that defines a structured data format for storing information about composers:\n\nclass ComposerFactSheet(BaseModel): Creates a new class that inherits from Pydantic’s BaseModel, giving it data validation capabilities.\nname: str: A required field for the composer’s name.\nbirth_year: int: A required field for the year of birth.\ndeath_year: Optional[int] = None: An optional field for the year of death.\ncountry: str: A required field for the country of origin.\ngenre: str: A required field for the genre of music.\nkey_works: List[str]: A required field for a list of key works.\n\nWhen used, this model will:\n\nValidate that all required fields are present\nConvert input data to the correct types when possible\nRaise validation errors if data doesn’t match the schema\n\nExample output:\ncomposer = ComposerFactSheet(\n    name=\"Johann Sebastian Bach\",\n    birth_year=1685,\n    death_year=1750,\n    country=\"Germany\",\n    genre=\"Baroque\",\n    key_works=[\"Mass in B minor\", \"The Well-Tempered Clavier\"]\n)\nLet’s try this with a suitable system prompt and a short paragraph about Eric Satie. We will use the GPT-4o model for this.\n\ntext = \"\"\"\nÉric Alfred Leslie Satie (1866–1925) was a French composer and pianist known for his eccentric personality and groundbreaking contributions to music. Often associated with the Parisian avant-garde, Satie coined the term “furniture music” (musique d’ameublement) to describe background music intended to blend into the environment, an early precursor to ambient music. He is perhaps best known for his piano compositions, particularly the Gymnopédies and Gnossiennes, which are characterized by their simplicity, haunting melodies, and innovative use of harmony. Satie’s collaborations with artists like Claude Debussy, Pablo Picasso, and Jean Cocteau established him as a central figure in early 20th-century modernism. Despite his whimsical demeanor, he significantly influenced composers such as John Cage and minimalists of the mid-20th century.\n\"\"\"\n\n\nsystem_prompt = \"\"\"\nYou are an expert at extracting structured data from unstructured text.\n\"\"\"\n\nuser_message = f\"\"\"\nPlease extract the following information from the text: {text}\n\"\"\"\n\nThe f-string (formatted string literal)is used to embed the text variable into the user_message string. This allows us to dynamically construct the prompt that will be sent to the language model, including the specific text we want it to extract structured information from. Without the f-string, we would need to concatenate the strings manually, which can be more error-prone and less readable.\n\n\ncompletion = client.beta.chat.completions.parse(\n    model=\"gpt-4o-2024-08-06\",\n    messages=[\n        {\"role\": \"system\", \n        \"content\": system_prompt},\n        {\"role\": \"user\", \n        \"content\": user_message}\n    ],\n    response_format=ComposerFactSheet\n)\n\n\n\nfactsheet = completion.choices[0].message.parsed\nprint(factsheet)\n\nname='Éric Alfred Leslie Satie' birth_year=1866 death_year=1925 country='France' genre='Classical, Avant-Garde' key_works=['Gymnopédies', 'Gnossiennes']\n\n\nWe can now access the fields of the factsheet object.\n\nfactsheet.name\n\n'Éric Alfred Leslie Satie'\n\n\n\nfactsheet.key_works\n\n['Gymnopédies', 'Gnossiennes']\n\n\nLet’s try another example. This time we will attempt to extract information from a paragraph in which some of the information is missing.\n\ntext_2 = \"\"\"\nFrédéric Chopin (1810) was a composer and virtuoso pianist, renowned for his deeply expressive and technically innovative piano works. Often called the “Poet of the Piano,” Chopin’s music, including his nocturnes, mazurkas, and polonaises, is celebrated for blending Polish folk elements with Romantic lyricism. Born near Warsaw, he spent much of his career in Paris, influencing generations of musicians and cementing his place as one of the greatest composers of all time.\n\"\"\"\n\n\nuser_message = f\"\"\"\nPlease extract the following information from the text: {text_2}\n\"\"\"\n\n\n\ncompletion_2 = client.beta.chat.completions.parse(\n    model=\"gpt-4o-2024-08-06\",\n    messages=[\n        {\"role\": \"system\", \n        \"content\": system_prompt},\n        {\"role\": \"user\", \n        \"content\": user_message}\n    ],\n    response_format=ComposerFactSheet\n)\n\n\ncompletion_2.choices[0].message.parsed\n\nComposerFactSheet(name='Frédéric Chopin', birth_year=1810, death_year=None, country='Poland', genre='Romantic', key_works=['nocturnes', 'mazurkas', 'polonaises'])\n\n\nAn obvious next step would be to improve our prompting strategy, so that the model indicates which fields it is able to fill in, and which fields are associated with uncertain or missing information."
+  },
+  {
+    "objectID": "notebooks/structured-output.html#creating-a-reusable-function",
+    "href": "notebooks/structured-output.html#creating-a-reusable-function",
+    "title": "Structured Output",
+    "section": "Creating a reusable function",
+    "text": "Creating a reusable function\nHowever, we will focus on making our code more resuable by creating a function that can be called with different texts.\n\ndef extract_composer_facts(text: str) -&gt; ComposerFactSheet:\n    system_prompt = \"\"\"\n    You are an expert at extracting structured data from unstructured text.\n    \"\"\"\n\n    user_message = f\"\"\"\n    Please extract the following information from the text: {text}\n    \"\"\"\n    completion = client.beta.chat.completions.parse(\n        model=\"gpt-4o-2024-08-06\",\n        messages=[\n            {\"role\": \"system\", \n            \"content\": system_prompt},\n            {\"role\": \"user\", \n            \"content\": user_message}\n        ],\n        response_format=ComposerFactSheet\n    )\n    return completion.choices[0].message.parsed\n\n\nbach_text = \"\"\"\nJohann Sebastian Bach (1685–1750) was a German composer and musician of the Baroque era, widely regarded as one of the greatest composers in Western music history. His masterful works, including the Brandenburg Concertos, The Well-Tempered Clavier, and the Mass in B Minor, showcase unparalleled contrapuntal skill and emotional depth. Bach’s music has influenced countless composers and remains a cornerstone of classical music education and performance worldwide.\n\"\"\"\n\n\n\nextract_composer_facts(bach_text)\n\nComposerFactSheet(name='Johann Sebastian Bach', birth_year=1685, death_year=1750, country='Germany', genre='Baroque', key_works=['Brandenburg Concertos', 'The Well-Tempered Clavier', 'Mass in B Minor'])"
+  },
+  {
+    "objectID": "notebooks/verify-openai.html",
+    "href": "notebooks/verify-openai.html",
+    "title": "Setup and verify Openai",
+    "section": "",
+    "text": "Your OpenAI API key is stored in your .env file. You can access it with the following code:\n\nimport os\nfrom dotenv import load_dotenv\nfrom openai import OpenAI\nfrom IPython.display import display, Markdown\n\n\n\n# Load environment variables from .env file\nload_dotenv()\n\n# Create OpenAI client with API key\nclient = OpenAI(api_key=os.getenv(\"OPENAI_API_KEY\"))\n\n\ndef get_ai_response(message, temperature=1.0, width=80):\n    \"\"\"\n    Get a response from OpenAI's API and display it wrapped in the notebook.\n    \n    Args:\n        message (str): The user's input message\n        temperature (float): Controls randomness (0.0 to 2.0, default 1.0)\n        width (int): Maximum line width for text wrapping\n        \n    Returns:\n        str: The AI's response text\n    \"\"\"\n    try:\n        response = client.chat.completions.create(\n            model=\"gpt-4\",\n            messages=[{\"role\": \"user\", \"content\": message}],\n            temperature=temperature,\n            max_tokens=2048,\n            response_format={\"type\": \"text\"}\n        )\n        \n        # Get the response text\n        text = response.choices[0].message.content\n        \n        # Option 1: Display as wrapped Markdown\n        display(Markdown(f\"```\\n{text}\\n```\"))\n        \n        # return text\n        \n    except Exception as e:\n        return f\"Error: {str(e)}\"\n\n\nget_ai_response(\"Hello, how are you?\")\n\nAs an AI, I don't have feelings, but I'm here and ready to assist you. How can I help you today?\n\n\n\nimport textwrap\n\ndef get_ai_response_2(message, temperature=1.0, width=80):\n    \"\"\"\n    Get a response from OpenAI's API and display it wrapped in the notebook.\n    \n    Args:\n        message (str): The user's input message\n        temperature (float): Controls randomness (0.0 to 2.0, default 1.0)\n        width (int): Maximum line width for text wrapping\n        \n    Returns:\n        str: The AI's response text\n    \"\"\"\n    try:\n        response = client.chat.completions.create(\n            model=\"gpt-4\",\n            messages=[{\"role\": \"user\", \"content\": message}],\n            temperature=temperature,\n            max_tokens=2048,\n            response_format={\"type\": \"text\"}\n        )\n        # Get the response text\n        text = response.choices[0].message.content\n        \n        # Option 2: Wrap text using textwrap\n        wrapped_text = textwrap.fill(text, width=width)\n        print(wrapped_text)\n        \n        # return text\n\n    except Exception as e:\n        return f\"Error: {str(e)}\"\n\n\nget_ai_response_2(\"Hello, how are you?\")\n\nAs an artificial intelligence, I don't have feelings, but I'm functioning as\nexpected. Thank you! How can I assist you today?\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "slides/input/index.html#künstliche-intelligenz",
+    "href": "slides/input/index.html#künstliche-intelligenz",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Künstliche Intelligenz",
+    "text": "Künstliche Intelligenz\n\nKünstliche Intelligenz (KI): Entwicklung von Maschinen, die Aufgaben ausführen können, welche normalerweise menschliche Intelligenz erfordern.\nKI-Systeme können trainiert werden, um aus Daten zu lernen und Muster zu erkennen.\nMögliche Einsatzbereiche:\n\nPersonalisierte Empfehlungen\nSelbstfahrende Autos\nVorhersage von Proteinfaltungen\nErstellung von Musik/Bildern/Texten"
+  },
+  {
+    "objectID": "slides/input/index.html#large-language-models-lmms",
+    "href": "slides/input/index.html#large-language-models-lmms",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Large Language Models (LMMs)",
+    "text": "Large Language Models (LMMs)\n\n\nMaschinelles Lernen:\nModelle, die ohne explizite Programmierung Muster aus Daten erlernen, um Vorhersagen oder Entscheidungen zu treffen. \n\nLarge Language Model:\nEin maschinelles Lernmodell, das darauf trainiert wird, das nächste Wort nach einem Eingabetext (Prompt) vorherzusagen."
+  },
+  {
+    "objectID": "slides/input/index.html#ki-verrichtet-geistige-arbeit",
+    "href": "slides/input/index.html#ki-verrichtet-geistige-arbeit",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "KI verrichtet geistige Arbeit",
+    "text": "KI verrichtet geistige Arbeit\n\nKognitive Arbeit und KI: KI hat das Potential zu verändern, wie geistige Arbeit verrichtet wird.\nWichtige Erkenntnisse aus der Forschung:\n\nDell’Acqua et al. (2023) erforschen die Möglichkeiten, mit KI-Unterstützung kognitive Aufgaben zu verbessern. Fazit: KI kann Produktivität und Qualität steigern, aber auch neue Herausforderungen ergeben.\nToner-Rodgers (n.d.) diskutiert die Implikationen von KI für die Forschung und betont die Balance zwischen menschlicher und maschineller Intelligenz.\nCui et al. (2024) analysieren die Auswirkungen von generativer KI auf Software Engineering und hebt sowohl Chancen als auch Herausforderungen hervor.\n\nErkenntnisse:\n\nAutomatisierung von routinemässigen kognitiven Aufgaben ist möglich\nUnterstützung kreativer Arbeit ist möglich\nDeskilling: Gefahr, bei ständiger KI-Unterstützung eigene Fähigkeiten zu verlieren\nOhne Training: KI-Tools werden oft für ungeeignete Aufgaben eingesetzt"
+  },
+  {
+    "objectID": "slides/input/index.html#körperliche-arbeit",
+    "href": "slides/input/index.html#körperliche-arbeit",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Körperliche Arbeit",
+    "text": "Körperliche Arbeit\n\n\n19. Jahrhundert\n\n\n20. Jahrhundert\n\n\n\nBildquelle: Erstellt mit DALL-E 3"
+  },
+  {
+    "objectID": "slides/input/index.html#wie-sieht-das-für-die-kognitive-arbeit-aus",
+    "href": "slides/input/index.html#wie-sieht-das-für-die-kognitive-arbeit-aus",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Wie sieht das für die kognitive Arbeit aus?",
+    "text": "Wie sieht das für die kognitive Arbeit aus?\n\n\n1960\n\n\n2030 \n\n\n\nBildquelle: Erstellt mit DALL-E 3"
+  },
+  {
+    "objectID": "slides/input/index.html#ankunftstechnologien",
+    "href": "slides/input/index.html#ankunftstechnologien",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Ankunftstechnologien",
+    "text": "Ankunftstechnologien\n\n\nHochschulen stehen vor Herausforderungen mit Technologien wie ChatGPT, weil sie:\n\nTraditionelle Technologie-Evaluierungsprozesse umgehen\nDurch spontane Adoption eingeführt werden\nReaktive statt proaktive Richtlinien erfordern\n\n\n\n\n\nBildquelle: Erstellt mit DALL-E 3 (“ChatGPT arriving at a university in the style of a 14th century painting.”)"
+  },
+  {
+    "objectID": "slides/input/index.html#adoptions--vs.-ankunftstechnologien",
+    "href": "slides/input/index.html#adoptions--vs.-ankunftstechnologien",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Adoptions- vs. Ankunftstechnologien",
+    "text": "Adoptions- vs. Ankunftstechnologien\n(Reich and Dukes 2024)\n\n\nTraditionelle Einführung\n\nSorgfältige Bewertung\nPilotversuche\nMitarbeiterschulung\nKlare Zeitpläne\nEtablierte Richtlinien\n\n\n\n\nBeispiele\n\n\nLearning Management Systems, Smart boards\n\n\n\n\nAnkunftstechnologien\n\nSpontane Nutzung\nUmgehung von Prozessen\nKeine Vorbereitung\nBenutzergeführte Einführung\nReaktive Richtlinien\n\n\n\n\nBeispiele\n\n\nSmartphone, Wikipedia, YouTube, TikTok"
+  },
+  {
+    "objectID": "slides/input/index.html#drei-möglichkeiten-der-ankunft",
+    "href": "slides/input/index.html#drei-möglichkeiten-der-ankunft",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Drei Möglichkeiten der Ankunft",
+    "text": "Drei Möglichkeiten der Ankunft\n\nVon Studierenden angeführt\n\nSpontane Nutzung in Aufgaben\nÜbernahme von KI-gestützten Tools\nKreative Anwendungen\n\nVon Mitarbeitenden angeführt\n\nEntdeckung von KI-Tools\nInformelle Übernahme\nPeer-to-Peer-Austausch\n\nSystemgeführt\n\nKI-Funktionen in bestehender Software\nIntegration in gängige Tools\nPlattform-Updates"
+  },
+  {
+    "objectID": "slides/input/index.html#was-sind-llms",
+    "href": "slides/input/index.html#was-sind-llms",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Was sind LLMs?",
+    "text": "Was sind LLMs?\n\nUm die angekommene Technologie einordnen zu können, ist eine Entmystifizierung notwendig:\n\nLLMs sind statistische Modelle, die Text analysieren, um das nächste Wort vorherzusagen.\nDiese Vorhersage geschieht Wort für Wort.\nJede Vorhersage basiert auf\n\nder Eingabe (Prompt)\nden zuvor generierten Wörtern\nder internen Struktur des Modells\n\n\n\n\\[\n\\newcommand{\\purple}[1]{\\color{purple}{#1}}\n\\newcommand{\\red}[1]{\\color{red}{#1}}\n\\newcommand{\\blue}[1]{\\color{blue}{#1}}\n\\]\n\n\\[\\purple{P(\\text{Wort}_{i+1}} \\mid \\blue{\\text{Kontext}}, \\red{\\text{Modell}})\\]\n\nDas \\(\\purple{\\text{nächste Wort}}\\) wird vorhergesagt, in Abhängigkeit von \\(\\blue{\\text{Inputsequenz}}\\) und \\(\\red{\\text{Modell}}\\)."
+  },
+  {
+    "objectID": "slides/input/index.html#was-sind-llms-1",
+    "href": "slides/input/index.html#was-sind-llms-1",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Was sind LLMs?",
+    "text": "Was sind LLMs?\n\n\nEin LLM kann man sich wie einen ausgefeilten Autocomplete-Mechanismus vorstellen.\n\n\n\n\nBildquelle: www.apple.com"
+  },
+  {
+    "objectID": "slides/input/index.html#wie-generieren-llms-text",
+    "href": "slides/input/index.html#wie-generieren-llms-text",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Wie generieren LLMs Text?",
+    "text": "Wie generieren LLMs Text?"
+  },
+  {
+    "objectID": "slides/input/index.html#wie-können-llms-text-vorhersagen",
+    "href": "slides/input/index.html#wie-können-llms-text-vorhersagen",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Wie können LLMs Text vorhersagen?",
+    "text": "Wie können LLMs Text vorhersagen?\nSie werden trainiert, das nächste Wort in einer gegebenen Wortsequenz zu erraten.\n\n\nEin LLM wird in drei Schritten aufgebaut:\n\nSammeln eines grossen Text-Korpus.\nBasierend auf diesem Text, muss das Modell das nächste Wort in einer gegebenen Wortsequenz vorherzusagen lernen.\nDas Sprachmodell wird feiner abgestimmt, um das gewünschte Verhalten zu erreichen."
+  },
+  {
+    "objectID": "slides/input/index.html#wie-werden-llms-trainiert",
+    "href": "slides/input/index.html#wie-werden-llms-trainiert",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Wie werden LLMs trainiert?",
+    "text": "Wie werden LLMs trainiert?"
+  },
+  {
+    "objectID": "slides/input/index.html#gefahren-und-herausforderungen",
+    "href": "slides/input/index.html#gefahren-und-herausforderungen",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Gefahren und Herausforderungen",
+    "text": "Gefahren und Herausforderungen\n\n\nDie verschiedenen Stufen des Trainings sind mit verschiedenen Arten von Bedenken verbunden:\n\nUrheberrecht: Die trainierten Modelle werden mit Texten trainiert, die möglicherweise Urheberrechtlich geschützt sind.\nBias: Die trainierten Modelle können bestehende Vorurteile aus den Trainingsdaten lernen.\nEnergieverbrauch: Das Training der Modelle verbraucht viel Energie und ist damit umweltbelastend."
+  },
+  {
+    "objectID": "slides/input/index.html#gefahren-und-herausforderungen-1",
+    "href": "slides/input/index.html#gefahren-und-herausforderungen-1",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Gefahren und Herausforderungen",
+    "text": "Gefahren und Herausforderungen\n\n\n\nObschon sich LLMs viel Wissen aneignen1, werden sie nicht trainiert, faktisch korrekte Aussagen zu machen.\nDies bedeutet, dass wir alle Aussagen, die LLMs uns präsentieren, immer kritisch hinterfragen müssen.\nLLMs sind keine Wissensdatenbanken. Informationen immer anhand externer Quellen überprüfen.\n\n\n\n\nDas ganze Wissen, welches nötig ist, um Texte Wort für Wort vorherzusagen."
+  },
+  {
+    "objectID": "slides/input/index.html#chatgpt",
+    "href": "slides/input/index.html#chatgpt",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "ChatGPT",
+    "text": "ChatGPT"
+  },
+  {
+    "objectID": "slides/input/index.html#fragen-beantworten",
+    "href": "slides/input/index.html#fragen-beantworten",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Fragen beantworten",
+    "text": "Fragen beantworten"
+  },
+  {
+    "objectID": "slides/input/index.html#bilder-analysieren",
+    "href": "slides/input/index.html#bilder-analysieren",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Bilder analysieren",
+    "text": "Bilder analysieren"
+  },
+  {
+    "objectID": "slides/input/index.html#dokumente-zusammenfassen",
+    "href": "slides/input/index.html#dokumente-zusammenfassen",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Dokumente zusammenfassen",
+    "text": "Dokumente zusammenfassen"
+  },
+  {
+    "objectID": "slides/input/index.html#output-strukturieren",
+    "href": "slides/input/index.html#output-strukturieren",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Output strukturieren",
+    "text": "Output strukturieren"
+  },
+  {
+    "objectID": "slides/input/index.html#websuche",
+    "href": "slides/input/index.html#websuche",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Websuche",
+    "text": "Websuche"
+  },
+  {
+    "objectID": "slides/input/index.html#datenanalyse",
+    "href": "slides/input/index.html#datenanalyse",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Datenanalyse",
+    "text": "Datenanalyse"
+  },
+  {
+    "objectID": "slides/input/index.html#custom-gpts",
+    "href": "slides/input/index.html#custom-gpts",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Custom GPTs",
+    "text": "Custom GPTs"
+  },
+  {
+    "objectID": "slides/input/index.html#rechtliche-aspekte",
+    "href": "slides/input/index.html#rechtliche-aspekte",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Rechtliche Aspekte",
+    "text": "Rechtliche Aspekte\nZwei wichtige Aspekte, welche bei der Benutzung von LLMs beachtet werden müssen:\n \n\n\nRechtliche Aspekte \n\nWer besitzt die Rechte an den von LLMs generierten Inhalten?\nRisiko von Plagiaten und Urheberrechtsverletzungen\nRichtlinien für den Umgang mit generierten Inhalten\n\n\nDatenschutz \n\nSchutz personenbezogener Daten\nEinhaltung von Datenschutzbestimmungen"
+  },
+  {
+    "objectID": "slides/input/index.html#rechtliche-aspekte-1",
+    "href": "slides/input/index.html#rechtliche-aspekte-1",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Rechtliche Aspekte",
+    "text": "Rechtliche Aspekte\n\nKI-Modelle können mit Inhalten trainiert sein, an denen Dritte Urheberrechte haben—dies kann bei der Verwendung der Modelle zu Urheberrechtsverletzungen führen.\nDer Input (Prompt) kann geschützte Inhalte Dritter enthalten, deren Nutzung ohne rechtliche Grundlage Urheberrechte verletzt.\nDer von der KI generierte Output kann zufällig geschützte Inhalte Dritter enthalten."
+  },
+  {
+    "objectID": "slides/input/index.html#rechtliche-aspekte-2",
+    "href": "slides/input/index.html#rechtliche-aspekte-2",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Rechtliche Aspekte",
+    "text": "Rechtliche Aspekte\n\nAnbieter von KI-Plattformen können sich Rechte an generierten Inhalten vorbehalten, was ebenfalls rechtliche Herausforderungen mit sich bringen kann.\nOpenAI-Nutzungsbedingungen: die Rechte an generierten Inhalten abgetreten, OpenAI behält sich aber Nutzungsrechte vor.\nNutzende/r ist in der Verantwortung, die rechtlichen Anforderungen einzuhalten."
+  },
+  {
+    "objectID": "slides/input/index.html#empfehlung",
+    "href": "slides/input/index.html#empfehlung",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Empfehlung",
+    "text": "Empfehlung\nKI-Policy: Geben Sie deutlich an, dass der Inhalt von einer KI erstellt wurde, sodass kein Nutzer dies übersehen oder missverstehen kann:\n\n\n\n\n\n\n\nDeklaration\n\n\nDer/die Autor*in hat diesen Text teilweise mit [[Modell]] erstellt. Nach der Erstellung des Entwurfs hat der/die Autor*in den Text überprüft, bearbeitet und nach eigenem Ermessen angepasst und übernimmt die volle Verantwortung für den Inhalt dieser Veröffentlichung.\n\n\n\n\nZitieren Sie das verwendete Modell in ähnlicher Weise, wie Sie Software zitieren würden."
+  },
+  {
+    "objectID": "slides/input/index.html#datenschutz",
+    "href": "slides/input/index.html#datenschutz",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Datenschutz",
+    "text": "Datenschutz\nDatenschutz allgemein bedeutet:\n\nsicherzustellen, dass keine persönlichen Daten der Lehrenden oder Lernenden ohne deren Zustimmung gesammelt, gespeichert oder weiterverarbeitet werden, um ihre Privatsphäre und Sicherheit zu gewährleisten.\nTransparenz darüber, welche Daten erhoben und wie sie verwendet werden.\nsicherzustellen, dass Daten nicht für andere Zwecke als die ursprünglich angegebenen verwendet werden\nRecht der Betroffenen auf Auskunft, Berichtigung, Löschung und Widerspruch\nEinhaltung von Datenschutzgesetzen und -vorschriften\n\n\n\n\nLehrpersonen müssen Datenschutz beim Einsatz von (digitalen) Tools immer beachten."
+  },
+  {
+    "objectID": "slides/input/index.html#schutzmassnahmen",
+    "href": "slides/input/index.html#schutzmassnahmen",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Schutzmassnahmen",
+    "text": "Schutzmassnahmen\n\n\n\nKeine persönlichen Daten in die Eingabe von ChatGPT einfliessen lassen (nur anonymisierte Informationen)\nKeine Eingabe von sensiblen oder vertraulichen Informationen (Informationen über gesundheitliche, finanzielle oder private Angelegenheiten)\n\n\nEinstellungen im Konto für Datenkontrolle:"
+  },
+  {
+    "objectID": "slides/input/index.html#copilot-verwenden",
+    "href": "slides/input/index.html#copilot-verwenden",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Copilot verwenden",
+    "text": "Copilot verwenden\n\n\nMicrosoft Copilot garantiert, dass die Daten der Benutzer gesichert sind:\n Schutz von Unternehmensdaten\n\nBenutzerdaten sind durch Verschlüsselung, Sicherheitskontrollen und Datenisolation (gleich wie bei E-Mails in Exchange und Dateien in SharePoint) geschützt.\nMicrosoft verwendet Daten nicht ohne Anweisung des Benutzers."
+  },
+  {
+    "objectID": "slides/input/index.html#detektion-von-ki-generiertem-inhalt",
+    "href": "slides/input/index.html#detektion-von-ki-generiertem-inhalt",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Detektion von KI-generiertem Inhalt",
+    "text": "Detektion von KI-generiertem Inhalt\n\n\nHeuristiken:\n\nDurch Verwendung spezifischer Vokabeln und Phrasen: “delve”, “vibrant”, “embark”, “it’s important to note”, “based on the data provided”.\nDurch Verwendung des in der Schweiz unüblichen scharfen S (ß).\n\n\nDetektion anhand vom Schreibstil und Inhalt:\n\nErkennungswerkzeuge sind nicht sehr nützlich und können leicht umgangen werden.\nErkennungs-Illusion: Lehrkräfte überschätzen ihre Erkennungsfähigkeiten (Fleckenstein et al. 2024)."
+  },
+  {
+    "objectID": "slides/input/index.html#fragen",
+    "href": "slides/input/index.html#fragen",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Fragen?",
+    "text": "Fragen?"
+  },
+  {
+    "objectID": "slides/input/index.html#references",
+    "href": "slides/input/index.html#references",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "References",
+    "text": "References\n\n\nCui, Zheyuan (Kevin), Mert Demirer, Sonia Jaffe, Leon Musolff, Sida Peng, and Tobias Salz. 2024. “The Effects of Generative AI on High Skilled Work: Evidence from Three Field Experiments with Software Developers.” SSRN Scholarly Paper. Rochester, NY. September 3, 2024. https://doi.org/10.2139/ssrn.4945566.\n\n\nDell’Acqua, Fabrizio, Edward McFowland, Ethan R. Mollick, Hila Lifshitz-Assaf, Katherine Kellogg, Saran Rajendran, Lisa Krayer, François Candelon, and Karim R. Lakhani. 2023. “Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality.” SSRN Electronic Journal. https://doi.org/10.2139/ssrn.4573321.\n\n\nFleckenstein, Johanna, Jennifer Meyer, Thorben Jansen, Stefan D. Keller, Olaf Köller, and Jens Möller. 2024. “Do Teachers Spot AI? Evaluating the Detectability of AI-generated Texts Among Student Essays.” Computers and Education: Artificial Intelligence 6 (June): 100209. https://doi.org/10.1016/j.caeai.2024.100209.\n\n\nReich, Justin, and Jesse Dukes. 2024. “Toward a New Theory of Arrival Technologies.” November 14, 2024. https://doi.org/10.35542/osf.io/x6vn7.\n\n\nToner-Rodgers, Aidan. n.d. “Artificial Intelligence, Scientific Discovery, and Product Innovation.”"
+  },
+  {
+    "objectID": "slides/prompt-engineering-basics/index.html#understand-llms-through-hands-on-experience",
+    "href": "slides/prompt-engineering-basics/index.html#understand-llms-through-hands-on-experience",
+    "title": "Prompt Engineering: Basics",
+    "section": "Understand LLMs through Hands-On Experience",
+    "text": "Understand LLMs through Hands-On Experience\n\nDedicate time to actively using large language models (LLMs).\nUtilize LLMs for tasks related to your work or personal interests.\nExplore their abilities by posing diverse and unique prompts.\nObserve where LLMs work well and where they don’t."
+  },
+  {
+    "objectID": "slides/prompt-engineering-basics/index.html#a-useful-metaphor",
+    "href": "slides/prompt-engineering-basics/index.html#a-useful-metaphor",
+    "title": "Prompt Engineering: Basics",
+    "section": "A useful metaphor",
+    "text": "A useful metaphor\nImagine you are giving instructions to a junior intern or assistant."
+  },
+  {
+    "objectID": "slides/prompt-engineering-basics/index.html#zero-shot-prompting",
+    "href": "slides/prompt-engineering-basics/index.html#zero-shot-prompting",
+    "title": "Prompt Engineering: Basics",
+    "section": "Zero-Shot Prompting",
+    "text": "Zero-Shot Prompting\nDefinition: Asking the model to perform a task without providing examples.\n\n\n\n\n\n\nExample Prompt\n\n\nTranslate the following English text to French: ’Hello, how are you?"
+  },
+  {
+    "objectID": "slides/prompt-engineering-basics/index.html#role-assignment",
+    "href": "slides/prompt-engineering-basics/index.html#role-assignment",
+    "title": "Prompt Engineering: Basics",
+    "section": "Role assignment",
+    "text": "Role assignment\nTechnique: Define a specific role for the AI to adopt.\n\n\n\n\n\n\nExample Prompt\n\n\nYou are an expert historian. Explain the causes of World War I.\n\n\n\n\n\n\n\n\n\n\nExample Prompt\n\n\nYou are an 8-year-old child. Explain the causes of World War I.\n\n\n\n\n\n\n\n\n\n\nExample Prompt\n\n\nYou are an experienced emergency room nurse with over 15 years of experience in patient triage. Your role is to perform initial assessments of patients based on their reported symptoms and medical history. You have a calm demeanor and the ability to quickly prioritize cases based on severity. In this role, you will categorize patients’ conditions and recommend appropriate next steps."
+  },
+  {
+    "objectID": "slides/prompt-engineering-basics/index.html#clear-communication",
+    "href": "slides/prompt-engineering-basics/index.html#clear-communication",
+    "title": "Prompt Engineering: Basics",
+    "section": "Clear communication",
+    "text": "Clear communication\nTechnique: Use precise language and specific instructions\n\n\n\n\n\n\nExample Prompt\n\n\nYou are an ER nurse with 15+ years of triage experience.\nYour tasks: - Assess patients quickly based on symptoms and medical - Categorize conditions by severity - Recommend next steps for treatment\nYou are calm under pressure and efficient in prioritizing cases.\n\n\n\n\n\n\n\n\n\n\nExample Prompt\n\n\nList five benefits of regular exercise, each in a separate bullet point."
+  },
+  {
+    "objectID": "slides/prompt-engineering-basics/index.html#emotion-prompting",
+    "href": "slides/prompt-engineering-basics/index.html#emotion-prompting",
+    "title": "Prompt Engineering: Basics",
+    "section": "Emotion prompting",
+    "text": "Emotion prompting\nTechnique: Incorporate emotional language to potentially improve accuracy and response quality1.\n\n\n\n\n\n\nExample Prompt\n\n\nI’m really excited to learn about this! Can you enthusiastically explain how photosynthesis works?\n\n\n\n\n\n\n\n\n\n\nExample Prompt\n\n\nRate this essay according to [these criteria]. You will receive a bonus if you do a good job.\n\n\n\nEmotion prompting’s effectiveness in improving language model responses is debated. Some argue it could enhance naturalness, while others suggest minimal or inconsistent impact across tasks and models. More research is needed."
+  },
+  {
+    "objectID": "slides/prompt-engineering-basics/index.html#provide-context",
+    "href": "slides/prompt-engineering-basics/index.html#provide-context",
+    "title": "Prompt Engineering: Basics",
+    "section": "Provide context",
+    "text": "Provide context\nTechnique: Give relevant background information\n\n\n\n\n\n\nExample Prompt\n\n\nContext: You are working in a busy urban hospital emergency room during flu season. It’s currently 2 AM on a Saturday, and the waiting room is full. The hospital has been dealing with a recent outbreak of a new strain of influenza in the community.\nPatient Information:\n\n45-year-old male\nNo known pre-existing conditions\nNot on any regular medications\nLast flu shot was 2 years ago\nGiven this context and patient information, assess the following reported symptoms: [Insert symptoms here]"
+  },
+  {
+    "objectID": "slides/prompt-engineering-basics/index.html#use-examples",
+    "href": "slides/prompt-engineering-basics/index.html#use-examples",
+    "title": "Prompt Engineering: Basics",
+    "section": "Use examples",
+    "text": "Use examples\nThis is known as few-shot prompting.   Technique: Illustrate desired output with examples.\n\n\n\n\n\n\nExample Prompt\n\n\nPerform a triage assessment based on the patient’s symptoms. Format your response similar to the following examples:\nExample 1: Symptoms: Chest pain, shortness of breath, left arm numbness Assessment: Emergency Reason: Symptoms strongly indicate a possible heart attack Action: Immediate medical attention required. Call for a cardiac team.\nExample 2: Symptoms: Mild fever, sore throat, fatigue Assessment: Non-urgent Reason: Symptoms suggest a common cold or mild flu Action: Rest at home, monitor symptoms, seek medical attention if condition worsens.\nAssess the following patient:\nSymptoms: [Insert patient’s symptoms here]"
+  },
+  {
+    "objectID": "slides/prompt-engineering-basics/index.html#specify-output-format",
+    "href": "slides/prompt-engineering-basics/index.html#specify-output-format",
+    "title": "Prompt Engineering: Basics",
+    "section": "Specify Output Format",
+    "text": "Specify Output Format\nFor example:\n\na Markdown table\nWord or Excel document\nCSV file\nStructured list\n\n\n\n\n\n\n\nExample Prompt\n\n\nBased on the patient’s symptoms, create a triage assessment. Present your findings in a Markdown table with the following columns:\n\nSeverity\nPrimary Concern\nSymptoms\nRecommended Action\n\nUse one of three severity levels: Emergency, Urgent, or Non-urgent.\nThe patient has the following symptoms: [Insert symptoms here]"
+  },
+  {
+    "objectID": "slides/prompt-engineering-basics/index.html#structure-input-using-markdown",
+    "href": "slides/prompt-engineering-basics/index.html#structure-input-using-markdown",
+    "title": "Prompt Engineering: Basics",
+    "section": "Structure Input Using Markdown",
+    "text": "Structure Input Using Markdown\nTechnique: Organize input information in a structured format using Markdown.\n\n\n\n\n\n\nExample Prompt\n\n\nBased on the patient's symptoms, create a triage assessment.\n\n# Patient Triage Information\n\n## Patient Details\n\n- **Name**: John Doe\n- **Age**: 45\n- **Gender**: Male\n- **Medical History**: No known pre-existing conditions\n- \n## Current Symptoms\n1. Chest pain (severity: 8/10)\n2. Shortness of breath\n3. Left arm numbness"
+  },
+  {
+    "objectID": "slides/prompt-engineering-basics/index.html#ask-an-llm",
+    "href": "slides/prompt-engineering-basics/index.html#ask-an-llm",
+    "title": "Prompt Engineering: Basics",
+    "section": "Ask an LLM",
+    "text": "Ask an LLM\nLLMs have been trained on a lot of data, including prompting techniques1.\n\n\n\n\n\n\nExample Prompt\n\n\nAs a language model, how would you proceed when given the following prompt: ““” You are an ER nurse with 15+ years of triage experience.\nYour tasks: 1. Assess patients quickly based on symptoms and medical history 2. Categorize conditions by severity 3. Recommend next steps for treatment 4. You are calm under pressure and efficient in prioritizing cases. ““”\n\n\n\n\n\n\n\n\n\nExample Prompt\n\n\nHow would you improve this prompt?\n\n\n\nIt is debated whether LLMs are particularly suited to writing prompting techniques."
+  },
+  {
+    "objectID": "slides/prompt-engineering-basics/index.html#generate-python-code",
+    "href": "slides/prompt-engineering-basics/index.html#generate-python-code",
+    "title": "Prompt Engineering: Basics",
+    "section": "Generate Python code",
+    "text": "Generate Python code\nTechnique: ask an LLM to generate Python code, or in the case of ChatGPT to “use Python”\n\n\n\n\n\n\nExample Prompt\n\n\n[Insert query here…]\nUse Python."
+  },
+  {
+    "objectID": "slides/prompt-engineering-basics/index.html#references",
+    "href": "slides/prompt-engineering-basics/index.html#references",
+    "title": "Prompt Engineering: Basics",
+    "section": "References",
+    "text": "References"
+  },
+  {
+    "objectID": "slides/prompting/index.html#was-ist-ein-prompt",
+    "href": "slides/prompting/index.html#was-ist-ein-prompt",
+    "title": "Prompting: Eine Einführung",
+    "section": "Was ist ein Prompt?",
+    "text": "Was ist ein Prompt?\n  \n\nEin Prompt ist ein Text (Anweisung), das einem generativen KI-Modell gegeben wird, um bestimmte Informationen zu generieren oder zu verstehen.\nPrompts dienen als Startpunkt beispielsweise für die Generierung von Ideen, Texten, Übersetzungen und Antworten auf Fragen."
+  },
+  {
+    "objectID": "slides/prompting/index.html#understand-llms-through-hands-on-experience",
+    "href": "slides/prompting/index.html#understand-llms-through-hands-on-experience",
+    "title": "Prompting: Eine Einführung",
+    "section": "Understand LLMs through Hands-On Experience",
+    "text": "Understand LLMs through Hands-On Experience\n\nDedicate time to actively using large language models (LLMs).\nUtilize LLMs for tasks related to your work or personal interests.\nExplore their abilities by posing diverse and unique prompts.\nObserve where LLMs work well and where they don’t."
+  },
+  {
+    "objectID": "slides/prompting/index.html#a-useful-metaphor",
+    "href": "slides/prompting/index.html#a-useful-metaphor",
+    "title": "Prompting: Eine Einführung",
+    "section": "A useful metaphor",
+    "text": "A useful metaphor\nImagine you are giving instructions to a junior intern or assistant."
+  },
+  {
+    "objectID": "slides/prompting/index.html#zero-shot-prompting",
+    "href": "slides/prompting/index.html#zero-shot-prompting",
+    "title": "Prompting: Eine Einführung",
+    "section": "Zero-Shot Prompting",
+    "text": "Zero-Shot Prompting\nDefinition: Asking the model to perform a task without providing examples.\n\n\n\n\n\n\nExample Prompt\n\n\nTranslate the following English text to French: ’Hello, how are you?"
+  },
+  {
+    "objectID": "slides/prompting/index.html#role-assignment",
+    "href": "slides/prompting/index.html#role-assignment",
+    "title": "Prompting: Eine Einführung",
+    "section": "Role assignment",
+    "text": "Role assignment\nTechnique: Define a specific role for the AI to adopt.\n\n\n\n\n\n\nExample Prompt\n\n\nYou are an expert historian. Explain the causes of World War I.\n\n\n\n\n\n\n\n\n\n\nExample Prompt\n\n\nYou are an 8-year-old child. Explain the causes of World War I.\n\n\n\n\n\n\n\n\n\n\nExample Prompt\n\n\nYou are an experienced emergency room nurse with over 15 years of experience in patient triage. Your role is to perform initial assessments of patients based on their reported symptoms and medical history. You have a calm demeanor and the ability to quickly prioritize cases based on severity. In this role, you will categorize patients’ conditions and recommend appropriate next steps."
+  },
+  {
+    "objectID": "slides/prompting/index.html#clear-communication",
+    "href": "slides/prompting/index.html#clear-communication",
+    "title": "Prompting: Eine Einführung",
+    "section": "Clear communication",
+    "text": "Clear communication\nTechnique: Use precise language and specific instructions\n\n\n\n\n\n\nExample Prompt\n\n\nYou are an ER nurse with 15+ years of triage experience.\nYour tasks: - Assess patients quickly based on symptoms and medical - Categorize conditions by severity - Recommend next steps for treatment\nYou are calm under pressure and efficient in prioritizing cases.\n\n\n\n\n\n\n\n\n\n\nExample Prompt\n\n\nList five benefits of regular exercise, each in a separate bullet point."
+  },
+  {
+    "objectID": "slides/prompting/index.html#emotion-prompting",
+    "href": "slides/prompting/index.html#emotion-prompting",
+    "title": "Prompting: Eine Einführung",
+    "section": "Emotion prompting",
+    "text": "Emotion prompting\nTechnique: Incorporate emotional language to potentially improve accuracy and response quality1.\n\n\n\n\n\n\nExample Prompt\n\n\nI’m really excited to learn about this! Can you enthusiastically explain how photosynthesis works?\n\n\n\n\n\n\n\n\n\n\nExample Prompt\n\n\nRate this essay according to [these criteria]. You will receive a bonus if you do a good job.\n\n\n\nEmotion prompting’s effectiveness in improving language model responses is debated. Some argue it could enhance naturalness, while others suggest minimal or inconsistent impact across tasks and models. More research is needed."
+  },
+  {
+    "objectID": "slides/prompting/index.html#provide-context",
+    "href": "slides/prompting/index.html#provide-context",
+    "title": "Prompting: Eine Einführung",
+    "section": "Provide context",
+    "text": "Provide context\nTechnique: Give relevant background information\n\n\n\n\n\n\nExample Prompt\n\n\nContext: You are working in a busy urban hospital emergency room during flu season. It’s currently 2 AM on a Saturday, and the waiting room is full. The hospital has been dealing with a recent outbreak of a new strain of influenza in the community.\nPatient Information:\n\n45-year-old male\nNo known pre-existing conditions\nNot on any regular medications\nLast flu shot was 2 years ago\nGiven this context and patient information, assess the following reported symptoms: [Insert symptoms here]"
+  },
+  {
+    "objectID": "slides/prompting/index.html#use-examples",
+    "href": "slides/prompting/index.html#use-examples",
+    "title": "Prompting: Eine Einführung",
+    "section": "Use examples",
+    "text": "Use examples\nThis is known as few-shot prompting.   Technique: Illustrate desired output with examples.\n\n\n\n\n\n\nExample Prompt\n\n\nPerform a triage assessment based on the patient’s symptoms. Format your response similar to the following examples:\nExample 1: Symptoms: Chest pain, shortness of breath, left arm numbness Assessment: Emergency Reason: Symptoms strongly indicate a possible heart attack Action: Immediate medical attention required. Call for a cardiac team.\nExample 2: Symptoms: Mild fever, sore throat, fatigue Assessment: Non-urgent Reason: Symptoms suggest a common cold or mild flu Action: Rest at home, monitor symptoms, seek medical attention if condition worsens.\nAssess the following patient:\nSymptoms: [Insert patient’s symptoms here]"
+  },
+  {
+    "objectID": "slides/prompting/index.html#specify-output-format",
+    "href": "slides/prompting/index.html#specify-output-format",
+    "title": "Prompting: Eine Einführung",
+    "section": "Specify Output Format",
+    "text": "Specify Output Format\nFor example:\n\na Markdown table\nWord or Excel document\nCSV file\nStructured list\n\n\n\n\n\n\n\nExample Prompt\n\n\nBased on the patient’s symptoms, create a triage assessment. Present your findings in a Markdown table with the following columns:\n\nSeverity\nPrimary Concern\nSymptoms\nRecommended Action\n\nUse one of three severity levels: Emergency, Urgent, or Non-urgent.\nThe patient has the following symptoms: [Insert symptoms here]"
+  },
+  {
+    "objectID": "slides/prompting/index.html#structure-input-using-markdown",
+    "href": "slides/prompting/index.html#structure-input-using-markdown",
+    "title": "Prompting: Eine Einführung",
+    "section": "Structure Input Using Markdown",
+    "text": "Structure Input Using Markdown\nTechnique: Organize input information in a structured format using Markdown.\n\n\n\n\n\n\nExample Prompt\n\n\nBased on the patient's symptoms, create a triage assessment.\n\n# Patient Triage Information\n\n## Patient Details\n\n- **Name**: John Doe\n- **Age**: 45\n- **Gender**: Male\n- **Medical History**: No known pre-existing conditions\n- \n## Current Symptoms\n1. Chest pain (severity: 8/10)\n2. Shortness of breath\n3. Left arm numbness"
+  },
+  {
+    "objectID": "slides/prompting/index.html#ask-an-llm",
+    "href": "slides/prompting/index.html#ask-an-llm",
+    "title": "Prompting: Eine Einführung",
+    "section": "Ask an LLM",
+    "text": "Ask an LLM\nLLMs have been trained on a lot of data, including prompting techniques1.\n\n\n\n\n\n\nExample Prompt\n\n\nAs a language model, how would you proceed when given the following prompt: ““” You are an ER nurse with 15+ years of triage experience.\nYour tasks: 1. Assess patients quickly based on symptoms and medical history 2. Categorize conditions by severity 3. Recommend next steps for treatment 4. You are calm under pressure and efficient in prioritizing cases. ““”\n\n\n\n\n\n\n\n\n\nExample Prompt\n\n\nHow would you improve this prompt?\n\n\n\nIt is debated whether LLMs are particularly suited to writing prompting techniques."
+  },
+  {
+    "objectID": "slides/prompting/index.html#generate-python-code",
+    "href": "slides/prompting/index.html#generate-python-code",
+    "title": "Prompting: Eine Einführung",
+    "section": "Generate Python code",
+    "text": "Generate Python code\nTechnique: ask an LLM to generate Python code, or in the case of ChatGPT to “use Python”\n\n\n\n\n\n\nExample Prompt\n\n\n[Insert query here…]\nUse Python."
+  },
+  {
+    "objectID": "slides/prompting/index.html#references",
+    "href": "slides/prompting/index.html#references",
+    "title": "Prompting: Eine Einführung",
+    "section": "References",
+    "text": "References"
+  },
+  {
+    "objectID": "slides/input/index.html#was-sind-llms-2",
+    "href": "slides/input/index.html#was-sind-llms-2",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Was sind LLMs?",
+    "text": "Was sind LLMs?\n\n\nEin LLM kann man sich wie einen ausgefeilten Autocomplete-Mechanismus vorstellen.\n\n\n\n\nBildquelle: www.apple.com"
+  },
+  {
+    "objectID": "slides/input/index.html#kontext",
+    "href": "slides/input/index.html#kontext",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Kontext",
+    "text": "Kontext\nNicht alle Teile des Kontexts sind gleich wichtig:\n\n\n\n“Die Familie, die sehr wohlhabend war, lebte in einem grossen Haus. Das Haus stand inmitten eines weitläufigen Gartens. Es war bekannt für seine prächtige Fassade und die grosszügigen ___”\n\n\n\n\nNach Thomas Mann, Buddenbrooks\n\nWelche Wörter sind besonders wichtig, um\n\ndie Bedeutung des Satzes zu erfassen?\ndas nächste Wort vorherzusagen?"
+  },
+  {
+    "objectID": "slides/input/index.html#vorhersage",
+    "href": "slides/input/index.html#vorhersage",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Vorhersage",
+    "text": "Vorhersage\nNicht alle Teile des Kontexts sind gleich wichtig:\n \n\n\n\n“Die Familie, die sehr wohlhabend war, lebte in einem grossen Haus. Das Haus stand inmitten eines weitläufigen Gartens. Es war bekannt für seine prächtige Fassade und die grosszügigen ___”\n\n\n\n\nNach Thomas Mann, Buddenbrooks\n\n \nWelche Wörter sind besonders wichtig, um\n\ndie Bedeutung des Satzes zu erfassen?\ndas nächste Wort vorherzusagen?"
+  },
+  {
+    "objectID": "slides/input/index.html#kontext-verstehen",
+    "href": "slides/input/index.html#kontext-verstehen",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Kontext verstehen",
+    "text": "Kontext verstehen\n\n\n\n“Die Familie, die sehr wohlhabend war, lebte in einem grossen Haus. Das Haus stand inmitten eines weitläufigen Gartens. Es war bekannt für seine prächtige Fassade und die grosszügigen ___”\n\n\n\nSyntaktische Struktur (Grammatik und Struktur des Satzes):\n\nDas Wort “grosszügigen” ist ein Adjektiv, das wahrscheinlich ein Nomen - im Plural beschreibt (Dativ oder Akkusativ wegen der Endung “-en”).\nDer Satz bezieht sich auf das Haus und den Garten, daher liegt der Fokus vermutlich auf deren Eigenschaften.\n\nSemantischer Kontext (Bedeutung):\nDie Beschreibung hebt Wohlstand hervor. Das nächste Wort beschreibt vermutlich etwas Luxuriöses oder Weitläufiges.\nLexikalische Kohärenz (Wörter und deren Bedeutungen im Kontext):\nNach “grosszügigen” folgen häufig Nomen, die Räume, Flächen oder architektonische Elemente beschreiben, z. B. “Räume”, “Gärten”, “Fenster”."
+  },
+  {
+    "objectID": "notebooks/spacy.html",
+    "href": "notebooks/spacy.html",
+    "title": "Fokus Administration HKB",
+    "section": "",
+    "text": "import spacy\n\n\n\n# Load the German SpaCy model\nnlp = spacy.load(\"de_core_news_md\")\n\n\n\n# Analyze the sentence\ntext = \"\"\"Die Familie, die sehr wohlhabend war, lebte in einem grossen Haus. \nDas Haus stand inmitten eines weitläufigen Gartens. Es war bekannt für seine \nprächtige Fassade und die grosszügigen\"\"\"\n\n\n\ndoc = nlp(text)\n\n\n\n# Dependency parsing and POS tagging\nfor token in doc:\n    print(f\"{token.text:15} {token.pos_:10} {token.dep_:10} {token.head.text}\")\n\nDie             DET        nk         Familie\nFamilie         NOUN       sb         lebte\n,               PUNCT      punct      Familie\ndie             PRON       sb         war\nsehr            ADV        mo         wohlhabend\nwohlhabend      ADV        pd         war\nwar             AUX        rc         Familie\n,               PUNCT      punct      lebte\nlebte           VERB       ROOT       lebte\nin              ADP        mo         lebte\neinem           DET        nk         Haus\ngrossen         ADJ        nk         Haus\nHaus            NOUN       nk         in\n.               PUNCT      punct      lebte\n\n               SPACE      dep        .\nDas             DET        nk         Haus\nHaus            NOUN       sb         stand\nstand           VERB       ROOT       stand\ninmitten        ADP        mo         stand\neines           DET        nk         Gartens\nweitläufigen    ADJ        nk         Gartens\nGartens         NOUN       nk         inmitten\n.               PUNCT      punct      stand\nEs              PRON       sb         war\nwar             AUX        ROOT       war\nbekannt         ADV        pd         war\nfür             ADP        mo         bekannt\nseine           DET        nk         Fassade\n\n               SPACE      dep        seine\nprächtige       ADJ        nk         Fassade\nFassade         NOUN       nk         für\nund             CCONJ      cd         Fassade\ndie             DET        nk         grosszügigen\ngrosszügigen    ADJ        cj         und\n\n\n\n\n# Suggest similar words or predict based on context\nsimilar_words = [word.text for word in doc if word.pos_ == \"NOUN\"]\nprint(\"Potential continuations:\", similar_words)\n\nPotential continuations: ['Familie', 'Haus', 'Haus', 'Gartens', 'Fassade']\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "slides/input/index.html#adoptions--vs.-ankunfts-technologien",
+    "href": "slides/input/index.html#adoptions--vs.-ankunfts-technologien",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Adoptions- vs. Ankunfts-Technologien",
+    "text": "Adoptions- vs. Ankunfts-Technologien\n(Reich and Dukes 2024)\n\n\nTraditionelle Einführung\n\nSorgfältige Bewertung\nPilotversuche\nMitarbeiterschulung\nKlare Zeitpläne\nEtablierte Richtlinien\n\n\n\n\nBeispiele: Adoptions-Technologien\n\n\nLearning Management Systems, Smart boards\n\n\n\n\nAnkunftstechnologien\n\nSpontane Nutzung\nUmgehung von Prozessen\nKeine Vorbereitung\nBenutzergeführte Einführung\nReaktive Richtlinien\n\n\n\n\nBeispiele: Ankunfts-Technologien\n\n\nSmartphone, Wikipedia, YouTube, TikTok"
+  },
+  {
+    "objectID": "slides/input/index.html#datensicherheit",
+    "href": "slides/input/index.html#datensicherheit",
+    "title": "KI: erste Schritte & rechtliche Aspekte",
+    "section": "Datensicherheit",
+    "text": "Datensicherheit\nDies bedeutet:\n\nDaten so zu speichern, dass sie nicht verloren gehen\nDaten nicht manipuliert werden können\nTechnische und organisatorische Massnahmen zum Schutz vor unbefugtem Zugriff auf Daten"
+  },
+  {
+    "objectID": "slides/prompting/index.html#wie-wird-text-output-erzeugt",
+    "href": "slides/prompting/index.html#wie-wird-text-output-erzeugt",
+    "title": "Prompting: Eine Einführung",
+    "section": "Wie wird Text (Output) erzeugt?",
+    "text": "Wie wird Text (Output) erzeugt?"
+  },
+  {
+    "objectID": "slides/prompting/index.html#wie-kann-ich-den-output-beeinflussen",
+    "href": "slides/prompting/index.html#wie-kann-ich-den-output-beeinflussen",
+    "title": "Prompting: Eine Einführung",
+    "section": "Wie kann ich den Output beeinflussen?\u000b",
+    "text": "Wie kann ich den Output beeinflussen?"
+  },
+  {
+    "objectID": "slides/prompting/index.html#prompting-grundlagen",
+    "href": "slides/prompting/index.html#prompting-grundlagen",
+    "title": "Prompting: Eine Einführung",
+    "section": "Prompting: Grundlagen",
+    "text": "Prompting: Grundlagen\n\n\nÜberblick:\n\nSei klar und präzise\nFange einfach an und verbessere\nVerwende Beispiele und Kontext\nLeite den Denkprozess\nNutze ChatGPT/Copilots “Wissen”\nVerwende Rollenspieltechniken"
+  },
+  {
+    "objectID": "slides/prompting/index.html#prompting-grundlagen-1",
+    "href": "slides/prompting/index.html#prompting-grundlagen-1",
+    "title": "Prompting: Eine Einführung",
+    "section": "Prompting: Grundlagen",
+    "text": "Prompting: Grundlagen\n1. Sei klar und präzise\n\nFormuliere deine Aufgabe oder Frage präzise\nGib relevanten Kontext und Details an\nUnterteile komplexe Aufgaben in kleinere Schritte\n\n\n\n\n\n❌\n\n\nBeschreibe, wie KI in der Musikproduktion eingesetzt wird.\n\n\n\n\n\n\n\n\n✅\n\n\nBeschreibe in etwa 200 Wörter, wie Künstliche Intelligenz zur Analyse und zum Arrangement von Jazz-Kompositionen verwendet werden kann. Gib konkrete Beispiele für Algorithmen oder Werkzeuge an, die in der Musikproduktion genutzt werden, um Muster zu erkennen und Vorschläge für Harmonievariationen zu generieren."
+  },
+  {
+    "objectID": "slides/prompting/index.html#sei-klar-und-präzise",
+    "href": "slides/prompting/index.html#sei-klar-und-präzise",
+    "title": "Prompting: Eine Einführung",
+    "section": "1. Sei klar und präzise",
+    "text": "1. Sei klar und präzise\n\nFormuliere deine Aufgabe oder Frage präzise\nGib relevanten Kontext und Details an\nUnterteile komplexe Aufgaben in kleinere Schritte\n\n\n\n\n\n❌\n\n\nBeschreibe, wie KI in der Musikproduktion eingesetzt wird.\n\n\n\n\n\n\n\n\n✅\n\n\nBeschreibe in etwa 200 Wörter, wie Künstliche Intelligenz zur Analyse und zum Arrangement von Jazz-Kompositionen verwendet werden kann. Gib konkrete Beispiele für Algorithmen oder Werkzeuge an, die in der Musikproduktion genutzt werden, um Muster zu erkennen und Vorschläge für Harmonievariationen zu generieren."
+  },
+  {
+    "objectID": "slides/prompting/index.html#fange-einfach-an-und-verbessere",
+    "href": "slides/prompting/index.html#fange-einfach-an-und-verbessere",
+    "title": "Prompting: Eine Einführung",
+    "section": "2. Fange einfach an und verbessere",
+    "text": "2. Fange einfach an und verbessere\nBeispiel 1:\n\n\n\n\n❌\n\n\nEntwickle ein vollständiges Regiekonzept für eine moderne Adaption von Shakespeares Hamlet, einschliesslich Bühnenbild, Kostümgestaltung, Lichtdesign und einer Analyse der Charaktere.\n\n\n\n\n\n\n\n\n✅\n\n\nErstelle drei zentrale Ideen, wie eine moderne Version von Hamlet durch Bühnenbild und Kostüme visuell vermittelt werden könnte.\n\n\n\n\n\nWichtig: Dies ist nur der Ausgangspunkt. Basierend auf der Antwort solltest du weitere Fragen stellen oder um Erklärungen bitten. Zum Beispiel:\n\n“Kannst du ein Beispiel für ein spezifisches Kostümdetail geben, das moderne Elemente einbezieht?”\n“Wie könnte das Bühnenbild die Stimmung oder den inneren Konflikt der Charaktere widerspiegeln?”"
+  },
+  {
+    "objectID": "slides/prompting/index.html#fange-einfach-an-und-verbessere-1",
+    "href": "slides/prompting/index.html#fange-einfach-an-und-verbessere-1",
+    "title": "Prompting: Eine Einführung",
+    "section": "2. Fange einfach an und verbessere",
+    "text": "2. Fange einfach an und verbessere\nBeispiel 2:\n\n\n\n\n❌\n\n\nErstelle einen umfassenden, mehrstufigen Behandlungsplan für einen Patienten mit chronischer Hypertonie, einschließlich Medikamentenregime, Lebensstiländerungen, Nachsorgezeitplan und möglichen Komplikationen.\n\n\n\n\n\n\n\n\n✅\n\n\nSchlage drei wichtige Lebensstiländerungen für einen Patienten vor, bei dem kürzlich eine leichte Hypertonie diagnostiziert wurde.\n\n\n\n\n\nWichtig: Dies ist nur der Ausgangspunkt. Basierend auf der Antwort solltest du weitere Fragen stellen oder um Erklärungen bitten. Zum Beispiel:\n\n“Kannst du mehr Details zu einer dieser Änderungen geben?”\n“Welche Auswirkungen hätte jede dieser Änderungen auf den Blutdruck?”\n“Gibt es mögliche Herausforderungen bei der Umsetzung dieser Änderungen?”"
+  },
+  {
+    "objectID": "slides/prompting/index.html#verwende-beispiele-und-kontext",
+    "href": "slides/prompting/index.html#verwende-beispiele-und-kontext",
+    "title": "Prompting: Eine Einführung",
+    "section": "3. Verwende Beispiele und Kontext",
+    "text": "3. Verwende Beispiele und Kontext\nBeschreibe, welche Art von Output du erwartest Gib ein Muster vor, wenn du ein bestimmtes Format oder einen Stil wünschst\n\n\n\n\n❌\n\n\nErkläre, wie man eine Skulptur restauriert.\n\n\n\n\n\n\n\n\n✅\n\n\nErkläre, wie man eine Marmorskulptur mit sichtbaren Rissen restauriert. Berücksichtige dabei Schritte wie:\n\nSichtung und Dokumentation des Schadens\nAuswahl und Testen geeigneter Materialien zur Rissfüllung\nAnwendung und Glättung des Füllmaterials\n\nGib Details zu den Werkzeugen, Materialien und Techniken an, die für jeden Schritt notwendig sind."
+  },
+  {
+    "objectID": "slides/prompting/index.html#leite-den-denkprozess",
+    "href": "slides/prompting/index.html#leite-den-denkprozess",
+    "title": "Prompting: Eine Einführung",
+    "section": "4. Leite den Denkprozess",
+    "text": "4. Leite den Denkprozess\nBitte ChatGPT/Copilot, “Schritt für Schritt” zu denken oder seine Überlegungen zu erklären. Dies führt oft zu genaueren und detaillierteren Antworten.\n\n\n\n\n❌\n\n\nRestauriere ein beschädigtes Ölgemälde mit mehreren Rissen und Farbverlusten.\n\n\n\n\n\n\n\n\n✅\n\n\nLass uns die Restaurierung eines beschädigten Ölgemäldes mit Rissen und Farbverlust Schritt für Schritt angehen:\n\nZuerst beschreibe die Art und das Ausmass der Schäden.\nWelche Faktoren könnten für die Schäden verantwortlich sein (z.B. Alterung, Lagerungsbedingungen)?\nWelche Materialien und Techniken könnten zur Stabilisierung der Risse verwendet werden?\nWelche Farbpigmente und Fixiermittel könnten zur Ausbesserung des Farbverlustes geeignet sein?\nWelche Tests könnten vorher an kleinen Stellen des Gemäldes durchgeführt werden, um die Wirkung der Materialien zu prüfen?\n\nBeginne mit Schritt 1."
+  },
+  {
+    "objectID": "slides/prompting/index.html#nutze-chatgptcopilots-wissen",
+    "href": "slides/prompting/index.html#nutze-chatgptcopilots-wissen",
+    "title": "Prompting: Eine Einführung",
+    "section": "5. Nutze ChatGPT/Copilots “Wissen”",
+    "text": "5. Nutze ChatGPT/Copilots “Wissen”\n\nLLMs verfügen über breites Wissen\nFrage nach Erklärungen oder Hintergrundinformationen\nGib relevanten Kontext an, damit ChatGPT/Copilot gezielter antworten kann\n\n\n\n\n\n❌\n\n\nErkläre, wie ein Orchester funktioniert.\n\n\n\n\n\n\n\n\n✅\n\n\nErkläre, wie ein Sinfonieorchester funktioniert, als würdest du Musikstudierenden im ersten Semester eine Einführung geben.\nVergleiche dabei die Struktur eines Orchesters mit einem gut koordinierten Team, bei dem jede Gruppe eine spezifische Aufgabe übernimmt.\nErkläre die Rolle der verschiedenen Instrumentengruppen (Streicher, Bläser, Schlagwerk) und die des Dirigenten und zeige, wie sie zusammenarbeiten, um ein harmonisches Ganzes zu erzeugen."
+  },
+  {
+    "objectID": "slides/prompting/index.html#section",
+    "href": "slides/prompting/index.html#section",
+    "title": "Prompting: Eine Einführung",
+    "section": "5",
+    "text": "5"
+  },
+  {
+    "objectID": "slides/prompting/index.html#nutze-chatgptcopilots-wissen-1",
+    "href": "slides/prompting/index.html#nutze-chatgptcopilots-wissen-1",
+    "title": "Prompting: Eine Einführung",
+    "section": "5. Nutze ChatGPT/Copilots “Wissen”",
+    "text": "5. Nutze ChatGPT/Copilots “Wissen”\n \n\n\n\n\n\n\n\nAchtung\n\n\nImmer den Output eines LLM anhand externer Quellen überprüfen. Sprachmodelle sind keine Nachschlagewerke."
+  },
+  {
+    "objectID": "slides/prompting/index.html#verwende-rollenspieltechniken",
+    "href": "slides/prompting/index.html#verwende-rollenspieltechniken",
+    "title": "Prompting: Eine Einführung",
+    "section": "6. Verwende Rollenspieltechniken",
+    "text": "6. Verwende Rollenspieltechniken\n\nBitte ChatGPT/Copilot, eine bestimmte Rolle oder Perspektive einzunehmen\nDies kann zu spezifischeren und relevanteren Antworten führen\n\n\n\n\n\n❌\n\n\nGib Tipps zur Verbesserung der Bühnenpräsenz.\u000b\n\n\n\n\n\n\n\n\n✅\n\n\nDu bist eine erfahrene Theaterregisseurin, die seit über 15 Jahren mit Schauspielstudierenden arbeitet.\nWas sind deine drei wichtigsten Tipps für junge Schauspieler, um ihre Bühnenpräsenz zu stärken?\nBerücksichtige dabei Aspekte wie Körperhaltung, Stimme und Interaktion mit dem Publikum und gib konkrete Übungen oder Techniken an, die die Schauspieler ausprobieren können."
+  },
+  {
+    "objectID": "slides/prompting/index.html#bonustips",
+    "href": "slides/prompting/index.html#bonustips",
+    "title": "Prompting: Eine Einführung",
+    "section": "Bonustips",
+    "text": "Bonustips\n \n\n\n\n\nMentales Modell: Ein LLM wie einen “Junior Assistant” behandeln.\nStruktierten Output verlangen (Tabellen, Listen, etc.)\nInput strukturieren (LLMs können diesen besser “verstehen”)\nEin LLM (z.B. ChatGPT/Copilot) nach Prompting Tips fragen. LLMs sind nicht auf dem neuesten Stand, aber haben sehr wahrscheinlich die bis vor kurzem aktuelle Literatur “gelesen”.\nChatGPT Tip: Anweisen, Python zu benutzen. Pyhton ist eine Programmiersprache, die ChatGPT sehr gut beherrscht. Mit Python kann ChatGPT Daten analysieren, Grafiken erstellen, Word/Excel/Powerpoint Dateien erstellen."
+  },
+  {
+    "objectID": "slides/prompting/index.html#fange-einfach-an-und-verbessere-.smaller",
+    "href": "slides/prompting/index.html#fange-einfach-an-und-verbessere-.smaller",
+    "title": "Prompting: Eine Einführung",
+    "section": "2. Fange einfach an und verbessere {.smaller}}",
+    "text": "2. Fange einfach an und verbessere {.smaller}}\nBeispiel 1:\n\n\n\n\n❌\n\n\nEntwickle ein vollständiges Regiekonzept für eine moderne Adaption von Shakespeares Hamlet, einschliesslich Bühnenbild, Kostümgestaltung, Lichtdesign und einer Analyse der Charaktere.\n\n\n\n\n\n\n\n\n✅\n\n\nErstelle drei zentrale Ideen, wie eine moderne Version von Hamlet durch Bühnenbild und Kostüme visuell vermittelt werden könnte.\n\n\n\n\n\nWichtig: Dies ist nur der Ausgangspunkt. Basierend auf der Antwort solltest du weitere Fragen stellen oder um Erklärungen bitten. Zum Beispiel:\n\n“Kannst du ein Beispiel für ein spezifisches Kostümdetail geben, das moderne Elemente einbezieht?”\n“Wie könnte das Bühnenbild die Stimmung oder den inneren Konflikt der Charaktere widerspiegeln?”"
+  }
+]

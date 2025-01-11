@@ -1,0 +1,71 @@
+---
+title: "Inhalt"
+---
+
+
+
+Workshop-Program auf einen Blick:
+
+
+| {{< bi clock >}} | {{< bi book >}} Inhalt | {{< bi person-fill >}} |
+|-----------------|-------------------------------------------------------------------------|-----------------------|
+| 13:30 – 13:45 | Begrüssung und Input zu Notebook LM | Nina |
+| 13:45 – 14:35 | [Input: KI erste Schritte, Datenschutz](presentation/index.qmd) | Andrew |
+| 14:35 – 14:55 | Austausch in Gruppen, visuell auf Flipchart | Dana |
+| 14:55 – 15:05 | Gruppen stellen Ergebnisse vor | {{< bi people-fill >}}  |
+| 14:05 – 15:20 | Pause | |
+| 15:20 – 15:35 | [Input Prompting](prompting/index.qmd) | Andrew |
+| 15:35 – 16:35 | Einführung zu Tools: Chat GPT, Copilot <br> Aufgaben aus Austausch mit Hilfe von Chat GPT / Copilot lösen im Think-Pair–Share | Raymond|
+| 16:35 – 16:50 | Präsentation der Ergebnisse | |
+| 16:50 – 17:00 | Austausch, Abschluss | |
+| Ab 17:00 | Apero mit VMAD-HKB im OG | |
+
+
+
+<!-- ::: {.schedule title="Begrüssung und Input zu NotebookLM"}  
+{{< bi clock >}} 13:30 – 13:45  
+(Nina 15’) 
+:::
+
+::: {.schedule title="Input: KI erste Schritte, Datenschutz"}
+{{< bi clock >}} 13:45 – 14:35 (Andrew 50’) 
+:::
+
+::: {.schedule title="Austausch in Gruppen, visuell auf Flipchart"}
+{{< bi clock >}} 14:35 – 14:55 (Dana 20’) 
+
+1. Wo könnte mir KI helfen, wenn es zaubern könnte?
+2. Was habe ich für konkrete Aufgaben, die KI für mich lösen dürfte?
+:::
+
+::: {.schedule title="Gruppen stellen Ergebnisse vor"}
+{{< bi clock >}} 14:55 – 15:05 
+(alle 10’) 
+:::
+
+::: {.screens-down title="Pause"}
+{{< bi clock >}} 14:05 – 15:20 
+:::
+
+::: {.schedule title="Input Prompting"}
+{{< bi clock >}} 15:20 – 15:35 {{< bi person-fill >}} Andrew 15’
+:::
+
+::: {.schedule title="Einführung zu Tools: ChatGPT, Copilot"}
+{{< bi clock >}} 15:35 – 16:35 (Raymond 60’) 
+
+- Einführung zu Tools: ChatGPT, Copilot 
+- Aufgaben aus Austausch mit Hilfe von Chat GPT / Copilot lösen im Think - Pair – Share
+:::
+
+::: {.schedule title="Präsentation der Ergebnisse"}
+{{< bi clock >}} 16:35 – 16:50
+:::
+
+::: {.reflect title="Austausch, Abschluss"}
+{{< bi clock >}} 16:50 – 17:00
+:::
+
+::: {.screens-down title="Ab 17:00 Apero mit VMAD-HKB im OG"}
+{{< bi clock >}}  Ab 17:00
+::: -->

@@ -2,6 +2,8 @@ project:
   type: website
   resources:
     - assets/*
+    - assets/images/*
+    - assets/audio/*
   preview:
     port: 8800
     browser: false

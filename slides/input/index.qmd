@@ -16,6 +16,16 @@ Big Text
 :::
 
 
+## AlphaFold
+<!-- {{< html file="https://alphafold.ebi.ac.uk/" height="500px">}} -->
+
+![](../../assets/images/protein.png)
+
+:::{.attribution}
+Quelle: [AlphaFold](https://alphafold.com/)
+:::
+
+
 ## Künstliche Intelligenz
 
 - KI-Systeme können **trainiert** werden, um aus Daten zu lernen und Muster zu erkennen.
@@ -50,12 +60,29 @@ Ein maschinelles Lernmodell, das darauf trainiert wird, das nächste Wort nach e
 
 
 ## Symbolic AI
+Symbolic AI:
+
+Uses explicit rules and logic programmed by humans
+Based on if-then statements and predefined knowledge
+Follows clear, explainable steps
+Good for problems with clear rules
+Less adaptable to new situations
 
 ## Machine Learning
 
+Machine Learning/Deep Learning:
+
+Learns patterns from data automatically
+Based on statistical patterns and relationships
+Works like a "black box" - harder to explain decisions
+Good for complex patterns and unclear rules
+Can adapt to new situations through training
+
+## Cats vs Dogs
+
+![](../../assets/images/cats-vs-dogs.png)
 
 ## Cat example
-
 ![](../../assets/images/cat.png)
 
 ![](../../assets/images/cat-features.png)
@@ -70,6 +97,7 @@ Ein maschinelles Lernmodell, das darauf trainiert wird, das nächste Wort nach e
 :::{.attribution}
 Quelle: [www.christian-holenstein.ch/sounds](https://www.christian-holenstein.ch/sounds)
 :::
+
 
 ## What are LLMs?
 
@@ -546,7 +574,14 @@ Microsoft Copilot garantiert, dass die Daten der Benutzer gesichert sind:
 :::
 ::::
 
-## Fragen? {background-color="#708090"}
+
+
+
+## Fragen {background-color="#708090"}
+
+:::{.r-fit-text}
+?
+:::
 
 ## References {background-color="#D8DEE9"}
 

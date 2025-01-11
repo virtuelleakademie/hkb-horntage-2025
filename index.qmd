@@ -25,9 +25,12 @@ about:
 
 # QR Code
 
-{{< qrcode https://virtuelleakademie.github.io/hkb-fokus-admin-2024/ width=400 height=400 colorDark='#000000' >}}
+{{< qrcode https://virtuelleakademie.github.io/hkb-horntage-2025/ width=400 height=400 colorDark='#000000' >}}
 
 <br> 
 
-{{< bi link >}} [virtuelleakademie.github.io/hkb-fokus-admin-2024](https://virtuelleakademie.github.io/hkb-fokus-admin-2024/)
+{{< bi link >}} [virtuelleakademie.github.io/hkb-horntage-2025](https://virtuelleakademie.github.io/hkb-horntage-2025/)
 
+
+
+12.01.2025, 10.00–15.00 Uhr – HKB, Grosser Konzertsaal, Papiermühlestrasse 13d, 3014 Bern

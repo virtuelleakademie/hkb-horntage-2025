@@ -53,15 +53,36 @@ Quelle: [AlphaFold](https://alphafold.com/)
 ## Künstliche Intelligenz
 
 :::: {.columns}
-::: {.column width="50%"}
+::: {.column width="60%"}
 <!-- Maschinelles Lernen: 
 
 Modelle, die ohne explizite Programmierung Muster aus Daten erlernen, um Vorhersagen oder Entscheidungen zu treffen. -->
-![](../../assets/images/what-is-AI.svg){width=80%}
+![](../../assets/images/what-is-AI.svg){width=100%}
 
 
 :::
-::: {.column width="50%"}
+::: {.column width="40%"}
+<!-- Large Language Model: -->
+
+<!-- Ein maschinelles Lernmodell, das darauf trainiert wird, das nächste Wort nach einem Eingabetext (Prompt) vorherzusagen. -->
+
+<!-- ![](../../assets/images/LLM.svg) -->
+
+:::
+::::
+
+## Künstliche Intelligenz
+
+:::: {.columns}
+::: {.column width="60%"}
+<!-- Maschinelles Lernen: 
+
+Modelle, die ohne explizite Programmierung Muster aus Daten erlernen, um Vorhersagen oder Entscheidungen zu treffen. -->
+![](../../assets/images/what-is-AI.svg){width=100%}
+
+
+:::
+::: {.column width="40%"}
 <!-- Large Language Model: -->
 
 <!-- Ein maschinelles Lernmodell, das darauf trainiert wird, das nächste Wort nach einem Eingabetext (Prompt) vorherzusagen. -->
@@ -71,12 +92,11 @@ Modelle, die ohne explizite Programmierung Muster aus Daten erlernen, um Vorhers
 :::
 ::::
 
-
 ## Symbolische KI / Maschinelles Lernen
 
 :::: {.columns} 
 ::: {.column width="50%"}
-Symbolische KI:
+**Symbolische KI:**
 
 - Verwendet explizite Regeln und Logik, programmiert von Menschen
 - Basiert auf Wenn-Dann-Anweisungen und vordefiniertem Wissen
@@ -85,9 +105,9 @@ Symbolische KI:
 - Weniger anpassungsfähig an neue Situationen
 :::
 ::: {.column width="50%"}
-Machine Learning/Deep Learning:
+**Machine Learning/Deep Learning:**
 
-- Lernt automatisch statistischen Mustern und Beziehungen aus Daten
+- Lernt automatisch statistische Muster und Beziehungen aus Daten
 - Funktioniert wie eine "Black Box" - Entscheidungen schwerer zu erklären
 - Gut für komplexe Muster und unklare Regeln
 - Kann sich durch Training an neue Situationen anpassen
@@ -115,6 +135,16 @@ Anhand welcher Merkmale kann man Katzen und Hunden unterscheiden?
 
 :::: {.columns}
 :::{.column width="60%"}
+
+:::
+
+
+:::{.column width="40%"}
+![](../../assets/images/cat.png)
+:::
+::::
+
+:::{.r-fit-text}
 ```
 IF has_whiskers = true
 AND has_pointed_ears = true
@@ -123,12 +153,6 @@ AND has_tail = true
 THEN is_cat = true
 ```
 :::
-
-:::{.column width="40%"}
-![](../../assets/images/cat.png)
-:::
-::::
-
 
 ## Mit Maschinellen Lernen
 

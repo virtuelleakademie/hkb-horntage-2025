@@ -1,5 +1,5 @@
 ---
-title: "Input: Prompting"
+title: "Anwendung: Prompting"
 ---
 
 In der folgenden Präsentation diskutieren wir folgende Prompting-Regeln:

@@ -1,5 +1,5 @@
 ---
-title: "Input: KI erste Schritte, Datenschutz"
+title: "Künstliche Intelligenz in der Lehre: erste Schritte"
 ---
 
 {{< bi book >}} Inhalt:
@@ -9,7 +9,7 @@ title: "Input: KI erste Schritte, Datenschutz"
 - zeigt potenzielle Vorteile auf: erhöhte Produktivität, Unterstützung der Kreativität.
 - diskutiert Herausforderungen: Deskilling, Missbrauch.
 - erörtert rechtliche Aspekte rund um Urheberrecht und Datenschutz.
-- gibt Empfehlungen zur Deklaration von KI-generierten Inhalten.
+<!-- - gibt Empfehlungen zur Deklaration von KI-generierten Inhalten. -->
 - adressiert Bedenken zur Plagiatserkennung.
 - Das Ziel ist, LLMs zu entmystifizieren und einen ausgewogenen Blick auf die spontane Übernahme dieser "Ankunftstechnologien" zu bieten.
 

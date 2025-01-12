@@ -9,16 +9,11 @@ Workshop-Program auf einen Blick:
 
 | {{< bi clock >}} | {{< bi book >}} Inhalt | {{< bi person-fill >}} |
 |-----------------|-------------------------------------------------------------------------|-----------------------|
-| 13:30 – 13:45 | Begrüssung und Input zu Notebook LM | Nina |
-| 13:45 – 14:35 | [Input: KI erste Schritte, Datenschutz](presentation/index.qmd) | Andrew |
-| 14:35 – 14:55 | Austausch in Gruppen, visuell auf Flipchart | Dana |
-| 14:55 – 15:05 | Gruppen stellen Ergebnisse vor | {{< bi people-fill >}}  |
-| 14:05 – 15:20 | Pause | |
-| 15:20 – 15:35 | [Input Prompting](prompting/index.qmd) | Andrew |
-| 15:35 – 16:35 | Einführung zu Tools: Chat GPT, Copilot <br> Aufgaben aus Austausch mit Hilfe von Chat GPT / Copilot lösen im Think-Pair–Share | Raymond|
-| 16:35 – 16:50 | Präsentation der Ergebnisse | |
-| 16:50 – 17:00 | Austausch, Abschluss | |
-| Ab 17:00 | Apero mit VMAD-HKB im OG | |
+| 12:30 – 13:05 | [Input: Künstliche Intelligenz in der Lehre: erste Schritte](presentation/index.qmd) | Andrew |
+| 13:05 – 13:15 | Fragen | Andrew |
+| 13:15 – 13:30 | [Anwendung: Prompting](prompting/index.qmd) | Andrew |
+| 13:30 – 13:45 | Fragen | Andrew |
+
 
 
 

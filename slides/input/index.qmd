@@ -5,28 +5,41 @@ title: "Künstliche Intelligenz in der Lehre: erste Schritte"
 ## Künstliche Intelligenz
 
 
-::: {.r-fit-text}
+<!-- ::: {.r-fit-text}
 Big Text
+::: -->
+
+
+:::: {.columns}
+::: {.column width="50%"}
+ 
 :::
-
-
-
-:::{.r-fit-text}
-**Künstliche Intelligenz (KI)**: Entwicklung von Maschinen, die Aufgaben ausführen können, welche normalerweise menschliche Intelligenz erfordern.
+::: {.column width="50%"}
+Entwicklung von Computersystemen, welche Aufgaben ausführen können, die normalerweise menschliche Intelligenz erfordern.
 :::
+::::
 
 
-## AlphaFold
+## Beispiel: AlphaFold
 <!-- {{< html file="https://alphafold.ebi.ac.uk/" height="500px">}} -->
 
+:::: {.columns}
+::: {.column width="40%"}
+[AlphaFold](https://alphafold.com/) ist ein von [Google DeepMind](https://deepmind.google/) entwickeltes KI-System, das die 3D-Struktur eines Proteins aus seiner Aminosäuresequenz vorhersagt.
+:::
+::: {.column width="60%"}
 ![](../../assets/images/protein.png)
+:::
+::::
+
+
 
 :::{.attribution}
 Quelle: [AlphaFold](https://alphafold.com/)
 :::
 
 
-## Künstliche Intelligenz
+<!-- ## Künstliche Intelligenz
 
 - KI-Systeme können **trainiert** werden, um aus Daten zu lernen und Muster zu erkennen.
 
@@ -35,23 +48,23 @@ Quelle: [AlphaFold](https://alphafold.com/)
     - Personalisierte Empfehlungen
     - Selbstfahrende Autos
     - Vorhersage von Proteinfaltungen
-    - Erstellung von Musik/Bildern/Texten
+    - Erstellung von Musik/Bildern/Texten -->
 
-## Large Language Models (LMMs) {.smaller}
+## Künstliche Intelligenz
 
 :::: {.columns}
 ::: {.column width="50%"}
-Maschinelles Lernen: 
+<!-- Maschinelles Lernen: 
 
-Modelle, die ohne explizite Programmierung Muster aus Daten erlernen, um Vorhersagen oder Entscheidungen zu treffen.
+Modelle, die ohne explizite Programmierung Muster aus Daten erlernen, um Vorhersagen oder Entscheidungen zu treffen. -->
 ![](../../assets/images/what-is-AI.svg){width=80%}
 
 
 :::
 ::: {.column width="50%"}
-Large Language Model:
+<!-- Large Language Model: -->
 
-Ein maschinelles Lernmodell, das darauf trainiert wird, das nächste Wort nach einem Eingabetext (Prompt) vorherzusagen.
+<!-- Ein maschinelles Lernmodell, das darauf trainiert wird, das nächste Wort nach einem Eingabetext (Prompt) vorherzusagen. -->
 
 ![](../../assets/images/LLM.svg)
 
@@ -59,52 +72,112 @@ Ein maschinelles Lernmodell, das darauf trainiert wird, das nächste Wort nach e
 ::::
 
 
-## Symbolic AI
-Symbolic AI:
+## Symbolische KI / Maschinelles Lernen
 
-Uses explicit rules and logic programmed by humans
-Based on if-then statements and predefined knowledge
-Follows clear, explainable steps
-Good for problems with clear rules
-Less adaptable to new situations
+:::: {.columns} 
+::: {.column width="50%"}
+Symbolische KI:
 
-## Machine Learning
-
+- Verwendet explizite Regeln und Logik, programmiert von Menschen
+- Basiert auf Wenn-Dann-Anweisungen und vordefiniertem Wissen
+- Folgt klaren, erklärbaren Schritten
+- Gut für Probleme mit eindeutigen Regeln
+- Weniger anpassungsfähig an neue Situationen
+:::
+::: {.column width="50%"}
 Machine Learning/Deep Learning:
 
-Learns patterns from data automatically
-Based on statistical patterns and relationships
-Works like a "black box" - harder to explain decisions
-Good for complex patterns and unclear rules
-Can adapt to new situations through training
+- Lernt automatisch statistischen Mustern und Beziehungen aus Daten
+- Funktioniert wie eine "Black Box" - Entscheidungen schwerer zu erklären
+- Gut für komplexe Muster und unklare Regeln
+- Kann sich durch Training an neue Situationen anpassen
+:::
+::::
 
-## Cats vs Dogs
 
+
+
+## Beispiel: Klassifikation von Katzen und Hunden
+
+::::{.columns}
+:::{.column width="40%"}
+Anhand welcher Merkmale kann man Katzen und Hunden unterscheiden?
+:::
+:::{.column width="60%"}
 ![](../../assets/images/cats-vs-dogs.png)
+:::
+::::
 
-## Cat example
+
+
+
+## Mit Symbolischer KI
+
+:::: {.columns}
+:::{.column width="60%"}
+```
+IF has_whiskers = true
+AND has_pointed_ears = true
+AND has_fur = true
+AND has_tail = true
+THEN is_cat = true
+```
+:::
+
+:::{.column width="40%"}
 ![](../../assets/images/cat.png)
+:::
+::::
 
+
+## Mit Maschinellen Lernen
+
+:::: {.columns}
+:::{.column width="40%"}
+-   System lernt automatisch Muster (Formen, Farben, Texturen) aus tausenden Bildern.
+- Kann Katzen in neuen Bildern erkennen, auch in ungewöhnlichen Positionen oder Beleuchtungen.
+- Braucht keine expliziten Regeln.
+
+:::
+:::{.column width="60%"}
 ![](../../assets/images/cat-features.png)
 
+:::
+::::
 
-## Music example
 
-![](../../assets/images/mozarthornkonzertkv495-2.png)
 
-{{< audio file="../../assets/audio/mozarthornkonzertkv495-2.mp3" caption="WA Mozart: Horn Concerto KV 495, Romanza (Christian Holenstein)" >}}
 
-:::{.attribution}
-Quelle: [www.christian-holenstein.ch/sounds](https://www.christian-holenstein.ch/sounds)
+## Sprache
+
+:::{.r-fit-text}
+fruit flies like a banana
 :::
 
 
-## What are LLMs?
+ Ist `flies` ein 
+
+ - Verb (bezieht sich auf Früchte, die durch die Luft fliegen) 
+
+ oder ein 
+
+ - Nomen (bezieht sich auf Bananenliebende Insekten)?
+
+
+## Was sind Large Language Models (LLMs)?
+
+
+Das Wichtigste ist zu verstehen, dass ChatGPT grundsätzlich immer versucht, eine **vernünftige Fortsetzung** des bisherigen Textes zu produzieren. 
+
+
+Mit "vernünftig" meinen wir: "Was ist die wahrscheinlichste Fortsetzung eines Textanfangs, wenn man alle möglichen Texte berücksichtigt?"
+
+
+## Was sind Large Language Models (LLMs)?
 
 ::: {.r-fit-text}
-Um die angekommene Technologie einordnen zu können, ist eine **Entmystifizierung** notwendig:
-
-- LLMs sind statistische Modelle, die Text analysieren, um das nächste Wort vorherzusagen.
+<!-- Um die angekommene Technologie einordnen zu können, ist eine **Entmystifizierung** notwendig: -->
+- Statistische Modelle, die Text analysieren, um das nächste Wort vorherzusagen.
 - Diese Vorhersage geschieht **Wort für Wort**.
 - Jede Vorhersage basiert auf 
   + der Eingabe (Prompt)
@@ -137,9 +210,10 @@ Nicht alle Teile des Kontexts sind gleich wichtig:
 
 <br> <br>
 
-:::{.callout-note appearance="minimal"}
-"Die Familie, die sehr wohlhabend war, lebte in einem grossen Haus. Das Haus stand inmitten eines weitläufigen Gartens. Es war bekannt für seine prächtige Fassade und die grosszügigen ___"
-:::
+<!-- :::{.callout-note appearance="minimal"}-->
+:::{.r-fit-text}
+_"Die Familie, die sehr wohlhabend war, lebte in einem grossen Haus. Das Haus stand inmitten eines weitläufigen Gartens. Es war bekannt für seine prächtige Fassade und die grosszügigen ___"_
+::: 
 
 :::{.attribution}
 Nach Thomas Mann, *Buddenbrooks*
@@ -196,7 +270,7 @@ Bildquelle: [www.apple.com](https://www.apple.com)
 ![](../../assets/images/wort-fuer-wort.png)
 
 
-## Wie können LLMs Text vorhersagen? {.smaller}
+<!-- ## Wie können LLMs Text vorhersagen? {.smaller}
 
 Sie werden trainiert, das nächste Wort in einer gegebenen Wortsequenz zu erraten.
 
@@ -212,7 +286,7 @@ Ein LLM wird in drei Schritten aufgebaut:
 ::: {.column width="50%"}
 ![](../../assets/images/LLM-Bookshelf.png)
 :::
-::::
+:::: -->
 
 
 ## Wie werden LLMs trainiert?
@@ -220,15 +294,17 @@ Ein LLM wird in drei Schritten aufgebaut:
 ![](../../assets/images/llm-training.png)
 
 
-## Gefahren und Herausforderungen {.smaller}
+## Gefahren und Herausforderungen
 
 :::: {.columns}
 ::: {.column width="50%"}
+:::{.r-fit-text}
 Die verschiedenen Stufen des Trainings sind mit verschiedenen Arten von Bedenken verbunden:
 
 - **Urheberrecht**: Die trainierten Modelle werden mit Texten trainiert, die möglicherweise Urheberrechtlich geschützt sind.
 - **Bias**: Die trainierten Modelle können bestehende Vorurteile aus den Trainingsdaten lernen.
 - **Energieverbrauch**: Das Training der Modelle verbraucht viel Energie und ist damit umweltbelastend.
+:::
 
 :::
 ::: {.column width="50%"}
@@ -240,12 +316,40 @@ Die verschiedenen Stufen des Trainings sind mit verschiedenen Arten von Bedenken
 
 :::: {.columns}
 ::: {.column width="50%"}
+:::{.r-fit-text}
 - Obschon sich LLMs viel Wissen aneignen[^1], werden sie nicht trainiert, faktisch korrekte Aussagen zu machen.
 - Dies bedeutet, dass wir alle Aussagen, die LLMs uns präsentieren, immer kritisch hinterfragen müssen.
 - LLMs sind **keine Wissensdatenbanken**. Informationen immer anhand externer Quellen überprüfen.
 :::
+:::
 ::: {.column width="50%"}
 ![](../../assets/images/KnowledgeBase.png)
+:::
+::::
+
+[^1]: Das ganze Wissen, welches nötig ist, um Texte Wort für Wort vorherzusagen.
+
+## Wie sieht das für Musik aus?
+
+![](../../assets/images/mozarthornkonzertkv495-2.png)
+
+{{< audio file="../../assets/audio/mozarthornkonzertkv495-2.mp3" caption="WA Mozart: Horn Concerto KV 495, Romanza (Christian Holenstein)" >}}
+
+:::{.attribution}
+Quelle: [www.christian-holenstein.ch/sounds](https://www.christian-holenstein.ch/sounds)
+:::
+
+## Style transfer
+
+:::: {.columns}
+::: {.column width="50%"}
+[Voicebox](https://voicebox.metademolab.com/) ist ein KI-System, das hochwertige Audioclips in verschiedenen Stilen erzeugen kann. Es beherrscht Sprachsynthese in sechs Sprachen und kann bestehende Aufnahmen bearbeiten oder neue erstellen.
+:::
+::: {.column width="50%"}
+```{=html}
+<iframe width="800" height="600" src="https://voicebox.metademolab.com/" title="Viocebox"></iframe>
+```
+
 :::
 ::::
 
@@ -253,7 +357,14 @@ Die verschiedenen Stufen des Trainings sind mit verschiedenen Arten von Bedenken
 
 
 
-[^1]: Das ganze Wissen, welches nötig ist, um Texte Wort für Wort vorherzusagen.
+
+
+
+
+
+
+
+
 
 
 <!-- ----------------------- -->
@@ -320,7 +431,7 @@ Bildquelle: Erstellt mit DALL-E 3
 
 :::: {.columns}
 ::: {.column width="50%"}
-Hochschulen stehen vor Herausforderungen mit Technologien wie ChatGPT, weil sie:
+Schulen und Hochschulen stehen vor Herausforderungen mit Technologien wie ChatGPT, weil sie:
 
 - Traditionelle Technologie-Evaluierungsprozesse umgehen
 - Durch **spontane Adoption** eingeführt werden
@@ -540,7 +651,7 @@ Einstellungen im Konto für Datenkontrolle:
 
 :::: {.columns}
 ::: {.column width="50%"}
-Microsoft Copilot garantiert, dass die Daten der Benutzer gesichert sind: 
+[Microsoft Copilot](https://copilot.microsoft.com/) garantiert BFH-Mitarbeitenden, dass Benutzerdaten gesichert sind: 
 
 {{< bi link >}} [Schutz von Unternehmensdaten](https://learn.microsoft.com/de-ch/copilot/microsoft-365/enterprise-data-protection)
 
@@ -550,6 +661,34 @@ Microsoft Copilot garantiert, dass die Daten der Benutzer gesichert sind:
 :::
 ::: {.column width="50%"}
 ![](../../assets/images/copilot.png)
+:::
+::::
+
+## API oder lokale KI-Modelle verwenden
+
+:::: {.columns}
+::: {.column width="47%"}
+[jan.ai](https://jan.ai/): Eine Open-Source ChatGPT-Alternative
+
+
+
+```{=html}
+<iframe width="600" height="500" src="https://jan.ai/" title="jan.ai"></iframe>
+```
+
+:::
+
+:::{.column width="6%"}
+:::
+
+::: {.column width="47%"}
+[lmstudio.ai](https://lmstudio.ai/): Lokale LLMs installieren
+
+
+
+```{=html}
+<iframe width="600" height="500" src="https://lmstudio.ai/" title="lmstudio.ai"></iframe>
+```
 :::
 ::::
 

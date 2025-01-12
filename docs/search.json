@@ -343,7 +343,7 @@
     "href": "slides/input/index.html#symbolische-ki-maschinelles-lernen",
     "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Symbolische KI / Maschinelles Lernen",
-    "text": "Symbolische KI / Maschinelles Lernen\n\n\nSymbolische KI:\n\nVerwendet explizite Regeln und Logik, programmiert von Menschen\nBasiert auf Wenn-Dann-Anweisungen und vordefiniertem Wissen\nFolgt klaren, erklärbaren Schritten\nGut für Probleme mit eindeutigen Regeln\nWeniger anpassungsfähig an neue Situationen\n\n\nMachine Learning/Deep Learning:\n\nLernt automatisch statistischen Mustern und Beziehungen aus Daten\nFunktioniert wie eine “Black Box” - Entscheidungen schwerer zu erklären\nGut für komplexe Muster und unklare Regeln\nKann sich durch Training an neue Situationen anpassen"
+    "text": "Symbolische KI / Maschinelles Lernen\n\n\nSymbolische KI:\n\nVerwendet explizite Regeln und Logik, programmiert von Menschen\nBasiert auf Wenn-Dann-Anweisungen und vordefiniertem Wissen\nFolgt klaren, erklärbaren Schritten\nGut für Probleme mit eindeutigen Regeln\nWeniger anpassungsfähig an neue Situationen\n\n\nMachine Learning/Deep Learning:\n\nLernt automatisch statistische Muster und Beziehungen aus Daten\nFunktioniert wie eine “Black Box” - Entscheidungen schwerer zu erklären\nGut für komplexe Muster und unklare Regeln\nKann sich durch Training an neue Situationen anpassen"
   },
   {
     "objectID": "slides/input/index.html#beispiel-klassifikation-von-katzen-und-hunden",
@@ -357,7 +357,7 @@
     "href": "slides/input/index.html#mit-symbolischer-ki",
     "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Mit Symbolischer KI",
-    "text": "Mit Symbolischer KI\n\n\nIF has_whiskers = true\nAND has_pointed_ears = true\nAND has_fur = true\nAND has_tail = true\nTHEN is_cat = true"
+    "text": "Mit Symbolischer KI\n\n\n\n\n\n\n\nIF has_whiskers = true\nAND has_pointed_ears = true\nAND has_fur = true\nAND has_tail = true\nTHEN is_cat = true"
   },
   {
     "objectID": "slides/input/index.html#mit-maschinellen-lernen",
@@ -813,5 +813,12 @@
     "title": "Prompting: Eine Einführung",
     "section": "References",
     "text": "References"
+  },
+  {
+    "objectID": "slides/input/index.html#künstliche-intelligenz-2",
+    "href": "slides/input/index.html#künstliche-intelligenz-2",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Künstliche Intelligenz",
+    "text": "Künstliche Intelligenz"
   }
 ]

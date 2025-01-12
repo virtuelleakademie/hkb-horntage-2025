@@ -293,14 +293,14 @@
     "href": "slides/input/index.html#künstliche-intelligenz",
     "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Künstliche Intelligenz",
-    "text": "Künstliche Intelligenz\n\nBig Text\n\n\nKünstliche Intelligenz (KI): Entwicklung von Maschinen, die Aufgaben ausführen können, welche normalerweise menschliche Intelligenz erfordern."
+    "text": "Künstliche Intelligenz\n\n\n\n\n\nEntwicklung von Computersystemen, welche Aufgaben ausführen können, die normalerweise menschliche Intelligenz erfordern."
   },
   {
     "objectID": "slides/input/index.html#large-language-models-lmms",
     "href": "slides/input/index.html#large-language-models-lmms",
     "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Large Language Models (LMMs)",
-    "text": "Large Language Models (LMMs)\n\n\nMaschinelles Lernen:\nModelle, die ohne explizite Programmierung Muster aus Daten erlernen, um Vorhersagen oder Entscheidungen zu treffen. \n\nLarge Language Model:\nEin maschinelles Lernmodell, das darauf trainiert wird, das nächste Wort nach einem Eingabetext (Prompt) vorherzusagen."
+    "text": "Large Language Models (LMMs)"
   },
   {
     "objectID": "slides/input/index.html#ki-verrichtet-geistige-arbeit",
@@ -328,7 +328,7 @@
     "href": "slides/input/index.html#ankunftstechnologien",
     "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Ankunftstechnologien",
-    "text": "Ankunftstechnologien\n\n\nHochschulen stehen vor Herausforderungen mit Technologien wie ChatGPT, weil sie:\n\nTraditionelle Technologie-Evaluierungsprozesse umgehen\nDurch spontane Adoption eingeführt werden\nReaktive statt proaktive Richtlinien erfordern\n\n\n\n\n\nBildquelle: Erstellt mit DALL-E 3 (“ChatGPT arriving at a university in the style of a 14th century painting.”)"
+    "text": "Ankunftstechnologien\n\n\nSchulen und Hochschulen stehen vor Herausforderungen mit Technologien wie ChatGPT, weil sie:\n\nTraditionelle Technologie-Evaluierungsprozesse umgehen\nDurch spontane Adoption eingeführt werden\nReaktive statt proaktive Richtlinien erfordern\n\n\n\n\n\nBildquelle: Erstellt mit DALL-E 3 (“ChatGPT arriving at a university in the style of a 14th century painting.”)"
   },
   {
     "objectID": "slides/input/index.html#adoptions--vs.-ankunfts-technologien",
@@ -349,7 +349,7 @@
     "href": "slides/input/index.html#vorhersage",
     "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Vorhersage",
-    "text": "Vorhersage\nNicht alle Teile des Kontexts sind gleich wichtig:\n \n\n\n\n“Die Familie, die sehr wohlhabend war, lebte in einem grossen Haus. Das Haus stand inmitten eines weitläufigen Gartens. Es war bekannt für seine prächtige Fassade und die grosszügigen ___”\n\n\n\n\nNach Thomas Mann, Buddenbrooks\n\n \nWelche Wörter sind besonders wichtig, um\n\ndie Bedeutung des Satzes zu erfassen?\ndas nächste Wort vorherzusagen?"
+    "text": "Vorhersage\nNicht alle Teile des Kontexts sind gleich wichtig:\n \n\n\n“Die Familie, die sehr wohlhabend war, lebte in einem grossen Haus. Das Haus stand inmitten eines weitläufigen Gartens. Es war bekannt für seine prächtige Fassade und die grosszügigen _“\n\n\nNach Thomas Mann, Buddenbrooks\n\n \nWelche Wörter sind besonders wichtig, um\n\ndie Bedeutung des Satzes zu erfassen?\ndas nächste Wort vorherzusagen?"
   },
   {
     "objectID": "slides/input/index.html#kontext-verstehen",
@@ -391,14 +391,14 @@
     "href": "slides/input/index.html#gefahren-und-herausforderungen",
     "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Gefahren und Herausforderungen",
-    "text": "Gefahren und Herausforderungen\n\n\nDie verschiedenen Stufen des Trainings sind mit verschiedenen Arten von Bedenken verbunden:\n\nUrheberrecht: Die trainierten Modelle werden mit Texten trainiert, die möglicherweise Urheberrechtlich geschützt sind.\nBias: Die trainierten Modelle können bestehende Vorurteile aus den Trainingsdaten lernen.\nEnergieverbrauch: Das Training der Modelle verbraucht viel Energie und ist damit umweltbelastend."
+    "text": "Gefahren und Herausforderungen\n\n\n\nDie verschiedenen Stufen des Trainings sind mit verschiedenen Arten von Bedenken verbunden:\n\nUrheberrecht: Die trainierten Modelle werden mit Texten trainiert, die möglicherweise Urheberrechtlich geschützt sind.\nBias: Die trainierten Modelle können bestehende Vorurteile aus den Trainingsdaten lernen.\nEnergieverbrauch: Das Training der Modelle verbraucht viel Energie und ist damit umweltbelastend."
   },
   {
     "objectID": "slides/input/index.html#gefahren-und-herausforderungen-1",
     "href": "slides/input/index.html#gefahren-und-herausforderungen-1",
     "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Gefahren und Herausforderungen",
-    "text": "Gefahren und Herausforderungen\n\n\n\nObschon sich LLMs viel Wissen aneignen1, werden sie nicht trainiert, faktisch korrekte Aussagen zu machen.\nDies bedeutet, dass wir alle Aussagen, die LLMs uns präsentieren, immer kritisch hinterfragen müssen.\nLLMs sind keine Wissensdatenbanken. Informationen immer anhand externer Quellen überprüfen.\n\n\n\n\n\nDas ganze Wissen, welches nötig ist, um Texte Wort für Wort vorherzusagen."
+    "text": "Gefahren und Herausforderungen\n\n\n\n\nObschon sich LLMs viel Wissen aneignen1, werden sie nicht trainiert, faktisch korrekte Aussagen zu machen.\nDies bedeutet, dass wir alle Aussagen, die LLMs uns präsentieren, immer kritisch hinterfragen müssen.\nLLMs sind keine Wissensdatenbanken. Informationen immer anhand externer Quellen überprüfen.\n\n\n\n\n\nDas ganze Wissen, welches nötig ist, um Texte Wort für Wort vorherzusagen."
   },
   {
     "objectID": "slides/input/index.html#chatgpt",
@@ -510,7 +510,7 @@
     "href": "slides/input/index.html#copilot-verwenden",
     "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Copilot verwenden",
-    "text": "Copilot verwenden\n\n\nMicrosoft Copilot garantiert, dass die Daten der Benutzer gesichert sind:\n Schutz von Unternehmensdaten\n\nBenutzerdaten sind durch Verschlüsselung, Sicherheitskontrollen und Datenisolation (gleich wie bei E-Mails in Exchange und Dateien in SharePoint) geschützt.\nMicrosoft verwendet Daten nicht ohne Anweisung des Benutzers."
+    "text": "Copilot verwenden\n\n\nMicrosoft Copilot garantiert BFH-Mitarbeitenden, dass Benutzerdaten gesichert sind:\n Schutz von Unternehmensdaten\n\nBenutzerdaten sind durch Verschlüsselung, Sicherheitskontrollen und Datenisolation (gleich wie bei E-Mails in Exchange und Dateien in SharePoint) geschützt.\nMicrosoft verwendet Daten nicht ohne Anweisung des Benutzers."
   },
   {
     "objectID": "slides/input/index.html#detektion-von-ki-generiertem-inhalt",
@@ -741,7 +741,7 @@
     "href": "slides/input/index.html#künstliche-intelligenz-1",
     "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Künstliche Intelligenz",
-    "text": "Künstliche Intelligenz\n\nKI-Systeme können trainiert werden, um aus Daten zu lernen und Muster zu erkennen.\nMögliche Einsatzbereiche:\n\nPersonalisierte Empfehlungen\nSelbstfahrende Autos\nVorhersage von Proteinfaltungen\nErstellung von Musik/Bildern/Texten"
+    "text": "Künstliche Intelligenz"
   },
   {
     "objectID": "slides/input/index.html#symbolic-ai",
@@ -790,7 +790,7 @@
     "href": "slides/input/index.html#alphafold",
     "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "AlphaFold",
-    "text": "AlphaFold\n\n\n\nQuelle: AlphaFold"
+    "text": "AlphaFold\n\n\n\nAlphaFold ist ein von Google DeepMind entwickeltes KI-System, das die 3D-Struktur eines Proteins aus seiner Aminosäuresequenz vorhersagt.\n\n\n\n\nQuelle: AlphaFold"
   },
   {
     "objectID": "slides/input/index.html#cats-vs-dogs",
@@ -798,5 +798,117 @@
     "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
     "section": "Cats vs Dogs",
     "text": "Cats vs Dogs"
+  },
+  {
+    "objectID": "slides/input/index.html#cross-lingual-style-transfer",
+    "href": "slides/input/index.html#cross-lingual-style-transfer",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Cross-lingual style transfer",
+    "text": "Cross-lingual style transfer"
+  },
+  {
+    "objectID": "slides/input/index.html#style-transfer",
+    "href": "slides/input/index.html#style-transfer",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Style transfer",
+    "text": "Style transfer\n\n\nVoicebox ist ein KI-System, das hochwertige Audioclips in verschiedenen Stilen erzeugen kann. Es beherrscht Sprachsynthese in sechs Sprachen und kann bestehende Aufnahmen bearbeiten oder neue erstellen."
+  },
+  {
+    "objectID": "slides/input/index.html#beispiel-alphafold",
+    "href": "slides/input/index.html#beispiel-alphafold",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Beispiel: AlphaFold",
+    "text": "Beispiel: AlphaFold\n\n\n\nAlphaFold ist ein von Google DeepMind entwickeltes KI-System, das die 3D-Struktur eines Proteins aus seiner Aminosäuresequenz vorhersagt.\n\n\n\n\nQuelle: AlphaFold"
+  },
+  {
+    "objectID": "slides/input/index.html#symbolische-maschinelles-lernen",
+    "href": "slides/input/index.html#symbolische-maschinelles-lernen",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Symbolische / Maschinelles Lernen",
+    "text": "Symbolische / Maschinelles Lernen\n\n\nSymbolische KI:\n\nVerwendet explizite Regeln und Logik, programmiert von Menschen\nBasiert auf Wenn-Dann-Anweisungen und vordefiniertem Wissen\nFolgt klaren, erklärbaren Schritten\nGut für Probleme mit eindeutigen Regeln\nWeniger anpassungsfähig an neue Situationen\n\n\nMachine Learning/Deep Learning:\n\nLernt automatisch statistischen Mustern und Beziehungen aus Daten\nFunktioniert wie eine “Black Box” - Entscheidungen schwerer zu erklären\nGut für komplexe Muster und unklare Regeln\nKann sich durch Training an neue Situationen anpassen"
+  },
+  {
+    "objectID": "slides/input/index.html#symbolische-ki-maschinelles-lernen",
+    "href": "slides/input/index.html#symbolische-ki-maschinelles-lernen",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Symbolische KI / Maschinelles Lernen",
+    "text": "Symbolische KI / Maschinelles Lernen\n\n\nSymbolische KI:\n\nVerwendet explizite Regeln und Logik, programmiert von Menschen\nBasiert auf Wenn-Dann-Anweisungen und vordefiniertem Wissen\nFolgt klaren, erklärbaren Schritten\nGut für Probleme mit eindeutigen Regeln\nWeniger anpassungsfähig an neue Situationen\n\n\nMachine Learning/Deep Learning:\n\nLernt automatisch statistischen Mustern und Beziehungen aus Daten\nFunktioniert wie eine “Black Box” - Entscheidungen schwerer zu erklären\nGut für komplexe Muster und unklare Regeln\nKann sich durch Training an neue Situationen anpassen"
+  },
+  {
+    "objectID": "slides/input/index.html#beispiel-klassifikation-von-katzen-und-hunden",
+    "href": "slides/input/index.html#beispiel-klassifikation-von-katzen-und-hunden",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Beispiel: Klassifikation von Katzen und Hunden",
+    "text": "Beispiel: Klassifikation von Katzen und Hunden\n\n\nAnhand welcher Merkmale kann man Katzen und Hunden unterscheiden?"
+  },
+  {
+    "objectID": "slides/input/index.html#mit-symbolischer-ki",
+    "href": "slides/input/index.html#mit-symbolischer-ki",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Mit Symbolischer KI",
+    "text": "Mit Symbolischer KI\n\n\nIF has_whiskers = true\nAND has_pointed_ears = true\nAND has_fur = true\nAND has_tail = true\nTHEN is_cat = true"
+  },
+  {
+    "objectID": "slides/input/index.html#mit-maschinellen-lernen",
+    "href": "slides/input/index.html#mit-maschinellen-lernen",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Mit Maschinellen Lernen",
+    "text": "Mit Maschinellen Lernen\n\n\n\nSystem lernt automatisch Muster (Formen, Farben, Texturen) aus tausenden Bildern.\nKann Katzen in neuen Bildern erkennen, auch in ungewöhnlichen Positionen oder Beleuchtungen.\nBraucht keine expliziten Regeln."
+  },
+  {
+    "objectID": "slides/input/index.html#sprache",
+    "href": "slides/input/index.html#sprache",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Sprache",
+    "text": "Sprache\n\nfruit flies like a banana\n\nIst flies ein\n\nVerb (bezieht sich auf Früchte, die durch die Luft fliegen)\n\noder ein\n\nNomen (bezieht sich auf Bananenliebende Insekten)?"
+  },
+  {
+    "objectID": "slides/input/index.html#was-sind-large-language-models-llms",
+    "href": "slides/input/index.html#was-sind-large-language-models-llms",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Was sind Large Language Models (LLMs)?",
+    "text": "Was sind Large Language Models (LLMs)?\nDas Wichtigste ist zu verstehen, dass ChatGPT grundsätzlich immer versucht, eine vernünftige Fortsetzung des bisherigen Textes zu produzieren.\nMit “vernünftig” meinen wir: “Was ist die wahrscheinlichste Fortsetzung eines Textanfangs, wenn man alle möglichen Texte berücksichtigt?”"
+  },
+  {
+    "objectID": "slides/input/index.html#was-sind-large-language-models-llms-1",
+    "href": "slides/input/index.html#was-sind-large-language-models-llms-1",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Was sind Large Language Models (LLMs)?",
+    "text": "Was sind Large Language Models (LLMs)?\n\n\n\nStatistische Modelle, die Text analysieren, um das nächste Wort vorherzusagen.\nDiese Vorhersage geschieht Wort für Wort.\nJede Vorhersage basiert auf\n\nder Eingabe (Prompt)\nden zuvor generierten Wörtern\nder internen Struktur des Modells\n\n\n\n\\[\n\\newcommand{\\purple}[1]{\\color{purple}{#1}}\n\\newcommand{\\red}[1]{\\color{red}{#1}}\n\\newcommand{\\blue}[1]{\\color{blue}{#1}}\n\\]\n\n\\[\\purple{P(\\text{Wort}_{i+1}} \\mid \\blue{\\text{Kontext}}, \\red{\\text{Modell}})\\]\n\nDas \\(\\purple{\\text{nächste Wort}}\\) wird vorhergesagt, in Abhängigkeit von \\(\\blue{\\text{Inputsequenz}}\\) und \\(\\red{\\text{Modell}}\\)."
+  },
+  {
+    "objectID": "slides/input/index.html#wie-funktioniert-die-vorhersage",
+    "href": "slides/input/index.html#wie-funktioniert-die-vorhersage",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Wie funktioniert die Vorhersage?",
+    "text": "Wie funktioniert die Vorhersage?\nNicht alle Teile des Kontexts sind gleich wichtig:\n \n\n\n“Die Familie, die sehr wohlhabend war, lebte in einem grossen Haus. Das Haus stand inmitten eines weitläufigen Gartens. Es war bekannt für seine prächtige Fassade und die grosszügigen _“\n\n\nNach Thomas Mann, Buddenbrooks\n\n \nWelche Wörter sind besonders wichtig, um\n\ndie Bedeutung des Satzes zu erfassen?\ndas nächste Wort vorherzusagen?"
+  },
+  {
+    "objectID": "slides/input/index.html#wie-sieht-das-für-musik-aus",
+    "href": "slides/input/index.html#wie-sieht-das-für-musik-aus",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Wie sieht das für Musik aus?",
+    "text": "Wie sieht das für Musik aus?\n\nYour browser does not support the audio tag.WA Mozart: Horn Concerto KV 495, Romanza (Christian Holenstein)\n\nQuelle: www.christian-holenstein.ch/sounds"
+  },
+  {
+    "objectID": "slides/input/index.html#programmierschnittstellen-oder-lokale-ki-modelle",
+    "href": "slides/input/index.html#programmierschnittstellen-oder-lokale-ki-modelle",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "Programmierschnittstellen oder lokale KI-Modelle",
+    "text": "Programmierschnittstellen oder lokale KI-Modelle\n\n\njan.ai: Eine Open-Source ChatGPT-Alternative\n\n\n\n\nlmstudio.ai: Lokale LLMs installieren"
+  },
+  {
+    "objectID": "slides/input/index.html#api-oder-lokale-ki-modelle",
+    "href": "slides/input/index.html#api-oder-lokale-ki-modelle",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "API oder lokale KI-Modelle",
+    "text": "API oder lokale KI-Modelle\n\n\njan.ai: Eine Open-Source ChatGPT-Alternative\n\n\n\n\nlmstudio.ai: Lokale LLMs installieren"
+  },
+  {
+    "objectID": "slides/input/index.html#api-oder-lokale-ki-modelle-verwenden",
+    "href": "slides/input/index.html#api-oder-lokale-ki-modelle-verwenden",
+    "title": "Künstliche Intelligenz in der Lehre: erste Schritte",
+    "section": "API oder lokale KI-Modelle verwenden",
+    "text": "API oder lokale KI-Modelle verwenden\n\n\njan.ai: Eine Open-Source ChatGPT-Alternative\n\n\n\n\nlmstudio.ai: Lokale LLMs installieren"
   }
 ]

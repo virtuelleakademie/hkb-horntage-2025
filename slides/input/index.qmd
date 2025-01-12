@@ -57,7 +57,7 @@ Quelle: [AlphaFold](https://alphafold.com/)
 <!-- Maschinelles Lernen: 
 
 Modelle, die ohne explizite Programmierung Muster aus Daten erlernen, um Vorhersagen oder Entscheidungen zu treffen. -->
-![](../../assets/images/what-is-AI.svg){width=100%}
+![](../../assets/images/what-is-AI.svg){width=80%}
 
 
 :::
@@ -78,7 +78,7 @@ Modelle, die ohne explizite Programmierung Muster aus Daten erlernen, um Vorhers
 <!-- Maschinelles Lernen: 
 
 Modelle, die ohne explizite Programmierung Muster aus Daten erlernen, um Vorhersagen oder Entscheidungen zu treffen. -->
-![](../../assets/images/what-is-AI.svg){width=100%}
+![](../../assets/images/what-is-AI.svg){width=80%}
 
 
 :::
@@ -175,7 +175,7 @@ THEN is_cat = true
 ## Sprache
 
 :::{.r-fit-text}
-fruit flies like a banana
+fruit `flies` like a banana
 :::
 
 
@@ -259,7 +259,7 @@ Welche Wörter sind besonders wichtig, um
 
 **Syntaktische Struktur (Grammatik und Struktur des Satzes):**
 
-- Das Wort "grosszügigen" ist ein Adjektiv, das wahrscheinlich ein Nomen - im Plural beschreibt (Dativ oder Akkusativ wegen der Endung "-en").
+- Das Wort "grosszügigen" ist ein Adjektiv, das wahrscheinlich ein Nomen---im Plural---beschreibt (Dativ oder Akkusativ wegen der Endung "-en").
 - Der Satz bezieht sich auf das Haus und den Garten, daher liegt der Fokus vermutlich auf deren Eigenschaften.
 
 **Semantischer Kontext (Bedeutung):**
